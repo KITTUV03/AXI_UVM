@@ -60,21 +60,21 @@ class axi_sanity_test extends axi_base_test;
 endclass
 
 
-// class axi_b2b_write_test extends axi_base_test;
-//   `uvm_component_utils(axi_b2b_write_test)
+class axi_b2b_write_test extends axi_base_test;
+  `uvm_component_utils(axi_b2b_write_test)
 
-//   function new(string name = "axi_b2b_write_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
+  function new(string name = "axi_b2b_write_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
 
-//   task run_phase(uvm_phase phase);
-//     axi_b2b_seq seq;
-//     phase.raise_objection(this);
-//     seq = axi_b2b_seq::type_id::create("seq");
-//     seq.start(env.agt.wr_sqr);
-//     phase.drop_objection(this);
-//   endtask
-// endclass
+  task run_phase(uvm_phase phase);
+    axi_b2b_seq seq;
+    phase.raise_objection(this);
+    seq = axi_b2b_seq::type_id::create("seq");
+    seq.start(env.agt.wr_sqr);
+    phase.drop_objection(this);
+  endtask
+endclass
 
 
 // class axi_b2b_read_test extends axi_base_test;
@@ -163,27 +163,124 @@ class axi_slv_err_test extends axi_base_test;
   endtask
 endclass
 
+class axi_regression_test extends axi_base_test;
 
-// class axi_dec_err_test extends axi_base_test;
-//   `uvm_component_utils(axi_dec_err_test)
+  `uvm_component_utils(axi_regression_test)
 
-//   function new(string name = "axi_dec_err_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
+  function new(string name = "axi_regression_test",
+               uvm_component parent);
+    super.new(name, parent);
+  endfunction
 
-//   task run_phase(uvm_phase phase);
-//     axi_dec_err_wr_seq wr_seq;
-//     axi_dec_err_rd_seq rd_seq;
-//     phase.raise_objection(this);
-//     wr_seq = axi_dec_err_wr_seq::type_id::create("wr_seq");
-//     rd_seq = axi_dec_err_rd_seq::type_id::create("rd_seq");
-//     fork
-//       wr_seq.start(env.agt.wr_sqr);
-//       rd_seq.start(env.agt.rd_sqr);
-//     join
-//     phase.drop_objection(this);
-//   endtask
-// endclass
+  task run_phase(uvm_phase phase);
+
+    axi_sanity_wr_seq sanity_wr_seq;
+    axi_sanity_rd_seq sanity_rd_seq;
+
+    axi_b2b_seq       b2b_seq;
+
+    axi_dec_err       dec_wr_seq;
+    axi_dec_err       dec_rd_seq;
+
+    axi_slv_err       slv_wr_seq;
+    axi_slv_err       slv_rd_seq;
+
+    axi_wstrb_seq     strb_seq;
+    axi_negative_seq  neg_w_seq;
+    axi_negative_seq  neg_r_seq;
+
+    phase.raise_objection(this);
+
+    fork
+
+      begin
+        sanity_wr_seq =
+          axi_sanity_wr_seq::type_id::create("sanity_wr_seq");
+        sanity_wr_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+        sanity_rd_seq =
+          axi_sanity_rd_seq::type_id::create("sanity_rd_seq");
+        sanity_rd_seq.start(env.agt.rd_sqr);
+      end
+
+      begin
+        b2b_seq =
+          axi_b2b_seq::type_id::create("b2b_seq");
+        b2b_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+        dec_wr_seq =
+          axi_dec_err::type_id::create("dec_wr_seq");
+        dec_wr_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+        dec_rd_seq =
+          axi_dec_err::type_id::create("dec_rd_seq");
+        dec_rd_seq.start(env.agt.rd_sqr);
+      end
+
+      begin
+        slv_wr_seq =
+          axi_slv_err::type_id::create("slv_wr_seq");
+        slv_wr_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+        slv_rd_seq =
+          axi_slv_err::type_id::create("slv_rd_seq");
+        slv_rd_seq.start(env.agt.rd_sqr);
+      end
+
+      begin 
+         strb_seq=axi_wstrb_seq::type_id::create("strb_seq");
+         strb_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+         neg_w_seq=axi_negative_seq::type_id::create("neg_w_seq");
+         neg_w_seq.start(env.agt.wr_sqr);
+      end
+
+      begin
+         neg_r_seq=axi_negative_seq::type_id::create("neg_r_seq");
+         neg_r_seq.start(env.agt.rd_sqr);
+      end
+
+    join
+
+
+
+    phase.drop_objection(this);
+
+  endtask
+
+endclass
+
+
+class axi_dec_err_test extends axi_base_test;
+  `uvm_component_utils(axi_dec_err_test)
+
+  function new(string name = "axi_dec_err_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    axi_dec_err wr_seq;
+    axi_dec_err rd_seq;
+    phase.raise_objection(this);
+    wr_seq = axi_dec_err::type_id::create("wr_seq");
+    rd_seq = axi_dec_err::type_id::create("rd_seq");
+    fork
+      wr_seq.start(env.agt.wr_sqr);
+      rd_seq.start(env.agt.rd_sqr);
+    join
+    phase.drop_objection(this);
+  endtask
+endclass
 
 
 // class axi_wstrb_test extends axi_base_test;

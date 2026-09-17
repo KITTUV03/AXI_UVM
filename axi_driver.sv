@@ -7,6 +7,7 @@ class axi_driver extends uvm_driver #(axi_trans);
 
   virtual intf axi_inf;
 
+  //I have taken other sequencer handle for read operation
   uvm_seq_item_pull_port #(axi_trans) rd_item_port;
 
   function new(string name = "axi_driver", uvm_component parent);
@@ -21,6 +22,7 @@ class axi_driver extends uvm_driver #(axi_trans);
   endfunction
 
   task run_phase(uvm_phase phase);
+    //We're are waiting for deassertion of Reset
     wait(axi_inf.ARESETn === 1'b1);
     @(axi_inf.drv_cb);
     clear_all();
@@ -52,6 +54,7 @@ class axi_driver extends uvm_driver #(axi_trans);
   endtask
 
 
+  //Perform Write Operation
   task write_channel_loop();
     axi_trans wr_pkt;
     forever begin
@@ -62,6 +65,7 @@ class axi_driver extends uvm_driver #(axi_trans);
     end
   endtask
 
+  //Perform Read Operation
   task read_channel_loop();
     axi_trans rd_pkt;
     forever begin

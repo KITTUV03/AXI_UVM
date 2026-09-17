@@ -1,6 +1,6 @@
-`include "axi_design.sv"
+//`include "axi_design.sv"
 `include "uvm_macros.svh"
-`include "axi_package.sv"
+//`include "axi_package.sv"
 `include "axi_assertion.sv"
 module axi_top;
   import uvm_pkg::*;
@@ -26,6 +26,8 @@ module axi_top;
   endtask
 
   initial begin
+    apply_reset;
+    repeat(10) @(posedge ACLK);
     apply_reset;
   end
 
@@ -82,7 +84,7 @@ module axi_top;
   end
 
   initial begin
-    run_test("axi_sanity_test");
+    run_test("axi_regression_test");
   end
 
 

@@ -1,7 +1,7 @@
-Command: vcs -full64 -sverilog -ntb_opts uvm -licqueue -cm line+cond+fsm+tgl+branch \
--assert svaext -assert enable_diag axi_top.sv -l compile.log
+Command: vcs -full64 -sverilog +v2k -ntb_opts uvm -debug_access+all -cm line+cond+fsm+tgl+branch \
+axi_package.sv axi_interface.sv axi_design.sv axi_top.sv -l compile.log
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Thu Sep 17 09:59:08 2026
+      Version Q-2020.03-SP2-8_Full64 -- Fri Sep 18 00:14:26 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -284,15 +284,39 @@ Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/
 Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_pkg.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/vcs_uvm_alt.sv'.
 Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_pkg.sv'.
-Parsing design file 'axi_top.sv'
-Parsing included file 'axi_design.sv'.
-Back to file 'axi_top.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/msglog.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_msglog_report_server.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_vcs_recorder.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_vcs_record_interface.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_macros.svh'.
-Back to file 'axi_top.sv'.
-Parsing included file 'axi_package.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_recorder.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_recorder.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_reg_map_recording.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_message_catcher.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_message_catcher.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/./dpi/uvm_verdi_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_reg_recording.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/include/verdi_trans_recorder_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_pli.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'
+Parsing design file 'axi_package.sv'
 Parsing included file 'define.svh'.
-Back to file 'axi_package.sv'.
-Parsing included file 'axi_interface.sv'.
 Back to file 'axi_package.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_macros.svh'.
 Back to file 'axi_package.sv'.
@@ -332,40 +356,51 @@ Parsing included file 'axi_env.sv'.
 Back to file 'axi_package.sv'.
 Parsing included file 'axi_test.sv'.
 Back to file 'axi_package.sv'.
+Parsing design file 'axi_interface.sv'
+Parsing design file 'axi_design.sv'
+Parsing design file 'axi_top.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_macros.svh'.
 Back to file 'axi_top.sv'.
 Parsing included file 'axi_assertion.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_macros.svh'.
 Back to file 'axi_assertion.sv'.
 Back to file 'axi_top.sv'.
 Top Level Modules:
+       uvm_custom_install_recording
+       uvm_custom_install_verdi_recording
        axi_top
 No TimeScale specified
 VCS Coverage Metrics Release Q-2020.03-SP2-8_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
 Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
-6 modules and 0 UDP read.
+10 modules and 0 UDP read.
 recompiling package vcs_paramclassrepository
 recompiling package uvm_pkg
-recompiling module axi4_lite_slave
-recompiling module intf
+recompiling module uvm_custom_install_recording
+recompiling module uvm_custom_install_verdi_recording
 recompiling package axi_pkg
 recompiling module axi_top
-All of 6 modules done
-rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-g++ -w  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/include \
--c /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/dpi/uvm_dpi.cc \
+6 of 10 modules done
+	However, due to incremental compilation, only 6 modules need to be compiled. 
+make[1]: Entering directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
 
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
 -L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
-/usr/lib64/libnuma.so.1 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vpdlogstub.o \
-uvm_dpi.o   objs/amcQw_d.o   _36049_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o \
-rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc \
--lvfs    -lvcsnew -lsimprofile -lreader_common /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libBA.a \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _28268_archive_1.so _prev_archive_1.so \
+_cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
+rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
+-lreader_common /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libBA.a \
 -luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
-/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+_vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
 -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 8.276 seconds to compile + .423 seconds to elab + .508 seconds to link
+make[1]: Leaving directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
+
+CPU time: 12.568 seconds to compile + .444 seconds to elab + .687 seconds to link

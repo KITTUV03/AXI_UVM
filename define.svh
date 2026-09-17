@@ -24,5 +24,5 @@ endfunction
 `define STRB_WIDTH (`DATA_WIDTH)/8
 
 `define TIME_OUT 100
-`define NUM_OF_TRANS 10
+`define NUM_OF_TRANS 30
 

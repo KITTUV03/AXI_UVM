@@ -1,9 +1,21 @@
 {
+    "_vcs_DPI_package": [
+        "_vcs_DPI_package",
+        "uM9F1",
+        "module",
+        9
+    ],
     "vcs_paramclassrepository": [
         "vcs_paramclassrepository",
         "hEeZs",
         "module",
         1
+    ],
+    "_vcs_unit__1808945750": [
+        "_vcs_unit__1808945750",
+        "WST78",
+        "module",
+        10
     ],
     "std": [
         "std",
@@ -17,11 +29,29 @@
         "module",
         3
     ],
-    "axi4_lite_slave": [
-        "axi4_lite_slave",
-        "C24qp",
+    "_vcs_msglog": [
+        "_vcs_msglog",
+        "zQBzV",
         "module",
-        4
+        11
+    ],
+    "uvm_custom_install_recording": [
+        "uvm_custom_install_recording",
+        "nhiwz",
+        "module",
+        12
+    ],
+    "uvm_custom_install_verdi_recording": [
+        "uvm_custom_install_verdi_recording",
+        "EbjT3",
+        "module",
+        13
+    ],
+    "axi_pkg": [
+        "axi_pkg",
+        "p9GxR",
+        "module",
+        6
     ],
     "intf": [
         "intf",
@@ -29,11 +59,11 @@
         "module",
         5
     ],
-    "axi_pkg": [
-        "axi_pkg",
-        "p9GxR",
+    "axi4_lite_slave": [
+        "axi4_lite_slave",
+        "C24qp",
         "module",
-        6
+        4
     ],
     "axi_top": [
         "axi_top",

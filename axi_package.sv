@@ -1,5 +1,5 @@
 `include "define.svh"
-`include "axi_interface.sv"
+//`include "axi_interface.sv"
 
 package axi_pkg;
   import uvm_pkg::*;
@@ -26,6 +26,6 @@ package axi_pkg;
   `include "axi_subscriber.sv"
   `include "axi_env.sv"
   `include "axi_test.sv"
-  
+  //`include "axi_regression_test.sv"
 endpackage
 

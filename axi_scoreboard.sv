@@ -27,11 +27,11 @@ class axi_scb extends uvm_scoreboard;
 
 
 
-  function bit [3:0] get_word_index(bit [`ADDR_WIDTH-1:0] addr);
+  function bit [3:0] wrd_index(bit [`ADDR_WIDTH-1:0] addr);
     return addr[5:2];
   endfunction
 
-  function bit is_addr_aligned(bit [`ADDR_WIDTH-1:0] addr);
+  function bit check_addr_alignment(bit [`ADDR_WIDTH-1:0] addr);
     return (addr[1:0] == 2'b00);
   endfunction
 
@@ -39,29 +39,29 @@ class axi_scb extends uvm_scoreboard;
     return (addr < (`MEM_DEPTH * 4));
   endfunction
 
-  function bit is_read_only(bit [3:0] word_idx);
+  function bit read_only(bit [3:0] word_idx);
     return (word_idx >= 10 && word_idx <= 12);
   endfunction
 
-  function bit is_write_only(bit [3:0] word_idx);
+  function bit write_only(bit [3:0] word_idx);
     return (word_idx >= 13 && word_idx <= 14);
   endfunction
 
   function bit [1:0] predict_bresp(bit [`ADDR_WIDTH-1:0] addr);
-    bit [3:0] idx = get_word_index(addr);
+    bit [3:0] idx = wrd_index(addr);
     if (!is_addr_in_range(addr))
       return 2'b11; // DECERR
-    else if (!is_addr_aligned(addr) || is_read_only(idx))
+    else if (!check_addr_alignment(addr) || read_only(idx))
       return 2'b10; // SLVERR
     else
       return 2'b00; // OKAY
   endfunction
 
   function bit [1:0] predict_rresp(bit [`ADDR_WIDTH-1:0] addr);
-    bit [3:0] idx = get_word_index(addr);
+    bit [3:0] idx = wrd_index(addr);
     if (!is_addr_in_range(addr))
       return 2'b11; // DECERR
-    else if (!is_addr_aligned(addr) || is_write_only(idx))
+    else if (!check_addr_alignment(addr) || write_only(idx))
       return 2'b10; // SLVERR
     else
       return 2'b00; // OKAY
@@ -69,7 +69,7 @@ class axi_scb extends uvm_scoreboard;
 
 
   function void write_write_txn(axi_trans t);
-    bit [3:0] idx = get_word_index(t.AWADDR);
+    bit [3:0] idx = wrd_index(t.AWADDR);
     bit [1:0] exp_resp;
 
     write_count++;
@@ -99,7 +99,7 @@ class axi_scb extends uvm_scoreboard;
 
 
   function void write_read_txn(axi_trans t);
-    bit [3:0] idx = get_word_index(t.ARADDR);
+    bit [3:0] idx = wrd_index(t.ARADDR);
     bit [1:0] exp_resp;
     bit [`DATA_WIDTH-1:0] exp_data;
 

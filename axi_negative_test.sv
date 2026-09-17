@@ -9,66 +9,55 @@ class axi_negative_seq extends axi_base_sequence;
   endfunction
 
   task body();
-    axi_trans pkt;
+    axi_trans wr_pkt;
+    axi_trans rd_pkt;
     `uvm_info("AXI_NEGATIVE", "Starting Negative Test Sequence", UVM_LOW)
-
-    for(int i = 10; i <= 12; i++) begin
-      pkt = axi_trans::type_id::create("pkt");
-      start_item(pkt);
-      pkt.valid_address_range.constraint_mode(0);
-      pkt.slv_err_address.constraint_mode(0);
-      pkt.dec_err_address.constraint_mode(0);
-      assert(pkt.randomize() with {
-        operation == single_w;
-        AWADDR == (i * 4);
-      });
-      finish_item(pkt);
-      `uvm_info("AXI_NEGATIVE", $sformatf("WRITE to RO[%0d] addr=0x%08h resp=%0d", i, pkt.AWADDR, pkt.BRESP), UVM_MEDIUM)
+     
+     repeat(2) begin
+      wr_pkt = axi_trans::type_id::create("wr_pkt");
+      start_item(wr_pkt);
+      wr_pkt.slv_err_address.constraint_mode(0);
+      wr_pkt.dec_err_address.constraint_mode(0);
+      assert(wr_pkt.randomize() with {operation == single_w;AWADDR==32'h00000000;});
+      finish_item(wr_pkt);
+      `uvm_info("AXI_Negative_WR", $sformatf("WRITE addr=0x%08h data=0x%08h resp=%0d",
+                wr_pkt.AWADDR, wr_pkt.WDATA, wr_pkt.BRESP), UVM_MEDIUM)
     end
 
-    for(int i = 13; i <= 14; i++) begin
-      pkt = axi_trans::type_id::create("pkt");
-      start_item(pkt);
-      pkt.valid_address_range.constraint_mode(0);
-      pkt.slv_err_address.constraint_mode(0);
-      pkt.dec_err_address.constraint_mode(0);
-      assert(pkt.randomize() with {
-        operation == single_r;
-        ARADDR == (i * 4);
-      });
-      finish_item(pkt);
-      `uvm_info("AXI_NEGATIVE", $sformatf("READ from WO[%0d] addr=0x%08h resp=%0d", i, pkt.ARADDR, pkt.RRESP), UVM_MEDIUM)
+
+     repeat(2) begin
+      rd_pkt = axi_trans::type_id::create("rd_pkt");
+      start_item(rd_pkt);
+      rd_pkt.slv_err_address.constraint_mode(0);
+      rd_pkt.dec_err_address.constraint_mode(0);
+      assert(rd_pkt.randomize() with {operation == single_r;ARADDR==32'h00000000;});
+      finish_item(rd_pkt);
+      
     end
 
-    for(int i = 16; i <= 20; i++) begin
-      pkt = axi_trans::type_id::create("pkt");
-      start_item(pkt);
-      pkt.valid_address_range.constraint_mode(0);
-      pkt.slv_err_address.constraint_mode(0);
-      pkt.dec_err_address.constraint_mode(0);
-      assert(pkt.randomize() with {
-        operation == single_w;
-        AWADDR == (i * 4);
-      });
-      finish_item(pkt);
-      `uvm_info("AXI_NEGATIVE", $sformatf("WRITE OOR[%0d] addr=0x%08h resp=%0d", i, pkt.AWADDR, pkt.BRESP), UVM_MEDIUM)
+
+   repeat(2) begin
+   wr_pkt = axi_trans::type_id::create("wr_pkt");
+      start_item(wr_pkt);
+      wr_pkt.slv_err_address.constraint_mode(0);
+      wr_pkt.dec_err_address.constraint_mode(0);
+      assert(wr_pkt.randomize() with {operation == single_w;AWADDR==32'hFFFFFFFF;});
+      finish_item(wr_pkt);
+      `uvm_info("AXI_Negative_WR", $sformatf("WRITE addr=0x%08h data=0x%08h resp=%0d",
+                wr_pkt.AWADDR, wr_pkt.WDATA, wr_pkt.BRESP), UVM_MEDIUM)
     end
 
-    for(int i = 16; i <= 20; i++) begin
-      pkt = axi_trans::type_id::create("pkt");
-      start_item(pkt);
-      pkt.valid_address_range.constraint_mode(0);
-      pkt.slv_err_address.constraint_mode(0);
-      pkt.dec_err_address.constraint_mode(0);
-      assert(pkt.randomize() with {
-        operation == single_r;
-        ARADDR == (i * 4);
-      });
-      finish_item(pkt);
-      `uvm_info("AXI_NEGATIVE", $sformatf("READ OOR[%0d] addr=0x%08h resp=%0d", i, pkt.ARADDR, pkt.RRESP), UVM_MEDIUM)
+
+     repeat(2) begin
+      rd_pkt = axi_trans::type_id::create("rd_pkt");
+      start_item(rd_pkt);
+      rd_pkt.slv_err_address.constraint_mode(0);
+      rd_pkt.dec_err_address.constraint_mode(0);
+      assert(rd_pkt.randomize() with {operation == single_r;ARADDR==32'hFFFFFFFF;});
+      finish_item(rd_pkt);
+
     end
 
-    `uvm_info("AXI_NEGATIVE", "Negative Test Sequence Complete", UVM_LOW)
   endtask
 
 endclass

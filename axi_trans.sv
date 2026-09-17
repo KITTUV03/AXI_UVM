@@ -47,12 +47,13 @@ class axi_trans extends uvm_sequence_item;
   
   
   
-  
+  //Last Two Bit will be 0
   constraint aligned_address {
     AWADDR[1:0] == 2'b00;
     ARADDR[1:0] == 2'b00;
   }
   
+  //Valif Address W-R Both happen from these address
   constraint valid_address_range {
     AWADDR[31:6] == 0;
     ARADDR[31:6] == 0;
@@ -60,6 +61,7 @@ class axi_trans extends uvm_sequence_item;
     ARADDR[5:2] inside {[0:12], 15};
   }
 
+  //Address for SLV-ERR
   constraint slv_err_address {
     AWADDR[31:6] == 0;
     ARADDR[31:6] == 0;
@@ -68,6 +70,7 @@ class axi_trans extends uvm_sequence_item;
   }
   
   
+  //Address for DEC_ERR
   constraint dec_err_address {
     AWADDR >= (`MEM_DEPTH * 4);
     ARADDR >= (`MEM_DEPTH * 4);
@@ -83,7 +86,7 @@ class axi_trans extends uvm_sequence_item;
   }
   
   constraint default_wstrb {
-    WSTRB == 4'hF;
+   soft WSTRB == 4'hF;
   }
   
   
