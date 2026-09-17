@@ -1,0 +1,254 @@
+Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_unaligned_test +ntb_random_seed=2 +UVM_VERBOSITY=UVM_MEDIUM -cm line+cond+fsm+tgl+branch -cm_name axi_unaligned_test_seed_2 -cm_dir simv.vdb -l regression_logs/axi_unaligned_test_seed_2.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 18 01:10 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test axi_unaligned_test...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------
+Name                       Type                        Size  Value
+------------------------------------------------------------------
+uvm_test_top               axi_unaligned_test          -     @461 
+  env                      axi_env                     -     @469 
+    agt                    axi_act_agent               -     @477 
+      drv                  axi_driver                  -     @751 
+        rd_item_port       uvm_seq_item_pull_port      -     @777 
+        rsp_port           uvm_analysis_port           -     @768 
+        seq_item_port      uvm_seq_item_pull_port      -     @759 
+      mon                  axi_monitor                 -     @786 
+        read_ap            uvm_analysis_port           -     @804 
+        write_ap           uvm_analysis_port           -     @795 
+      rd_sqr               axi_sequencer               -     @628 
+        rsp_export         uvm_analysis_export         -     @636 
+        seq_item_export    uvm_seq_item_pull_imp       -     @742 
+        arbitration_queue  array                       0     -    
+        lock_queue         array                       0     -    
+        num_last_reqs      integral                    32    'd1  
+        num_last_rsps      integral                    32    'd1  
+      wr_sqr               axi_sequencer               -     @505 
+        rsp_export         uvm_analysis_export         -     @513 
+        seq_item_export    uvm_seq_item_pull_imp       -     @619 
+        arbitration_queue  array                       0     -    
+        lock_queue         array                       0     -    
+        num_last_reqs      integral                    32    'd1  
+        num_last_rsps      integral                    32    'd1  
+    cov                    axi_sub                     -     @493 
+      read_export          uvm_analysis_imp_cov_read   -     @833 
+      write_export         uvm_analysis_imp_cov_write  -     @824 
+    scb                    axi_scb                     -     @485 
+      read_export          uvm_analysis_imp_read_txn   -     @851 
+      write_export         uvm_analysis_imp_write_txn  -     @842 
+------------------------------------------------------------------
+
+UVM_INFO axi_unaligned_seq.sv(13) @ 0: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] Starting Unaligned Address Write Sequence
+UVM_INFO axi_unaligned_seq.sv(46) @ 0: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] Starting Unaligned Address Read Sequence
+UVM_INFO axi_top.sv(25) @ 15: reporter [TESTBENCH] Reset released
+UVM_INFO axi_input_monitor.sv(117) @ 45: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000001 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 45: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000001 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 55: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000001 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 65: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000001 data=0x2d3e8a2f strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 65: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000001 resp=2'b10
+UVM_INFO axi_input_monitor.sv(117) @ 75: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000002 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 75: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000002 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(28) @ 75: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000001 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 85: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000002 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 105: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000003 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 105: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000003 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 115: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000003 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(28) @ 125: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000002 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_top.sv(25) @ 135: reporter [TESTBENCH] Reset released
+UVM_INFO axi_input_monitor.sv(117) @ 155: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000005 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 155: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000005 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 165: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000005 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 175: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000003 data=0x8b9b9979 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 175: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000003 resp=2'b10
+UVM_INFO axi_input_monitor.sv(117) @ 185: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000006 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 185: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000006 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(28) @ 185: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000003 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 195: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000006 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 215: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000007 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 215: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000007 resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 225: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000005 data=0x69907d50 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 225: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000005 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(61) @ 225: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000007 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(28) @ 235: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000005 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 245: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000009 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 245: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000009 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 255: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000009 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 275: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000000a data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 275: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000000a resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 275: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000006 data=0x44ba4b38 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 275: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000006 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 285: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000006 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 285: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000000a (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 305: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000000b data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 305: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000000b resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 315: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000000b (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 325: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000007 data=0xc5b2708e strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 325: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000007 resp=2'b10
+UVM_INFO axi_input_monitor.sv(117) @ 335: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000000d data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 335: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000000d resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(28) @ 335: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000007 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 345: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000000d (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 365: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000000e data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 365: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000000e resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 375: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000009 data=0xd99b0290 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 375: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000009 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(61) @ 375: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000000e (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(28) @ 385: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000009 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 395: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000000f data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 395: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000000f resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 405: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000000f (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 425: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000011 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000011 resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 425: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000a data=0x4df53027 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000a resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 435: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000000a (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 435: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000011 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 455: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000012 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 455: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000012 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 465: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000012 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 475: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000b data=0x8f88a99f strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 475: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000b resp=2'b10
+UVM_INFO axi_input_monitor.sv(117) @ 485: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000013 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 485: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000013 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(28) @ 485: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000000b (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 495: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000013 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 515: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000015 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 515: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000015 resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 525: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000d data=0xbcbbb20d strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 525: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000d resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(61) @ 525: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000015 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(28) @ 535: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000000d (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 545: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000016 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 545: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000016 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 555: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000016 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 575: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000017 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 575: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000017 resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 575: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000e data=0xa2e7e194 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 575: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000e resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 585: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000000e (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 585: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000017 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 605: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000019 data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 605: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x00000019 resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 615: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x00000019 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 625: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000f data=0x123315e9 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 625: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000f resp=2'b10
+UVM_INFO axi_input_monitor.sv(117) @ 635: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000001a data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 635: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000001a resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(28) @ 635: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000000f (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 645: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000001a (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 665: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000001b data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 665: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000001b resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 675: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000011 data=0x68b9b57b strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 675: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000011 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(61) @ 675: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000001b (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(28) @ 685: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000011 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 695: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000001d data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 695: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000001d resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 705: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000001d (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 725: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000001e data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 725: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000001e resp=2'b10 data=0x00000000
+UVM_INFO axi_input_monitor.sv(78) @ 725: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000012 data=0x88d250de strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 725: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000012 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 735: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000012 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(61) @ 735: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000001e (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(117) @ 755: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000001f data=0x00000000 resp=2
+UVM_INFO axi_scoreboard.sv(136) @ 755: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ ERR PASS] addr=0x0000001f resp=2'b10 data=0x00000000
+UVM_INFO axi_unaligned_seq.sv(61) @ 765: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] READ UNALIGNED addr=0x0000001f (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(66) @ 765: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_UNALIGNED_RD] Unaligned Address Read Sequence Complete
+UVM_INFO axi_input_monitor.sv(78) @ 775: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000013 data=0x55ec77af strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 775: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000013 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 785: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000013 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 825: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000015 data=0xbabce909 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 825: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000015 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 835: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000015 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 875: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000016 data=0x7da73470 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 875: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000016 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 885: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000016 (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 925: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000017 data=0x1f5cea90 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 925: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000017 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 935: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000017 (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 975: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000019 data=0xaca29e25 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 975: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000019 resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 985: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x00000019 (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 1025: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001a data=0xaeeb65f7 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 1025: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001a resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 1035: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000001a (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 1075: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001b data=0x882fc46b strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 1075: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001b resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 1085: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000001b (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 1125: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001d data=0x52b9c941 strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 1125: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001d resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 1135: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000001d (offset=1) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 1175: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001e data=0xae0da18e strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 1175: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001e resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 1185: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000001e (offset=2) resp=2 (expected SLVERR)
+UVM_INFO axi_input_monitor.sv(78) @ 1225: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001f data=0x65c52c9d strb=0xf resp=2
+UVM_INFO axi_scoreboard.sv(85) @ 1225: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001f resp=2'b10
+UVM_INFO axi_unaligned_seq.sv(28) @ 1235: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] WRITE UNALIGNED addr=0x0000001f (offset=3) resp=2 (expected SLVERR)
+UVM_INFO axi_unaligned_seq.sv(33) @ 1235: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_UNALIGNED_WR] Unaligned Address Write Sequence Complete
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 1235: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO axi_subscriber.sv(117) @ 1235: uvm_test_top.env.cov [AXI_COVERAGE] 
+============ COVERAGE SUMMARY ============
+  Write Coverage : 22.77%
+  Read  Coverage : 40.00%
+=============================================
+UVM_INFO axi_scoreboard.sv(145) @ 1235: uvm_test_top.env.scb [AXI_SCOREBOARD] 
+============ SCOREBOARD SUMMARY ============
+  Total Writes  : 23
+  Total Reads   : 24
+  Total Pass    : 47
+  Total Fail    : 0
+=============================================
+UVM_INFO axi_scoreboard.sv(151) @ 1235: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
+UVM_INFO axi_test.sv(36) @ 1235: uvm_test_top [AXI_TEST] 
+*** TEST PASSED ***
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  155
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_COVERAGE]     1
+[AXI_MONITOR]    47
+[AXI_SCOREBOARD]    49
+[AXI_TEST]     1
+[AXI_UNALIGNED_RD]    26
+[AXI_UNALIGNED_WR]    26
+[RNTST]     1
+[TESTBENCH]     2
+[TEST_DONE]     1
+[UVMTOP]     1
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                 1235
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1235
+CPU Time:      0.730 seconds;       Data structure size:   0.6Mb
+Fri Sep 18 01:10:20 2026

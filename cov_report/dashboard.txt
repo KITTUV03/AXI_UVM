@@ -1,0 +1,35 @@
+Dashboard
+
+Date: Fri Sep 18 01:10:37 2026
+
+User: kittupatel
+
+Version: Q-2020.03-SP2-8
+Command line: urg -dir simv.vdb -report cov_report -format both
+Number of tests: 16
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
+ 55.15  27.22  60.00  62.03  50.00  49.12  82.54 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                               
+ 67.38  90.71  60.00  62.86  50.00  73.33 axi_top                            
+ 30.22  30.43 --     --     --      30.00 uvm_custom_install_recording       
+  8.41   4.76 --       0.00 --      20.45 uvm_custom_install_verdi_recording 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 49.68  27.22  60.00  62.03  50.00  49.12 
+
+
+-------------------------------------------------------------------------------
+Total Groups Coverage Summary 
+SCORE  INST SCORE WEIGHT 
+ 82.54  82.54     1      
+

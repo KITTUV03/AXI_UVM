@@ -153,6 +153,7 @@
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_b2b_read.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_b2b_write.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_base_sequence.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_corner_data_seq.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_dec_err.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_design.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_driver.sv
@@ -169,6 +170,7 @@
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_test.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_top.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_trans.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_unaligned_seq.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_write_read_seq.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_wstrb_seq.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/define.svh

@@ -1,8 +1,8 @@
-<session version="1.1" release="Q-2020.03-SP2-8" timestp="2026-09-17 18:44:52 GMT">
+<session version="1.1" release="Q-2020.03-SP2-8" timestp="2026-09-17 19:40:34 GMT">
   <info>
-    <attr name="datetime" value="Fri Sep 18 00:15:04 2026
+    <attr name="datetime" value="Fri Sep 18 01:10:37 2026
 "/>
-    <attr name="command" value="urg -dir simv.vdb -report cov_report"/>
+    <attr name="command" value="urg -dir simv.vdb -report cov_report -format both"/>
     <attr name="top_instance" value="uvm_custom_install_recording,uvm_custom_install_verdi_recording,axi_top"/>
   </info>
   <hvp>
@@ -18,20 +18,20 @@
   <old_coverage>
   <scope type="top" name="top">
     <metric name="Line" value="153/562" />
-    <metric name="Cond" value="58/100" />
-    <metric name="Toggle" value="536/906" />
+    <metric name="Cond" value="60/100" />
+    <metric name="Toggle" value="562/906" />
     <metric name="FSM" value="5/10" />
     <metric name="Branch" value="56/114" />
-    <metric name="Group" value="74.2913%" />
+    <metric name="Group" value="82.5353%" />
   </scope>
   <scope type="instance" name="top">
   </scope>
   <scope type="group" name="top">
     <scope type="group" name="axi_pkg::axi_sub::write_cg">
-      <metric name="Group" value="70.6659%" />
+      <metric name="Group" value="80.4874%" />
     </scope>
     <scope type="group" name="axi_pkg::axi_sub::read_cg">
-      <metric name="Group" value="77.9167%" />
+      <metric name="Group" value="84.5833%" />
     </scope>
   </scope>
   <scope type="assert" name="Statistics">

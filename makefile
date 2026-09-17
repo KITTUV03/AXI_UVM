@@ -1,17 +1,36 @@
-
 # ==================================================
-# VCS + UVM Makefile
+# VCS + UVM Makefile with Regression, Verbosity & Coverage Display
 # ==================================================
 
 VCS      = vcs
 SIMV     = ./simv
 URG      = urg
 
+# Source files
 SRC = \
 	axi_package.sv \
 	axi_interface.sv \
 	axi_design.sv \
 	axi_top.sv
+
+# Default test, seed, and verbosity
+TEST      ?= axi_sanity_test
+SEED      ?= 1
+VERBOSITY ?= UVM_MEDIUM
+
+# List of tests for regression
+TEST_LIST = \
+	axi_sanity_test \
+	axi_b2b_write_test \
+	axi_slv_err_test \
+	axi_dec_err_test \
+	axi_unaligned_test \
+	axi_wstrb_test \
+	axi_corner_data_test \
+	axi_negative_test
+
+# Seeds to run per test during regression
+SEEDS ?= 1 2
 
 CMP_OPTS = -full64 -sverilog +v2k -ntb_opts uvm \
            -debug_access+all \
@@ -25,24 +44,84 @@ c:
 	$(VCS) $(CMP_OPTS) $(SRC) -l compile.log
 
 # ----------------------------------------
-# Simulate
-# Usage: make r
+# Simulate Single Test (Displays ALL UVM_INFO & Warnings to screen)
+# Usage: make r TEST=axi_sanity_test VERBOSITY=UVM_HIGH
 # ----------------------------------------
 r:
-	$(SIMV) -cm line+cond+fsm+tgl+branch -l sim.log
+	@mkdir -p sim_logs
+	$(SIMV) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) \
+	        +UVM_VERBOSITY=$(VERBOSITY) \
+	        -cm line+cond+fsm+tgl+branch \
+	        -cm_name $(TEST)_seed_$(SEED) \
+	        -cm_dir simv.vdb \
+	        -l sim_logs/$(TEST)_seed_$(SEED).log
 
 # ----------------------------------------
-# Compile + Run
-# Usage: make cr
+# Compile + Run Single Test
+# Usage: make cr TEST=axi_sanity_test
 # ----------------------------------------
 cr: c r
+
+# ----------------------------------------
+# Run Full Regression (Extracts & Displays Functional Coverage in Table)
+# Usage: make reg
+# ----------------------------------------
+reg: c
+	@echo "========================================================================================"
+	@echo "                   STARTING FULL UVM REGRESSION & COVERAGE RUN                          "
+	@echo "========================================================================================"
+	@mkdir -p regression_logs
+	@rm -rf regression_summary.rpt
+	@echo "========================================================================================" >> regression_summary.rpt
+	@echo "                               REGRESSION SUMMARY REPORT                                " >> regression_summary.rpt
+	@echo "========================================================================================" >> regression_summary.rpt
+	@printf "%-22s %-6s %-8s %-12s %-12s %-25s\n" "TEST NAME" "SEED" "STATUS" "WR COV" "RD COV" "LOG FILE" | tee -a regression_summary.rpt
+	@echo "----------------------------------------------------------------------------------------" | tee -a regression_summary.rpt
+	@for t in $(TEST_LIST); do \
+		for s in $(SEEDS); do \
+			$(SIMV) +UVM_TESTNAME=$$t +ntb_random_seed=$$s \
+			        +UVM_VERBOSITY=UVM_MEDIUM \
+			        -cm line+cond+fsm+tgl+branch \
+			        -cm_name $${t}_seed_$${s} \
+			        -cm_dir simv.vdb \
+			        -l regression_logs/$${t}_seed_$${s}.log > /dev/null 2>&1; \
+			if grep -q "\*\*\* TEST PASSED \*\*\*" regression_logs/$${t}_seed_$${s}.log && \
+			   ! grep -q "UVM_ERROR : *[1-9]" regression_logs/$${t}_seed_$${s}.log && \
+			   ! grep -q "UVM_FATAL : *[1-9]" regression_logs/$${t}_seed_$${s}.log; then \
+				STATUS="PASSED"; \
+			else \
+				STATUS="FAILED"; \
+			fi; \
+			WR_COV=$$(grep "Write Coverage" regression_logs/$${t}_seed_$${s}.log | tail -1 | awk '{print $$NF}'); \
+			RD_COV=$$(grep "Read  Coverage" regression_logs/$${t}_seed_$${s}.log | tail -1 | awk '{print $$NF}'); \
+			if [ -z "$$WR_COV" ]; then WR_COV="N/A"; fi; \
+			if [ -z "$$RD_COV" ]; then RD_COV="N/A"; fi; \
+			printf "%-22s %-6s %-8s %-12s %-12s %-25s\n" "$$t" "$$s" "$$STATUS" "$$WR_COV" "$$RD_COV" "regression_logs/$${t}_seed_$${s}.log" | tee -a regression_summary.rpt; \
+		done; \
+	done
+	@echo "========================================================================================" | tee -a regression_summary.rpt
+	@$(MAKE) cov
 
 # ----------------------------------------
 # Coverage Report
 # Usage: make cov
 # ----------------------------------------
 cov:
-	$(URG) -dir simv.vdb -report cov_report
+	$(URG) -dir simv.vdb -report cov_report -format both
+	@echo "=================================================="
+	@echo " Code coverage report generated in: cov_report/   "
+	@echo " Open dashboard: firefox cov_report/dashboard.html"
+	@echo "=================================================="
+
+# ----------------------------------------
+# View Functional Coverage from Logs
+# Usage: make view_fcov
+# ----------------------------------------
+view_fcov:
+	@echo "=================================================="
+	@echo " Functional Coverage Summary from Test Logs:      "
+	@echo "=================================================="
+	@grep -H -A 3 "COVERAGE SUMMARY" regression_logs/*.log 2>/dev/null || echo "No logs found. Run 'make reg' first."
 
 # ----------------------------------------
 # Open Coverage Report
@@ -58,7 +137,8 @@ view:
 clean:
 	rm -rf csrc simv simv.daidir \
 	       ucli.key *.vdb cov_report \
-	       *.log DVEfiles novas* \
+	       *.log sim_logs regression_logs \
+	       regression_summary.rpt DVEfiles novas* \
 	       verdiLog inter.fsdb
 
 # ----------------------------------------
@@ -66,9 +146,10 @@ clean:
 # Usage: make help
 # ----------------------------------------
 help:
-	@echo "make c     -> Compile"
-	@echo "make r     -> Run Simulation"
-	@echo "make cr    -> Compile + Run"
-	@echo "make cov   -> Generate Coverage Report"
-	@echo "make view  -> Open Coverage Report"
-	@echo "make clean -> Clean Generated Files"
+	@echo "make c               -> Compile design & testbench"
+	@echo "make r TEST=<name>   -> Run single test with live terminal output"
+	@echo "make reg             -> Run regression with Functional Coverage printed in table"
+	@echo "make view_fcov       -> Print all functional coverage summaries from logs"
+	@echo "make cov             -> Generate URG code coverage report"
+	@echo "make view            -> Open Coverage HTML Dashboard"
+	@echo "make clean           -> Clean all generated files"

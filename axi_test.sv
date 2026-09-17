@@ -39,10 +39,10 @@ class axi_base_test extends uvm_test;
 endclass
 
 
+// 1. Sanity Test (Basic R/W across standard registers)
 class axi_sanity_test extends axi_base_test;
   `uvm_component_utils(axi_sanity_test)
 
-  
   function new(string name = "axi_sanity_test", uvm_component parent);
     super.new(name, parent);
   endfunction
@@ -60,6 +60,7 @@ class axi_sanity_test extends axi_base_test;
 endclass
 
 
+// 2. Back-to-back Write Test
 class axi_b2b_write_test extends axi_base_test;
   `uvm_component_utils(axi_b2b_write_test)
 
@@ -77,69 +78,6 @@ class axi_b2b_write_test extends axi_base_test;
 endclass
 
 
-// class axi_b2b_read_test extends axi_base_test;
-//   `uvm_component_utils(axi_b2b_read_test)
-
-//   function new(string name = "axi_b2b_read_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
-
-//   task run_phase(uvm_phase phase);
-//     axi_b2b_read_seed_seq seed_seq;
-//     axi_b2b_read_seq      rd_seq;
-//     phase.raise_objection(this);
-//     seed_seq = axi_b2b_read_seed_seq::type_id::create("seed_seq");
-//     rd_seq   = axi_b2b_read_seq::type_id::create("rd_seq");
-//     seed_seq.start(env.agt.wr_sqr);  // seed data via write channel
-//     rd_seq.start(env.agt.rd_sqr);    // then read back
-//     phase.drop_objection(this);
-//   endtask
-// endclass
-
-
-// class axi_write_read_test extends axi_base_test;
-//   `uvm_component_utils(axi_write_read_test)
-
-//   function new(string name = "axi_write_read_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
-
-//   task run_phase(uvm_phase phase);
-//     axi_wr_phase_seq wr_seq;
-//     axi_rd_phase_seq rd_seq;
-//     phase.raise_objection(this);
-//     wr_seq = axi_wr_phase_seq::type_id::create("wr_seq");
-//     rd_seq = axi_rd_phase_seq::type_id::create("rd_seq");
-//     // Write phase: writes random addresses, stores them
-//     wr_seq.start(env.agt.wr_sqr);
-//     // Read phase: reads back the same addresses
-//     rd_seq.read_addrs = wr_seq.written_addrs;
-//     rd_seq.start(env.agt.rd_sqr);
-//     phase.drop_objection(this);
-//   endtask
-// endclass
-
-
-// class axi_sim_rw_test extends axi_base_test;
-//   `uvm_component_utils(axi_sim_rw_test)
-//     axi_sim_rw wr_seq;
-//     axi_sim_rw rd_seq;
-//   function new(string name = "axi_sim_rw_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
-
-//   task run_phase(uvm_phase phase);
-   
-//     phase.raise_objection(this);
-//     wr_seq = axi_sim_rw::type_id::create("wr_seq");
-//     rd_seq = axi_sim_rw::type_id::create("rd_seq");
-//     fork
-//       wr_seq.start(env.agt.wr_sqr);
-//       rd_seq.start(env.agt.rd_sqr);
-//     join
-//     phase.drop_objection(this);
-//   endtask
-// endclass
 
 
 class axi_slv_err_test extends axi_base_test;
@@ -151,7 +89,6 @@ class axi_slv_err_test extends axi_base_test;
   endfunction
 
   task run_phase(uvm_phase phase);
-   
     phase.raise_objection(this);
     wr_seq = axi_slv_err::type_id::create("wr_seq");
     rd_seq = axi_slv_err::type_id::create("rd_seq");
@@ -163,104 +100,8 @@ class axi_slv_err_test extends axi_base_test;
   endtask
 endclass
 
-class axi_regression_test extends axi_base_test;
 
-  `uvm_component_utils(axi_regression_test)
-
-  function new(string name = "axi_regression_test",
-               uvm_component parent);
-    super.new(name, parent);
-  endfunction
-
-  task run_phase(uvm_phase phase);
-
-    axi_sanity_wr_seq sanity_wr_seq;
-    axi_sanity_rd_seq sanity_rd_seq;
-
-    axi_b2b_seq       b2b_seq;
-
-    axi_dec_err       dec_wr_seq;
-    axi_dec_err       dec_rd_seq;
-
-    axi_slv_err       slv_wr_seq;
-    axi_slv_err       slv_rd_seq;
-
-    axi_wstrb_seq     strb_seq;
-    axi_negative_seq  neg_w_seq;
-    axi_negative_seq  neg_r_seq;
-
-    phase.raise_objection(this);
-
-    fork
-
-      begin
-        sanity_wr_seq =
-          axi_sanity_wr_seq::type_id::create("sanity_wr_seq");
-        sanity_wr_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-        sanity_rd_seq =
-          axi_sanity_rd_seq::type_id::create("sanity_rd_seq");
-        sanity_rd_seq.start(env.agt.rd_sqr);
-      end
-
-      begin
-        b2b_seq =
-          axi_b2b_seq::type_id::create("b2b_seq");
-        b2b_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-        dec_wr_seq =
-          axi_dec_err::type_id::create("dec_wr_seq");
-        dec_wr_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-        dec_rd_seq =
-          axi_dec_err::type_id::create("dec_rd_seq");
-        dec_rd_seq.start(env.agt.rd_sqr);
-      end
-
-      begin
-        slv_wr_seq =
-          axi_slv_err::type_id::create("slv_wr_seq");
-        slv_wr_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-        slv_rd_seq =
-          axi_slv_err::type_id::create("slv_rd_seq");
-        slv_rd_seq.start(env.agt.rd_sqr);
-      end
-
-      begin 
-         strb_seq=axi_wstrb_seq::type_id::create("strb_seq");
-         strb_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-         neg_w_seq=axi_negative_seq::type_id::create("neg_w_seq");
-         neg_w_seq.start(env.agt.wr_sqr);
-      end
-
-      begin
-         neg_r_seq=axi_negative_seq::type_id::create("neg_r_seq");
-         neg_r_seq.start(env.agt.rd_sqr);
-      end
-
-    join
-
-
-
-    phase.drop_objection(this);
-
-  endtask
-
-endclass
-
-
+// 5. Decode Error Test (Out-of-range addresses >= 64)
 class axi_dec_err_test extends axi_base_test;
   `uvm_component_utils(axi_dec_err_test)
 
@@ -283,75 +124,90 @@ class axi_dec_err_test extends axi_base_test;
 endclass
 
 
-// class axi_wstrb_test extends axi_base_test;
-//   `uvm_component_utils(axi_wstrb_test)
+// 6. Unaligned Address Access Test (ADDR[1:0] != 00)
+class axi_unaligned_test extends axi_base_test;
+  `uvm_component_utils(axi_unaligned_test)
 
-//   function new(string name = "axi_wstrb_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
+  function new(string name = "axi_unaligned_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
 
-//   task run_phase(uvm_phase phase);
-//     axi_wstrb_wr_seq wr_seq;
-//     axi_wstrb_rd_seq rd_seq;
-//     phase.raise_objection(this);
-
-//     `uvm_info("AXI_TEST", "Starting WSTRB Test: 16 strobe patterns", UVM_LOW)
-//     for(int s = 0; s < 16; s++) begin
-//       // Write: clear register + write with strobe pattern s
-//       wr_seq = axi_wstrb_wr_seq::type_id::create("wr_seq");
-//       wr_seq.strb_pattern = s;
-//       wr_seq.start(env.agt.wr_sqr);
-//       // Read: verify byte-lane updates
-//       rd_seq = axi_wstrb_rd_seq::type_id::create("rd_seq");
-//       rd_seq.start(env.agt.rd_sqr);
-//     end
-
-//     phase.drop_objection(this);
-//   endtask
-// endclass
+  task run_phase(uvm_phase phase);
+    axi_unaligned_wr_seq wr_seq;
+    axi_unaligned_rd_seq rd_seq;
+    phase.raise_objection(this);
+    wr_seq = axi_unaligned_wr_seq::type_id::create("wr_seq");
+    rd_seq = axi_unaligned_rd_seq::type_id::create("rd_seq");
+    fork
+      wr_seq.start(env.agt.wr_sqr);
+      rd_seq.start(env.agt.rd_sqr);
+    join
+    phase.drop_objection(this);
+  endtask
+endclass
 
 
-// class axi_negative_test extends axi_base_test;
-//   `uvm_component_utils(axi_negative_test)
+// 7. Byte-Strobe Test (All 16 strobe patterns 0x0 to 0xF)
+class axi_wstrb_test extends axi_base_test;
+  `uvm_component_utils(axi_wstrb_test)
 
-//   function new(string name = "axi_negative_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
+  function new(string name = "axi_wstrb_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
 
-//   task run_phase(uvm_phase phase);
-//     axi_neg_wr_seq wr_seq;
-//     axi_neg_rd_seq rd_seq;
-//     phase.raise_objection(this);
-//     wr_seq = axi_neg_wr_seq::type_id::create("wr_seq");
-//     rd_seq = axi_neg_rd_seq::type_id::create("rd_seq");
-//     fork
-//       wr_seq.start(env.agt.wr_sqr);
-//       rd_seq.start(env.agt.rd_sqr);
-//     join
-//     phase.drop_objection(this);
-//   endtask
-// endclass
+  task run_phase(uvm_phase phase);
+    axi_wstrb_wr_seq wr_seq;
+    axi_wstrb_rd_seq rd_seq;
+    phase.raise_objection(this);
+    wr_seq = axi_wstrb_wr_seq::type_id::create("wr_seq");
+    rd_seq = axi_wstrb_rd_seq::type_id::create("rd_seq");
+    wr_seq.start(env.agt.wr_sqr);
+    rd_seq.start(env.agt.rd_sqr);
+    phase.drop_objection(this);
+  endtask
+endclass
 
 
-// class axi_random_test extends axi_base_test;
-//   `uvm_component_utils(axi_random_test)
+// 8. Corner Data Patterns Test (All 0s, All 1s, alternating patterns for toggle coverage)
+class axi_corner_data_test extends axi_base_test;
+  `uvm_component_utils(axi_corner_data_test)
 
-//   function new(string name = "axi_random_test", uvm_component parent);
-//     super.new(name, parent);
-//   endfunction
+  function new(string name = "axi_corner_data_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
 
-//   task run_phase(uvm_phase phase);
-//     axi_random_wr_seq wr_seq;
-//     axi_random_rd_seq rd_seq;
-//     phase.raise_objection(this);
-//     wr_seq = axi_random_wr_seq::type_id::create("wr_seq");
-//     rd_seq = axi_random_rd_seq::type_id::create("rd_seq");
-//     fork
-//       wr_seq.start(env.agt.wr_sqr);
-//       rd_seq.start(env.agt.rd_sqr);
-//     join
-//     phase.drop_objection(this);
-//   endtask
-// endclass
+  task run_phase(uvm_phase phase);
+    axi_corner_data_wr_seq wr_seq;
+    axi_corner_data_rd_seq rd_seq;
+    phase.raise_objection(this);
+    wr_seq = axi_corner_data_wr_seq::type_id::create("wr_seq");
+    rd_seq = axi_corner_data_rd_seq::type_id::create("rd_seq");
+    wr_seq.start(env.agt.wr_sqr);
+    rd_seq.start(env.agt.rd_sqr);
+    phase.drop_objection(this);
+  endtask
+endclass
 
+
+// 9. Comprehensive Negative Test
+class axi_negative_test extends axi_base_test;
+  `uvm_component_utils(axi_negative_test)
+
+  function new(string name = "axi_negative_test", uvm_component parent);
+    super.new(name, parent);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    axi_negative_seq wr_seq;
+    axi_negative_seq rd_seq;
+    phase.raise_objection(this);
+    wr_seq = axi_negative_seq::type_id::create("wr_seq");
+    rd_seq = axi_negative_seq::type_id::create("rd_seq");
+    fork
+      wr_seq.start(env.agt.wr_sqr);
+      rd_seq.start(env.agt.rd_sqr);
+    join
+    phase.drop_objection(this);
+  endtask
+endclass
 `endif
