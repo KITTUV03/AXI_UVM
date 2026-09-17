@@ -152,32 +152,32 @@
       <fileinfo name="/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_reg_recording.sv"  id="147"  />
       <fileinfo name="/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/include/verdi_trans_recorder_dpi.svh"  id="148"  />
       <fileinfo name="/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_verdi_pli.svh"  id="149"  />
-      <fileinfo name="axi_package.sv"  id="150"  />
-      <fileinfo name="define.svh"  id="151"  />
-      <fileinfo name="axi_trans.sv"  id="152"  />
-      <fileinfo name="axi_base_sequence.sv"  id="153"  />
-      <fileinfo name="axi_sanity_test.sv"  id="154"  />
-      <fileinfo name="axi_b2b_write.sv"  id="155"  />
-      <fileinfo name="axi_b2b_read.sv"  id="156"  />
-      <fileinfo name="axi_write_read_seq.sv"  id="157"  />
-      <fileinfo name="axi_slv_err.sv"  id="158"  />
-      <fileinfo name="axi_dec_err.sv"  id="159"  />
-      <fileinfo name="axi_unaligned_seq.sv"  id="160"  />
-      <fileinfo name="axi_wstrb_seq.sv"  id="161"  />
-      <fileinfo name="axi_corner_data_seq.sv"  id="162"  />
-      <fileinfo name="axi_negative_test.sv"  id="163"  />
-      <fileinfo name="axi_sequencer.sv"  id="164"  />
-      <fileinfo name="axi_driver.sv"  id="165"  />
-      <fileinfo name="axi_override_driver.sv"  id="166"  />
-      <fileinfo name="axi_input_monitor.sv"  id="167"  />
-      <fileinfo name="axi_active_agent.sv"  id="168"  />
-      <fileinfo name="axi_scoreboard.sv"  id="169"  />
-      <fileinfo name="axi_subscriber.sv"  id="170"  />
-      <fileinfo name="axi_env.sv"  id="171"  />
-      <fileinfo name="axi_test.sv"  id="172"  />
-      <fileinfo name="axi_interface.sv"  id="173"  />
-      <fileinfo name="axi_design.sv"  id="174"  />
-      <fileinfo name="axi_top.sv"  id="175"  />
-      <fileinfo name="axi_assertion.sv"  id="176"  />
+      <fileinfo name="src/tb/include/define.svh"  id="150"  />
+      <fileinfo name="src/tb/include/axi_interface.sv"  id="151"  />
+      <fileinfo name="src/tb/include/axi_assertion.sv"  id="152"  />
+      <fileinfo name="src/design/axi_design.sv"  id="153"  />
+      <fileinfo name="src/tb/top/axi_package.sv"  id="154"  />
+      <fileinfo name="src/tb/agent/axi_trans.sv"  id="155"  />
+      <fileinfo name="src/tb/sequences/axi_base_sequence.sv"  id="156"  />
+      <fileinfo name="src/tb/sequences/axi_sanity_test.sv"  id="157"  />
+      <fileinfo name="src/tb/sequences/axi_b2b_write.sv"  id="158"  />
+      <fileinfo name="src/tb/sequences/axi_b2b_read.sv"  id="159"  />
+      <fileinfo name="src/tb/sequences/axi_write_read_seq.sv"  id="160"  />
+      <fileinfo name="src/tb/sequences/axi_slv_err.sv"  id="161"  />
+      <fileinfo name="src/tb/sequences/axi_dec_err.sv"  id="162"  />
+      <fileinfo name="src/tb/sequences/axi_unaligned_seq.sv"  id="163"  />
+      <fileinfo name="src/tb/sequences/axi_wstrb_seq.sv"  id="164"  />
+      <fileinfo name="src/tb/sequences/axi_corner_data_seq.sv"  id="165"  />
+      <fileinfo name="src/tb/sequences/axi_negative_test.sv"  id="166"  />
+      <fileinfo name="src/tb/agent/axi_sequencer.sv"  id="167"  />
+      <fileinfo name="src/tb/agent/axi_driver.sv"  id="168"  />
+      <fileinfo name="src/tb/agent/axi_override_driver.sv"  id="169"  />
+      <fileinfo name="src/tb/agent/axi_input_monitor.sv"  id="170"  />
+      <fileinfo name="src/tb/agent/axi_active_agent.sv"  id="171"  />
+      <fileinfo name="src/tb/env/axi_scoreboard.sv"  id="172"  />
+      <fileinfo name="src/tb/env/axi_subscriber.sv"  id="173"  />
+      <fileinfo name="src/tb/env/axi_env.sv"  id="174"  />
+      <fileinfo name="src/tb/tests/axi_test.sv"  id="175"  />
+      <fileinfo name="src/tb/top/axi_top.sv"  id="176"  />
       <fileinfo name=""  id="177"  />
     </srcinfo>

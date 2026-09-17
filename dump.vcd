@@ -1,0 +1,1155 @@
+$date
+	Fri Sep 18 01:55:50 2026
+$end
+
+$version
+	Synopsys VCS version Q-2020.03-SP2-8_Full64
+$end
+
+$timescale
+	1ns
+$end
+
+$comment Csum: 1 d3e11a1f5175f651 $end
+
+
+$scope module $unit $end
+$var reg 32 ! is_reg_hier_recorded [31:0] $end
+$var reg 32 " is_dhier_visited [31:0] $end
+$var reg 32 # is_reg_hier_dumping [31:0] $end
+$upscope $end
+
+
+$scope module _vcs_msglog $end
+$var reg 32 $ _MSG_T [31:0] $end
+$var reg 32 % _MSG_S [31:0] $end
+$var reg 32 & _MSG_R [31:0] $end
+$upscope $end
+
+
+$scope module uvm_custom_install_recording $end
+$var reg 32 ' file_handle [31:0] $end
+$var reg 32 ( is_sanity_exist [31:0] $end
+
+$scope begin unnamed$$_0 $end
+$var reg 32 ) verdi_tracing [31:0] $end
+
+$scope begin unnamed$$_1 $end
+$upscope $end
+
+
+$scope begin unnamed$$_2 $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+
+$scope module axi_pkg $end
+$upscope $end
+
+
+$scope module axi_top $end
+$var reg 1 * ACLK $end
+$var reg 1 + ARESETn $end
+
+$scope begin unnamed$$_vcs_5 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_0 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_1 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_2 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_3 $end
+$upscope $end
+
+
+$scope begin unnamed$$_vcs_4 $end
+$upscope $end
+
+
+$scope module axi_inf $end
+$var wire 1 , ARESETn $end
+$var reg 32 - AWADDR [31:0] $end
+$var reg 3 . AWPROT [2:0] $end
+$var reg 1 / AWVALID $end
+$var reg 1 0 AWREADY $end
+$var reg 32 1 WDATA [31:0] $end
+$var reg 4 2 WSTRB [3:0] $end
+$var reg 1 3 WVALID $end
+$var reg 1 4 WREADY $end
+$var reg 2 5 BRESP [1:0] $end
+$var reg 1 6 BVALID $end
+$var reg 1 7 BREADY $end
+$var reg 32 8 ARADDR [31:0] $end
+$var reg 3 9 ARPROT [2:0] $end
+$var reg 1 : ARVALID $end
+$var reg 1 ; ARREADY $end
+$var reg 32 < RDATA [31:0] $end
+$var reg 2 = RRESP [1:0] $end
+$var reg 1 > RVALID $end
+$var reg 1 ? RREADY $end
+$var wire 1 @ ACLK $end
+$upscope $end
+
+
+$scope module dut $end
+$var wire 1 A ACLK $end
+$var wire 1 B ARESETn $end
+$var wire 32 C AWADDR [31:0] $end
+$var wire 3 D AWPROT [2:0] $end
+$var wire 1 E AWVALID $end
+$var reg 1 F AWREADY $end
+$var wire 32 G WDATA [31:0] $end
+$var wire 4 H WSTRB [3:0] $end
+$var wire 1 I WVALID $end
+$var reg 1 J WREADY $end
+$var reg 2 K BRESP [1:0] $end
+$var reg 1 L BVALID $end
+$var wire 1 M BREADY $end
+$var wire 32 N ARADDR [31:0] $end
+$var wire 3 O ARPROT [2:0] $end
+$var wire 1 P ARVALID $end
+$var reg 1 Q ARREADY $end
+$var reg 32 R RDATA [31:0] $end
+$var reg 2 S RRESP [1:0] $end
+$var reg 1 T RVALID $end
+$var wire 1 U RREADY $end
+$var wire 3 V slave_prot [2:0] $end
+$var integer 32 W i $end
+$var reg 3 X wr_state [2:0] $end
+$var reg 3 Y n_wr_state [2:0] $end
+$var reg 1 Z aw_done $end
+$var reg 1 [ w_done $end
+$var reg 32 \ wr_addr_lat [31:0] $end
+$var reg 32 ] wr_data_lat [31:0] $end
+$var reg 4 ^ wr_strb_lat [3:0] $end
+$var reg 3 _ wr_prot_lat [2:0] $end
+$var wire 4 ` wr_word_addr [3:0] $end
+$var wire 1 a wr_addr_unaligned $end
+$var wire 1 b wr_addr_ok $end
+$var wire 1 c wr_addr_ro $end
+$var reg 1 d rd_state $end
+$var reg 1 e n_rd_state $end
+$var reg 32 f rd_addr_lat [31:0] $end
+$var reg 3 g rd_prot_lat [2:0] $end
+$var wire 4 h rd_word_idx [3:0] $end
+$var wire 4 i rd_word_addr [3:0] $end
+$var wire 1 j rd_addr_unaligned $end
+$var wire 1 k rd_addr_ok $end
+$var wire 1 l rd_addr_wo $end
+$upscope $end
+
+
+$scope module axi_assert $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module uvm_pkg $end
+$var reg 32 m UVM_UNBOUNDED_CONNECTIONS [31:0] $end
+$var reg 1 n uvm_start_uvm_declarations $end
+$var time 64 o setting_offset $end
+$var reg 32 p setting_verbosity [31:0] $end
+$var reg 1 q is_verdi_set_verbosity_called $end
+$var reg 32 r uvm_global_random_seed [31:0] $end
+$var reg 1 s is_uvm_factory_trace_checked $end
+$var reg 1 t is_verdi_trace_fac $end
+$upscope $end
+
+
+$scope module uvm_custom_install_verdi_recording $end
+$var reg 32 u user_verbosity [31:0] $end
+$var integer 32 v uvmHandle $end
+$var reg 1 w hooks_version_flag $end
+$var reg 1 x plusargs_tested $end
+$var reg 1 y enable_port_recording $end
+$var reg 1 z enable_tlm2_port_recording $end
+$var reg 1 { enable_imp_port_recording $end
+$var reg 1 | enable_verdi_debug $end
+$var reg 32 } file_h [31:0] $end
+$var reg 32 ~ file_handle [31:0] $end
+$var reg 32 "! is_sanity_exist [31:0] $end
+$var reg 32 "" is_vpd_record [31:0] $end
+$var reg 32 "# is_vcs_home_exist [31:0] $end
+$var reg 32 "$ is_vcs_uvm_home_exist [31:0] $end
+
+$scope begin unnamed$$_vcs_3 $end
+
+$scope begin unnamed$$_0 $end
+$var reg 32 "% verb_count [31:0] $end
+$upscope $end
+
+
+$scope begin unnamed$$_1 $end
+
+$scope begin unnamed$$_2 $end
+$upscope $end
+
+
+$scope begin unnamed$$_3 $end
+$upscope $end
+
+$upscope $end
+
+
+$scope begin unnamed$$_4 $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+b00000000000000000000000000000000 "
+b00000000000000000000000000000000 #
+b00000000000000000000000000000000 !
+1s
+0q
+0t
+1n
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx o
+b11111111111111111111111111111111 m
+b00000000000000000000000000000000 p
+b10000110101011010111001111011001 r
+b00000000000000000000000000000000 &
+b00000000000000000000000000000000 %
+b00000000000000000000000000000000 $
+b00000000000000000000000000000000 '
+b00000000000000000000000000000000 (
+b00000000000000000000000000000000 )
+0{
+0y
+0z
+0|
+0w
+0x
+b00000000000000000000000000000000 v
+b00000000000000000000000000000000 }
+b00000000000000000000000000000000 ~
+b00000000000000000000000000000000 "!
+b00000000000000000000000000000001 "#
+b00000000000000000000000000000000 "$
+b00000000000000000000000000000000 ""
+b00000000000000000000000000000000 "%
+b00000000000000000000000011001000 u
+0*
+0+
+b00 =
+b00000000000000000000000000000000 <
+bxxx 9
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 8
+b00 5
+bxxxx 2
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 1
+bxxx .
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -
+0Q
+0F
+0L
+0T
+0J
+0Z
+0e
+xk
+xj
+xl
+0d
+0[
+xb
+xc
+xa
+b00 K
+b00000000000000000000000000000000 R
+b00 S
+b00000000000000000000000000010000 W
+b000 Y
+b00000000000000000000000000000000 f
+b000 g
+bxxxx i
+b0000 h
+b000 V
+b00000000000000000000000000000000 \
+b00000000000000000000000000000000 ]
+b000 _
+b000 X
+b0000 ^
+bxxxx `
+0A
+0,
+0B
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx C
+bxxx D
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx G
+bxxxx H
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx N
+bxxx O
+0@
+xE
+xI
+xM
+xP
+xU
+0;
+x:
+00
+x/
+x7
+06
+x?
+0>
+04
+x3
+$end
+#5
+1*
+1A
+1@
+#10
+0*
+0A
+0@
+#15
+1*
+1A
+1@
+1+
+1,
+1B
+1F
+10
+1J
+14
+1Q
+1;
+b00000000000000000000000000000000 -
+b000 .
+0/
+0E
+b00000000000000000000000000000000 1
+b0000 2
+03
+0I
+07
+0M
+b00000000000000000000000000000000 8
+b000 9
+0:
+0P
+0?
+0U
+b00000000000000000000000000000000 C
+0a
+b0000 `
+0c
+1b
+b000 D
+b00000000000000000000000000000000 G
+b0000 H
+b00000000000000000000000000000000 N
+0j
+b0000 i
+0l
+1k
+b000 O
+#20
+0*
+0A
+0@
+#25
+1*
+1A
+1@
+b00000000000000000000000000001100 8
+1:
+1P
+1/
+1E
+b00000000000000000000000000001100 N
+b0011 i
+1e
+b001 Y
+#30
+0*
+0A
+0@
+#35
+1*
+1A
+1@
+1Z
+b001 X
+1d
+b00000000000000000000000000001100 f
+b0011 h
+1T
+1>
+0Q
+0;
+b011 Y
+0:
+0P
+1?
+1U
+0/
+0E
+b01101011110110010100110110110010 1
+b1111 2
+13
+1I
+b01101011110110010100110110110010 G
+b1111 H
+0e
+b100 Y
+#40
+0*
+0A
+0@
+#45
+1*
+1A
+1@
+1[
+b01101011110110010100110110110010 ]
+b1111 ^
+b100 X
+0F
+00
+0J
+04
+0d
+0T
+0>
+0?
+0U
+03
+0I
+17
+1M
+#50
+0*
+0A
+0@
+#55
+1*
+1A
+1@
+1L
+16
+1Q
+1;
+b000 Y
+b00000000000000000000000000100000 8
+1:
+1P
+b00000000000000000000000000100000 N
+b1000 i
+1e
+#60
+0*
+0A
+0@
+#65
+1*
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+1d
+b00000000000000000000000000100000 f
+b1000 h
+1T
+1>
+0Q
+0;
+07
+0M
+0:
+0P
+1?
+1U
+0e
+#70
+0*
+0A
+0@
+#75
+1*
+1A
+1@
+1F
+10
+1J
+14
+0d
+0T
+0>
+1/
+1E
+b00000000000000000000000000000000 1
+b0000 2
+0?
+0U
+b00000000000000000000000000000000 G
+b0000 H
+b001 Y
+#80
+0*
+0A
+0@
+#85
+1*
+1A
+1@
+1Z
+b001 X
+1Q
+1;
+b011 Y
+b00000000000000000000000000000000 8
+1:
+1P
+0/
+0E
+b00101111010101011000010000111000 1
+b1111 2
+13
+1I
+b00000000000000000000000000000000 N
+b0000 i
+b00101111010101011000010000111000 G
+b1111 H
+1e
+b100 Y
+#90
+0*
+0A
+0@
+#95
+1*
+1A
+1@
+1[
+b00101111010101011000010000111000 ]
+b100 X
+0F
+00
+0J
+04
+1d
+b00000000000000000000000000000000 f
+b0000 h
+b01101011110110010100110110110010 R
+b01101011110110010100110110110010 <
+1T
+1>
+0Q
+0;
+03
+0I
+17
+1M
+0:
+0P
+1?
+1U
+0e
+#100
+0*
+0A
+0@
+#105
+1*
+1A
+1@
+1L
+16
+0d
+0T
+0>
+b000 Y
+0?
+0U
+#110
+0*
+0A
+0@
+#115
+1*
+1A
+1@
+0+
+0,
+0B
+0Z
+0[
+b00000000000000000000000000000000 ]
+b0000 ^
+b000 X
+0L
+06
+b00000000000000000000000000000000 R
+b00000000000000000000000000000000 <
+07
+0M
+1:
+1P
+#120
+0A
+0@
+#125
+1A
+1@
+b00000000000000000000000000011100 -
+1/
+1E
+b00000000000000000000000000000000 1
+b0000 2
+b00000000000000000000000000011100 C
+b0111 `
+b00000000000000000000000000000000 G
+b0000 H
+b001 Y
+#130
+0A
+0@
+#135
+1A
+1@
+1,
+1B
+b001 X
+1F
+10
+1J
+14
+1Q
+1;
+b011 Y
+1e
+#140
+0A
+0@
+#145
+1A
+1@
+1Z
+b00000000000000000000000000011100 \
+b011 X
+0F
+00
+1d
+1T
+1>
+0Q
+0;
+0:
+0P
+1?
+1U
+0/
+0E
+b10000010111011100111101001011110 1
+b1111 2
+13
+1I
+b10000010111011100111101001011110 G
+b1111 H
+0e
+b100 Y
+#150
+0A
+0@
+#155
+1A
+1@
+1[
+b10000010111011100111101001011110 ]
+b1111 ^
+b100 X
+0J
+04
+0d
+0T
+0>
+0?
+0U
+03
+0I
+17
+1M
+#160
+0A
+0@
+#165
+1A
+1@
+1L
+16
+1Q
+1;
+b000 Y
+1:
+1P
+1e
+#170
+0A
+0@
+#175
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+1d
+1T
+1>
+0Q
+0;
+07
+0M
+0:
+0P
+1?
+1U
+0e
+#180
+0A
+0@
+#185
+1A
+1@
+1F
+10
+1J
+14
+0d
+0T
+0>
+1/
+1E
+b00000000000000000000000000000000 1
+b0000 2
+0?
+0U
+b00000000000000000000000000000000 G
+b0000 H
+b001 Y
+#190
+0A
+0@
+#195
+1A
+1@
+1Z
+b001 X
+1Q
+1;
+b011 Y
+1:
+1P
+0/
+0E
+b01010011000111011100010111000101 1
+b1111 2
+13
+1I
+b01010011000111011100010111000101 G
+b1111 H
+1e
+b100 Y
+#200
+0A
+0@
+#205
+1A
+1@
+1[
+b01010011000111011100010111000101 ]
+b100 X
+0F
+00
+0J
+04
+1d
+1T
+1>
+0Q
+0;
+03
+0I
+17
+1M
+0:
+0P
+1?
+1U
+0e
+#210
+0A
+0@
+#215
+1A
+1@
+1L
+16
+0d
+0T
+0>
+b000 Y
+0?
+0U
+#220
+0A
+0@
+#225
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+1Q
+1;
+07
+0M
+1:
+1P
+1e
+#230
+0A
+0@
+#235
+1A
+1@
+1F
+10
+1J
+14
+1d
+1T
+1>
+0Q
+0;
+b00000000000000000000000000000000 -
+1/
+1E
+b00000000000000000000000000000000 1
+b0000 2
+0:
+0P
+1?
+1U
+b00000000000000000000000000000000 C
+b0000 `
+b00000000000000000000000000000000 G
+b0000 H
+b001 Y
+0e
+#240
+0A
+0@
+#245
+1A
+1@
+1Z
+b00000000000000000000000000000000 \
+b001 X
+0d
+0T
+0>
+b011 Y
+0?
+0U
+0/
+0E
+13
+1I
+b100 Y
+#250
+0A
+0@
+#255
+1A
+1@
+1[
+b00000000000000000000000000000000 ]
+b0000 ^
+b100 X
+0F
+00
+0J
+04
+1Q
+1;
+1:
+1P
+03
+0I
+17
+1M
+1e
+#260
+0A
+0@
+#265
+1A
+1@
+1L
+16
+1d
+1T
+1>
+0Q
+0;
+b000 Y
+0:
+0P
+1?
+1U
+0e
+#270
+0A
+0@
+#275
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+0d
+0T
+0>
+07
+0M
+0?
+0U
+#280
+0A
+0@
+#285
+1A
+1@
+1F
+10
+1J
+14
+1Q
+1;
+1/
+1E
+b001 Y
+#290
+0A
+0@
+#295
+1A
+1@
+1Z
+b001 X
+b011 Y
+0/
+0E
+13
+1I
+b100 Y
+#300
+0A
+0@
+#305
+1A
+1@
+1[
+b100 X
+0F
+00
+0J
+04
+03
+0I
+17
+1M
+#310
+0A
+0@
+#315
+1A
+1@
+1L
+16
+b000 Y
+#320
+0A
+0@
+#325
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+07
+0M
+#330
+0A
+0@
+#335
+1A
+1@
+1F
+10
+1J
+14
+1/
+1E
+b001 Y
+#340
+0A
+0@
+#345
+1A
+1@
+1Z
+b001 X
+b011 Y
+0/
+0E
+13
+1I
+b100 Y
+#350
+0A
+0@
+#355
+1A
+1@
+1[
+b100 X
+0F
+00
+0J
+04
+03
+0I
+17
+1M
+#360
+0A
+0@
+#365
+1A
+1@
+1L
+16
+b000 Y
+#370
+0A
+0@
+#375
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+07
+0M
+#380
+0A
+0@
+#385
+1A
+1@
+1F
+10
+1J
+14
+1/
+1E
+b001 Y
+#390
+0A
+0@
+#395
+1A
+1@
+1Z
+b001 X
+b011 Y
+0/
+0E
+13
+1I
+b100 Y
+#400
+0A
+0@
+#405
+1A
+1@
+1[
+b100 X
+0F
+00
+0J
+04
+03
+0I
+17
+1M
+#410
+0A
+0@
+#415
+1A
+1@
+1L
+16
+b000 Y
+#420
+0A
+0@
+#425
+1A
+1@
+0Z
+0[
+b000 X
+0L
+06
+07
+0M
+#430
+0A
+0@
+#435
+1A
+1@
+1F
+10
+1J
+14

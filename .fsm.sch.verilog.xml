@@ -1,6 +1,6 @@
 <Command name="schRTLInfo"  delimiter="."  >
 <RTLBlock >
-<RTLInfo   name="wr_state_0"  type="2"  fileName="axi_design.sv"  >
+<RTLInfo   name="wr_state_0"  type="2"  fileName="src/design/axi_design.sv"  >
     <Seg beginLine="108"  endLine="121"  />
   </RTLInfo>
 <Instance name="axi_top.dut"  />

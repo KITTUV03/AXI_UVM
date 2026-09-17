@@ -47,12 +47,6 @@
         "module",
         8
     ],
-    "axi_pkg": [
-        "axi_pkg",
-        "p9GxR",
-        "module",
-        9
-    ],
     "intf": [
         "intf",
         "k6LTY",
@@ -64,6 +58,12 @@
         "C24qp",
         "module",
         11
+    ],
+    "axi_pkg": [
+        "axi_pkg",
+        "p9GxR",
+        "module",
+        9
     ],
     "axi_top": [
         "axi_top",

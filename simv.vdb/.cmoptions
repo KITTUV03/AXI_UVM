@@ -12,7 +12,8 @@ Glitch -1
 cm_tglmda 0
 cm_tglstructarr 0
 cm_tglcount 0
-cm_hier 0
+cm_hier 1
 InstrSpecs 0
 TglUnpkdLimitVal -1
+cm_hier_file /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/cov_hier.cfg
 cm_assert_hier 0

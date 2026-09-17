@@ -9,7 +9,7 @@ SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING
 
 Source File(s) : 
 
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_subscriber.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/env/axi_subscriber.sv
 
 1 Instances:
 
@@ -635,7 +635,7 @@ SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING
 
 Source File(s) : 
 
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_subscriber.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/env/axi_subscriber.sv
 
 1 Instances:
 

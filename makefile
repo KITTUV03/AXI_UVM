@@ -1,24 +1,35 @@
-# ==================================================
-# VCS + UVM Makefile with Regression, Verbosity & Coverage Display
-# ==================================================
+# ==============================================================================
+# VCS + UVM Makefile for Structured Directory (src/design & src/tb)
+# ==============================================================================
 
 VCS      = vcs
 SIMV     = ./simv
 URG      = urg
 
-# Source files
+# Include directories for compiler
+INCDIRS = \
+	+incdir+src/tb/include \
+	+incdir+src/tb/agent \
+	+incdir+src/tb/sequences \
+	+incdir+src/tb/env \
+	+incdir+src/tb/tests \
+	+incdir+src/tb/top \
+	+incdir+src/design
+
+# Primary source compile order
 SRC = \
-	axi_package.sv \
-	axi_interface.sv \
-	axi_design.sv \
-	axi_top.sv
+	src/tb/include/define.svh \
+	src/tb/include/axi_interface.sv \
+	src/tb/include/axi_assertion.sv \
+	src/design/axi_design.sv \
+	src/tb/top/axi_package.sv \
+	src/tb/top/axi_top.sv
 
-# Default test, seed, and verbosity
-TEST      ?= axi_sanity_test
-SEED      ?= 1
-VERBOSITY ?= UVM_MEDIUM
+# Default test and seed
+TEST ?= axi_sanity_test
+SEED ?= 1
 
-# List of tests for regression
+# Regression Test List
 TEST_LIST = \
 	axi_sanity_test \
 	axi_b2b_write_test \
@@ -29,12 +40,14 @@ TEST_LIST = \
 	axi_corner_data_test \
 	axi_negative_test
 
-# Seeds to run per test during regression
 SEEDS ?= 1 2
 
 CMP_OPTS = -full64 -sverilog +v2k -ntb_opts uvm \
+           -timescale=1ns/1ns \
+           $(INCDIRS) \
            -debug_access+all \
-           -cm line+cond+fsm+tgl+branch
+           -cm line+cond+fsm+tgl+branch \
+           -cm_hier cov_hier.cfg
 
 # ----------------------------------------
 # Compile
@@ -44,13 +57,12 @@ c:
 	$(VCS) $(CMP_OPTS) $(SRC) -l compile.log
 
 # ----------------------------------------
-# Simulate Single Test (Displays ALL UVM_INFO & Warnings to screen)
-# Usage: make r TEST=axi_sanity_test VERBOSITY=UVM_HIGH
+# Simulate Single Test
+# Usage: make r TEST=axi_sanity_test SEED=10
 # ----------------------------------------
 r:
 	@mkdir -p sim_logs
 	$(SIMV) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) \
-	        +UVM_VERBOSITY=$(VERBOSITY) \
 	        -cm line+cond+fsm+tgl+branch \
 	        -cm_name $(TEST)_seed_$(SEED) \
 	        -cm_dir simv.vdb \
@@ -63,7 +75,7 @@ r:
 cr: c r
 
 # ----------------------------------------
-# Run Full Regression (Extracts & Displays Functional Coverage in Table)
+# Run Full Regression
 # Usage: make reg
 # ----------------------------------------
 reg: c
@@ -80,7 +92,6 @@ reg: c
 	@for t in $(TEST_LIST); do \
 		for s in $(SEEDS); do \
 			$(SIMV) +UVM_TESTNAME=$$t +ntb_random_seed=$$s \
-			        +UVM_VERBOSITY=UVM_MEDIUM \
 			        -cm line+cond+fsm+tgl+branch \
 			        -cm_name $${t}_seed_$${s} \
 			        -cm_dir simv.vdb \
@@ -108,23 +119,9 @@ reg: c
 # ----------------------------------------
 cov:
 	$(URG) -dir simv.vdb -report cov_report -format both
-	@echo "=================================================="
-	@echo " Code coverage report generated in: cov_report/   "
-	@echo " Open dashboard: firefox cov_report/dashboard.html"
-	@echo "=================================================="
 
 # ----------------------------------------
-# View Functional Coverage from Logs
-# Usage: make view_fcov
-# ----------------------------------------
-view_fcov:
-	@echo "=================================================="
-	@echo " Functional Coverage Summary from Test Logs:      "
-	@echo "=================================================="
-	@grep -H -A 3 "COVERAGE SUMMARY" regression_logs/*.log 2>/dev/null || echo "No logs found. Run 'make reg' first."
-
-# ----------------------------------------
-# Open Coverage Report
+# View Coverage Dashboard
 # Usage: make view
 # ----------------------------------------
 view:
@@ -147,9 +144,8 @@ clean:
 # ----------------------------------------
 help:
 	@echo "make c               -> Compile design & testbench"
-	@echo "make r TEST=<name>   -> Run single test with live terminal output"
-	@echo "make reg             -> Run regression with Functional Coverage printed in table"
-	@echo "make view_fcov       -> Print all functional coverage summaries from logs"
-	@echo "make cov             -> Generate URG code coverage report"
+	@echo "make r TEST=<name>   -> Run single test"
+	@echo "make reg             -> Run all tests in regression + auto-generate coverage"
+	@echo "make cov             -> Generate URG coverage report"
 	@echo "make view            -> Open Coverage HTML Dashboard"
 	@echo "make clean           -> Clean all generated files"

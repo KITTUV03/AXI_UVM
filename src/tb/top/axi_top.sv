@@ -1,7 +1,7 @@
 //`include "axi_design.sv"
 `include "uvm_macros.svh"
 //`include "axi_package.sv"
-`include "axi_assertion.sv"
+//`include "axi_assertion.sv"
 module axi_top;
   import uvm_pkg::*;
   import axi_pkg::*;

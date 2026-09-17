@@ -1839,7 +1839,7 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH
 
 Source File(s) : 
 
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_top.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/top/axi_top.sv
 
 Module self-instances :
 
@@ -1881,7 +1881,7 @@ uvm_info("TESTBENCH", "Reset released", UVM_LOW):
 25.3                       `endif 
 25.4                       begin 
 25.5       1/1               if (uvm_report_enabled(UVM_LOW,UVM_INFO,"TESTBENCH")) 
-25.6       1/1                 uvm_report_info ("TESTBENCH", "Reset released", UVM_LOW, "axi_top.sv", 25); 
+25.6       1/1                 uvm_report_info ("TESTBENCH", "Reset released", UVM_LOW, "src/tb/top/axi_top.sv", 25); 
 25.7                       end
                    ==>  MISSING_ELSE
 26                        endtask
@@ -1959,7 +1959,7 @@ uvm_fatal("TIMEOUT", "Simulation timed out at 100us!"):
 93.3                       `endif 
 93.4                       begin 
 93.5       0/1     ==>       if (uvm_report_enabled(UVM_NONE,UVM_FATAL,"TIMEOUT")) 
-93.6       0/1     ==>         uvm_report_fatal ("TIMEOUT", "Simulation timed out at 100us!", UVM_NONE, "axi_top.sv", 93); 
+93.6       0/1     ==>         uvm_report_fatal ("TIMEOUT", "Simulation timed out at 100us!", UVM_NONE, "src/tb/top/axi_top.sv", 93); 
 93.7                       end
                    ==>  MISSING_ELSE
 94                        end
@@ -2055,7 +2055,7 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH
 
 Source File(s) : 
 
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_interface.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/axi_interface.sv
 
 Module self-instances :
 
@@ -2160,7 +2160,7 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH
 
 Source File(s) : 
 
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_design.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/design/axi_design.sv
 
 Module self-instances :
 

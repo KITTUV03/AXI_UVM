@@ -1,11 +1,11 @@
 class c_10_1;
     rand bit[31:0] AWADDR; // rand_mode = ON 
 
-    constraint valid_address_range_this    // (constraint_mode = ON) (axi_trans.sv:57)
+    constraint valid_address_range_this    // (constraint_mode = ON) (src/tb/agent/axi_trans.sv:57)
     {
        ((AWADDR[31:6]) == 26'h0);
     }
-    constraint WITH_CONSTRAINT_this    // (constraint_mode = ON) (axi_negative_test.sv:44)
+    constraint WITH_CONSTRAINT_this    // (constraint_mode = ON) (src/tb/sequences/axi_negative_test.sv:44)
     {
        (AWADDR == 32'hffffffff);
     }
