@@ -1,0 +1,50 @@
+{
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        1
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        2
+    ],
+    "uvm_pkg": [
+        "uvm_pkg",
+        "zr7M1",
+        "module",
+        3
+    ],
+    "axi4_lite_slave": [
+        "axi4_lite_slave",
+        "C24qp",
+        "module",
+        4
+    ],
+    "intf": [
+        "intf",
+        "k6LTY",
+        "module",
+        5
+    ],
+    "axi_pkg": [
+        "axi_pkg",
+        "p9GxR",
+        "module",
+        6
+    ],
+    "axi_top": [
+        "axi_top",
+        "vi5JT",
+        "module",
+        7
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        8
+    ]
+}
