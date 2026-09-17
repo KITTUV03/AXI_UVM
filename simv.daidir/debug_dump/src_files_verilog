@@ -161,6 +161,7 @@
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_input_monitor.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_interface.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_negative_test.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_override_driver.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_package.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_sanity_test.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/axi_scoreboard.sv
