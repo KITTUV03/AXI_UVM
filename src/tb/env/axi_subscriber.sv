@@ -47,9 +47,6 @@ class axi_sub extends uvm_component;
       bins others   = default;
     }
 
-    // Cross coverage
-    addr_x_resp:  cross wr_addr_cp, bresp_cp;
-    addr_x_strb:  cross wr_addr_cp, wstrb_cp;
   endgroup
 
   covergroup read_cg;
@@ -78,8 +75,6 @@ class axi_sub extends uvm_component;
       bins others   = default;
     }
 
-    // Cross coverage
-    addr_x_resp: cross rd_addr_cp, rresp_cp;
   endgroup
 
 

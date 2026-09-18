@@ -1,13 +1,14 @@
 class c_38_1;
+    integer addr = 7;
     rand bit[31:0] AWADDR; // rand_mode = ON 
 
-    constraint valid_address_range_this    // (constraint_mode = ON) (axi_trans.sv:57)
+    constraint dec_err_address_this    // (constraint_mode = ON) (src/tb/agent/axi_trans.sv:74)
     {
-       ((AWADDR[31:6]) == 26'h0);
+       (AWADDR >= (16 * 4));
     }
-    constraint WITH_CONSTRAINT_this    // (constraint_mode = ON) (axi_negative_test.sv:44)
+    constraint WITH_CONSTRAINT_this    // (constraint_mode = ON) (src/tb/sequences/axi_corner_data_seq.sv:31)
     {
-       (AWADDR == 32'hffffffff);
+       (AWADDR == (addr * 4));
     }
 endclass
 
@@ -18,7 +19,7 @@ program p_38_1;
     initial
         begin
             obj = new;
-            randState = "zz1x11xxzzz100z10x1xx1x0xz010zzxzxxzzzxzxzzxxzzzxxzxzzxzxxxzzzzz";
+            randState = "011zz0z1x111110z0zx1zz1zx100x1x1xxzxzxxzzxxxxxzzzzzxxzzzxxzzxzxx";
             obj.set_randstate(randState);
             obj.randomize();
         end

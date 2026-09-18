@@ -5,7 +5,7 @@ Command: vcs -full64 -sverilog +v2k -ntb_opts uvm -timescale=1ns/1ns +incdir+src
 src/design/axi_design.sv src/tb/top/axi_package.sv src/tb/top/axi_top.sv -l compile.log \
 
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Fri Sep 18 01:54:56 2026
+      Version Q-2020.03-SP2-8_Full64 -- Fri Sep 18 13:20:35 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -389,27 +389,21 @@ VCS Coverage Metrics Release Q-2020.03-SP2-8_Full64 Copyright (c) 1991-2020 by S
 Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
 10 modules and 0 UDP read.
-recompiling package vcs_paramclassrepository
-recompiling package _vcs_DPI_package
-recompiling package uvm_pkg
-recompiling package _vcs_msglog
-recompiling module uvm_custom_install_recording
 recompiling module uvm_custom_install_verdi_recording
-recompiling module intf
-recompiling module axi4_lite_slave
-recompiling package axi_pkg
-recompiling module axi_top
-All of 10 modules done
+	However, due to incremental compilation, only 1 module needs to be compiled. 
 make[1]: Entering directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
 -L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
-/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o   _76369_archive_1.so \
-SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
--lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lreader_common /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libBA.a \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _67872_archive_1.so _prev_archive_1.so \
+_cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
+rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
+-lreader_common /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libBA.a \
 -luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
 _vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
@@ -418,4 +412,4 @@ _vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/lin
 ../simv up to date
 make[1]: Leaving directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
 
-CPU time: 11.072 seconds to compile + .429 seconds to elab + .690 seconds to link
+CPU time: 10.412 seconds to compile + .475 seconds to elab + .725 seconds to link

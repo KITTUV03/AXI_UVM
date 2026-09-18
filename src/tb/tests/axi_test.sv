@@ -31,6 +31,8 @@ class axi_base_test extends uvm_test;
     uvm_report_server svr;
     super.report_phase(phase);
     svr = uvm_report_server::get_server();
+    
+     //Used severity count for Regression if any of the test will fail then it will get Failed for that one
     if(svr.get_severity_count(UVM_ERROR) > 0 || svr.get_severity_count(UVM_FATAL) > 0)
       `uvm_info("AXI_TEST", "\n*** TEST FAILED ***", UVM_NONE)
     else
@@ -80,7 +82,7 @@ endclass
 
 
 
-
+//3 Slave Errorr test fr specific address 
 class axi_slv_err_test extends axi_base_test;
   `uvm_component_utils(axi_slv_err_test)
     axi_slv_err wr_seq;
@@ -102,7 +104,7 @@ class axi_slv_err_test extends axi_base_test;
 endclass
 
 
-// 5. Decode Error Test (Out-of-range addresses >= 64)
+// 5 Decode Error Test (Out-of-range addresses >= 64)
 class axi_dec_err_test extends axi_base_test;
   `uvm_component_utils(axi_dec_err_test)
 
@@ -125,7 +127,7 @@ class axi_dec_err_test extends axi_base_test;
 endclass
 
 
-// 6. Unaligned Address Access Test (ADDR[1:0] != 00)
+// 6 Unaligned Address Access Test (ADDR[1:0] != 00)
 class axi_unaligned_test extends axi_base_test;
   `uvm_component_utils(axi_unaligned_test)
 
@@ -148,7 +150,7 @@ class axi_unaligned_test extends axi_base_test;
 endclass
 
 
-// 7. Byte-Strobe Test (All 16 strobe patterns 0x0 to 0xF)
+// 7 Byte-Strobe Test (All 16 strobe patterns 0x0 to 0xF)
 class axi_wstrb_test extends axi_base_test;
   `uvm_component_utils(axi_wstrb_test)
 
@@ -169,7 +171,7 @@ class axi_wstrb_test extends axi_base_test;
 endclass
 
 
-// 8. Corner Data Patterns Test (All 0s, All 1s, alternating patterns for toggle coverage)
+// 8 Corner Data Patterns Test (All 0s, All 1s, alternating patterns for toggle coverage)
 class axi_corner_data_test extends axi_base_test;
   `uvm_component_utils(axi_corner_data_test)
 
@@ -190,7 +192,7 @@ class axi_corner_data_test extends axi_base_test;
 endclass
 
 
-// 9. Comprehensive Negative Test
+// 9 Comprehensive Negative Test
 class axi_negative_test extends axi_base_test;
   `uvm_component_utils(axi_negative_test)
 

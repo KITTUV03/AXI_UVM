@@ -4,7 +4,7 @@ Group : axi_pkg::axi_sub::write_cg
 Group : axi_pkg::axi_sub::write_cg
 ===============================================================================
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
- 80.49  80.49    1      100    1        1            64           64            
+ 86.25  86.25    1      100    1        1            64           64            
 
 
 Source File(s) : 
@@ -14,7 +14,7 @@ Source File(s) :
 1 Instances:
 
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                    
- 80.49 1      100    1        64           64            axi_top.me.obj.write_cg 
+ 86.25 1      100    1        64           64            axi_top.me.obj.write_cg 
 
 
 
@@ -26,8 +26,7 @@ Summary for Group   axi_pkg::axi_sub::write_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 39       2         37      97.50   
-Crosses   304      244       60      37.96   
+Variables 39       4         35      86.25   
 
 
 Variables for Group  axi_pkg::axi_sub::write_cg
@@ -36,17 +35,9 @@ Variables for Group  axi_pkg::axi_sub::write_cg
 VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
 wr_addr_cp       16       2         14      87.50   100  1      1        0                    
 wr_addr_range_cp 2        0         2       100.00  100  1      1        0                    
-wstrb_cp         16       0         16      100.00  100  1      1        0                    
+wstrb_cp         16       1         15      93.75   100  1      1        0                    
 bresp_cp         3        0         3       100.00  100  1      1        0                    
-wdata_cp         2        0         2       100.00  100  1      1        0                    
-
-
-Crosses for Group  axi_pkg::axi_sub::write_cg
-
-
-CROSS       EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
-addr_x_resp 48       17        31      64.58   100  1      1        0                     
-addr_x_strb 256      227       29      11.33   100  1      1        0                     
+wdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -74,17 +65,17 @@ NAME       COUNT AT LEAST
 ro_addrs_a 9     1        
 ro_addrs_b 7     1        
 ro_addrs_c 5     1        
-rw_addrs_0 95    1        
-rw_addrs_1 32    1        
-rw_addrs_2 28    1        
-rw_addrs_3 27    1        
-rw_addrs_4 29    1        
-rw_addrs_5 28    1        
-rw_addrs_6 33    1        
-rw_addrs_7 38    1        
-rw_addrs_8 28    1        
-rw_addrs_9 21    1        
-rw_addrs_f 12    1        
+rw_addrs_0 144   1        
+rw_addrs_1 23    1        
+rw_addrs_2 17    1        
+rw_addrs_3 18    1        
+rw_addrs_4 21    1        
+rw_addrs_5 19    1        
+rw_addrs_6 24    1        
+rw_addrs_7 29    1        
+rw_addrs_8 21    1        
+rw_addrs_9 10    1        
+rw_addrs_f 13    1        
 
 
 -------------------------------------------------------------------------------
@@ -103,7 +94,7 @@ Bins
 
 NAME          COUNT AT LEAST 
 invalid_range 18    1        
-valid_range   374   1        
+valid_range   342   1        
 
 
 -------------------------------------------------------------------------------
@@ -112,13 +103,19 @@ Summary for Variable wstrb_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 16       0         16      100.00  
+User Defined Bins 16       1         15      93.75   
 
 
 User Defined Bins for wstrb_cp
 
 
-Bins
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER 
+single_byte_1 0     1        1      
+
+
+Covered bins
 
 NAME          COUNT AT LEAST 
 three_bytes_7 2     1        
@@ -131,12 +128,11 @@ two_bytes_6   2     1
 two_bytes_9   2     1        
 two_bytes_a   2     1        
 two_bytes_c   2     1        
-single_byte_1 2     1        
 single_byte_2 2     1        
 single_byte_4 2     1        
 single_byte_8 2     1        
-no_bytes      8     1        
-all_bytes     356   1        
+no_bytes      128   1        
+all_bytes     206   1        
 
 
 -------------------------------------------------------------------------------
@@ -156,7 +152,7 @@ Bins
 NAME   COUNT AT LEAST 
 decerr 18    1        
 slverr 64    1        
-okay   310   1        
+okay   278   1        
 
 
 -------------------------------------------------------------------------------
@@ -165,153 +161,28 @@ Summary for Variable wdata_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        0         2       100.00  
+User Defined Bins 2        1         1       50.00   
 
 
 User Defined Bins for wdata_cp
 
 
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+all_ones 0     1        1      
+
+
 Excluded/Illegal bins
 
 NAME   COUNT STATUS   
-others 314   Excluded 
+others 234   Excluded 
 
 
 Covered bins
 
-NAME     COUNT AT LEAST 
-all_ones 18    1        
-zero     60    1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_resp
-
-
-Samples crossed: wr_addr_cp bresp_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 48       17        31      64.58   17      
-
-
-Automatically Generated Cross Bins for addr_x_resp
-
-
-Element holes
-
-wr_addr_cp                bresp_cp COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e] *        --    --       6      
-
-
-Uncovered bins
-
-wr_addr_cp   bresp_cp          COUNT AT LEAST NUMBER 
-[ro_addrs_a] [okay]            0     1        1      
-[ro_addrs_b] [decerr]          0     1        1      
-[ro_addrs_b] [okay]            0     1        1      
-[ro_addrs_c] [okay]            0     1        1      
-[rw_addrs_0] [decerr]          0     1        1      
-[rw_addrs_2] [decerr]          0     1        1      
-[rw_addrs_5] [decerr]          0     1        1      
-[rw_addrs_8] [slverr]          0     1        1      
-[rw_addrs_9] [decerr , slverr] --    --       2      
-[rw_addrs_f] [slverr]          0     1        1      
-
-
-Covered bins
-
-wr_addr_cp bresp_cp COUNT AT LEAST 
-ro_addrs_a decerr   2     1        
-ro_addrs_a slverr   7     1        
-ro_addrs_b slverr   7     1        
-ro_addrs_c decerr   1     1        
-ro_addrs_c slverr   4     1        
-rw_addrs_0 slverr   4     1        
-rw_addrs_0 okay     91    1        
-rw_addrs_1 decerr   4     1        
-rw_addrs_1 slverr   6     1        
-rw_addrs_1 okay     22    1        
-rw_addrs_2 slverr   6     1        
-rw_addrs_2 okay     22    1        
-rw_addrs_3 decerr   1     1        
-rw_addrs_3 slverr   6     1        
-rw_addrs_3 okay     20    1        
-rw_addrs_4 decerr   3     1        
-rw_addrs_4 slverr   6     1        
-rw_addrs_4 okay     20    1        
-rw_addrs_5 slverr   6     1        
-rw_addrs_5 okay     22    1        
-rw_addrs_6 decerr   2     1        
-rw_addrs_6 slverr   6     1        
-rw_addrs_6 okay     25    1        
-rw_addrs_7 decerr   1     1        
-rw_addrs_7 slverr   6     1        
-rw_addrs_7 okay     31    1        
-rw_addrs_8 decerr   2     1        
-rw_addrs_8 okay     26    1        
-rw_addrs_9 okay     21    1        
-rw_addrs_f decerr   2     1        
-rw_addrs_f okay     10    1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_strb
-
-
-Samples crossed: wr_addr_cp wstrb_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 256      227       29      11.33   227     
-
-
-Automatically Generated Cross Bins for addr_x_strb
-
-
-Element holes
-
-wr_addr_cp                wstrb_cp COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e] *        --    --       32     
-
-
-Uncovered bins
-
-wr_addr_cp                                                                                                                        wstrb_cp                                                                                                                                                                                                                       COUNT AT LEAST NUMBER 
-[ro_addrs_a , ro_addrs_b , ro_addrs_c]                                                                                            [three_bytes_7 , three_bytes_b , three_bytes_d , three_bytes_e , two_bytes_3 , two_bytes_5 , two_bytes_6 , two_bytes_9 , two_bytes_a , two_bytes_c , single_byte_1 , single_byte_2 , single_byte_4 , single_byte_8 , no_bytes] --    --       45     
-[rw_addrs_1 , rw_addrs_2 , rw_addrs_3 , rw_addrs_4 , rw_addrs_5 , rw_addrs_6 , rw_addrs_7 , rw_addrs_8 , rw_addrs_9 , rw_addrs_f] [three_bytes_7 , three_bytes_b , three_bytes_d , three_bytes_e , two_bytes_3 , two_bytes_5 , two_bytes_6 , two_bytes_9 , two_bytes_a , two_bytes_c , single_byte_1 , single_byte_2 , single_byte_4 , single_byte_8 , no_bytes] --    --       150    
-
-
-Covered bins
-
-wr_addr_cp wstrb_cp      COUNT AT LEAST 
-ro_addrs_a all_bytes     9     1        
-ro_addrs_b all_bytes     7     1        
-ro_addrs_c all_bytes     5     1        
-rw_addrs_0 three_bytes_7 2     1        
-rw_addrs_0 three_bytes_b 2     1        
-rw_addrs_0 three_bytes_d 2     1        
-rw_addrs_0 three_bytes_e 2     1        
-rw_addrs_0 two_bytes_3   2     1        
-rw_addrs_0 two_bytes_5   2     1        
-rw_addrs_0 two_bytes_6   2     1        
-rw_addrs_0 two_bytes_9   2     1        
-rw_addrs_0 two_bytes_a   2     1        
-rw_addrs_0 two_bytes_c   2     1        
-rw_addrs_0 single_byte_1 2     1        
-rw_addrs_0 single_byte_2 2     1        
-rw_addrs_0 single_byte_4 2     1        
-rw_addrs_0 single_byte_8 2     1        
-rw_addrs_0 no_bytes      8     1        
-rw_addrs_0 all_bytes     59    1        
-rw_addrs_1 all_bytes     32    1        
-rw_addrs_2 all_bytes     28    1        
-rw_addrs_3 all_bytes     27    1        
-rw_addrs_4 all_bytes     29    1        
-rw_addrs_5 all_bytes     28    1        
-rw_addrs_6 all_bytes     33    1        
-rw_addrs_7 all_bytes     38    1        
-rw_addrs_8 all_bytes     28    1        
-rw_addrs_9 all_bytes     21    1        
-rw_addrs_f all_bytes     12    1        
+NAME COUNT AT LEAST 
+zero 126   1        
 
 
 -------------------------------------------------------------------------------
@@ -319,13 +190,13 @@ rw_addrs_f all_bytes     12    1
 Group Instance : axi_top.me.obj.write_cg
 ===============================================================================
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
- 80.49 1      100    1        64           64            
+ 86.25 1      100    1        64           64            
 
 
 Group:
 
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                       
- 80.49  80.49    1      100    1        1            64           64                    axi_pkg::axi_sub::write_cg 
+ 86.25  86.25    1      100    1        1            64           64                    axi_pkg::axi_sub::write_cg 
 
 
 
@@ -336,8 +207,7 @@ Summary for Group Instance   axi_top.me.obj.write_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 39       2         37      97.50   
-Crosses   304      244       60      37.96   
+Variables 39       4         35      86.25   
 
 
 Variables for Group Instance  axi_top.me.obj.write_cg
@@ -346,17 +216,9 @@ Variables for Group Instance  axi_top.me.obj.write_cg
 VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
 wr_addr_cp       16       2         14      87.50   100  1      1        0                    
 wr_addr_range_cp 2        0         2       100.00  100  1      1        0                    
-wstrb_cp         16       0         16      100.00  100  1      1        0                    
+wstrb_cp         16       1         15      93.75   100  1      1        0                    
 bresp_cp         3        0         3       100.00  100  1      1        0                    
-wdata_cp         2        0         2       100.00  100  1      1        0                    
-
-
-Crosses for Group Instance  axi_top.me.obj.write_cg
-
-
-CROSS       EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
-addr_x_resp 48       17        31      64.58   100  1      1        0                     
-addr_x_strb 256      227       29      11.33   100  1      1        0                     
+wdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -384,17 +246,17 @@ NAME       COUNT AT LEAST
 ro_addrs_a 9     1        
 ro_addrs_b 7     1        
 ro_addrs_c 5     1        
-rw_addrs_0 95    1        
-rw_addrs_1 32    1        
-rw_addrs_2 28    1        
-rw_addrs_3 27    1        
-rw_addrs_4 29    1        
-rw_addrs_5 28    1        
-rw_addrs_6 33    1        
-rw_addrs_7 38    1        
-rw_addrs_8 28    1        
-rw_addrs_9 21    1        
-rw_addrs_f 12    1        
+rw_addrs_0 144   1        
+rw_addrs_1 23    1        
+rw_addrs_2 17    1        
+rw_addrs_3 18    1        
+rw_addrs_4 21    1        
+rw_addrs_5 19    1        
+rw_addrs_6 24    1        
+rw_addrs_7 29    1        
+rw_addrs_8 21    1        
+rw_addrs_9 10    1        
+rw_addrs_f 13    1        
 
 
 -------------------------------------------------------------------------------
@@ -413,7 +275,7 @@ Bins
 
 NAME          COUNT AT LEAST 
 invalid_range 18    1        
-valid_range   374   1        
+valid_range   342   1        
 
 
 -------------------------------------------------------------------------------
@@ -422,13 +284,19 @@ Summary for Variable wstrb_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 16       0         16      100.00  
+User Defined Bins 16       1         15      93.75   
 
 
 User Defined Bins for wstrb_cp
 
 
-Bins
+Uncovered bins
+
+NAME          COUNT AT LEAST NUMBER 
+single_byte_1 0     1        1      
+
+
+Covered bins
 
 NAME          COUNT AT LEAST 
 three_bytes_7 2     1        
@@ -441,12 +309,11 @@ two_bytes_6   2     1
 two_bytes_9   2     1        
 two_bytes_a   2     1        
 two_bytes_c   2     1        
-single_byte_1 2     1        
 single_byte_2 2     1        
 single_byte_4 2     1        
 single_byte_8 2     1        
-no_bytes      8     1        
-all_bytes     356   1        
+no_bytes      128   1        
+all_bytes     206   1        
 
 
 -------------------------------------------------------------------------------
@@ -466,7 +333,7 @@ Bins
 NAME   COUNT AT LEAST 
 decerr 18    1        
 slverr 64    1        
-okay   310   1        
+okay   278   1        
 
 
 -------------------------------------------------------------------------------
@@ -475,153 +342,28 @@ Summary for Variable wdata_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        0         2       100.00  
+User Defined Bins 2        1         1       50.00   
 
 
 User Defined Bins for wdata_cp
 
 
+Uncovered bins
+
+NAME     COUNT AT LEAST NUMBER 
+all_ones 0     1        1      
+
+
 Excluded/Illegal bins
 
 NAME   COUNT STATUS   
-others 314   Excluded 
+others 234   Excluded 
 
 
 Covered bins
 
-NAME     COUNT AT LEAST 
-all_ones 18    1        
-zero     60    1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_resp
-
-
-Samples crossed: wr_addr_cp bresp_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 48       17        31      64.58   17      
-
-
-Automatically Generated Cross Bins for addr_x_resp
-
-
-Element holes
-
-wr_addr_cp                bresp_cp COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e] *        --    --       6      
-
-
-Uncovered bins
-
-wr_addr_cp   bresp_cp          COUNT AT LEAST NUMBER 
-[ro_addrs_a] [okay]            0     1        1      
-[ro_addrs_b] [decerr]          0     1        1      
-[ro_addrs_b] [okay]            0     1        1      
-[ro_addrs_c] [okay]            0     1        1      
-[rw_addrs_0] [decerr]          0     1        1      
-[rw_addrs_2] [decerr]          0     1        1      
-[rw_addrs_5] [decerr]          0     1        1      
-[rw_addrs_8] [slverr]          0     1        1      
-[rw_addrs_9] [decerr , slverr] --    --       2      
-[rw_addrs_f] [slverr]          0     1        1      
-
-
-Covered bins
-
-wr_addr_cp bresp_cp COUNT AT LEAST 
-ro_addrs_a decerr   2     1        
-ro_addrs_a slverr   7     1        
-ro_addrs_b slverr   7     1        
-ro_addrs_c decerr   1     1        
-ro_addrs_c slverr   4     1        
-rw_addrs_0 slverr   4     1        
-rw_addrs_0 okay     91    1        
-rw_addrs_1 decerr   4     1        
-rw_addrs_1 slverr   6     1        
-rw_addrs_1 okay     22    1        
-rw_addrs_2 slverr   6     1        
-rw_addrs_2 okay     22    1        
-rw_addrs_3 decerr   1     1        
-rw_addrs_3 slverr   6     1        
-rw_addrs_3 okay     20    1        
-rw_addrs_4 decerr   3     1        
-rw_addrs_4 slverr   6     1        
-rw_addrs_4 okay     20    1        
-rw_addrs_5 slverr   6     1        
-rw_addrs_5 okay     22    1        
-rw_addrs_6 decerr   2     1        
-rw_addrs_6 slverr   6     1        
-rw_addrs_6 okay     25    1        
-rw_addrs_7 decerr   1     1        
-rw_addrs_7 slverr   6     1        
-rw_addrs_7 okay     31    1        
-rw_addrs_8 decerr   2     1        
-rw_addrs_8 okay     26    1        
-rw_addrs_9 okay     21    1        
-rw_addrs_f decerr   2     1        
-rw_addrs_f okay     10    1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_strb
-
-
-Samples crossed: wr_addr_cp wstrb_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 256      227       29      11.33   227     
-
-
-Automatically Generated Cross Bins for addr_x_strb
-
-
-Element holes
-
-wr_addr_cp                wstrb_cp COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e] *        --    --       32     
-
-
-Uncovered bins
-
-wr_addr_cp                                                                                                                        wstrb_cp                                                                                                                                                                                                                       COUNT AT LEAST NUMBER 
-[ro_addrs_a , ro_addrs_b , ro_addrs_c]                                                                                            [three_bytes_7 , three_bytes_b , three_bytes_d , three_bytes_e , two_bytes_3 , two_bytes_5 , two_bytes_6 , two_bytes_9 , two_bytes_a , two_bytes_c , single_byte_1 , single_byte_2 , single_byte_4 , single_byte_8 , no_bytes] --    --       45     
-[rw_addrs_1 , rw_addrs_2 , rw_addrs_3 , rw_addrs_4 , rw_addrs_5 , rw_addrs_6 , rw_addrs_7 , rw_addrs_8 , rw_addrs_9 , rw_addrs_f] [three_bytes_7 , three_bytes_b , three_bytes_d , three_bytes_e , two_bytes_3 , two_bytes_5 , two_bytes_6 , two_bytes_9 , two_bytes_a , two_bytes_c , single_byte_1 , single_byte_2 , single_byte_4 , single_byte_8 , no_bytes] --    --       150    
-
-
-Covered bins
-
-wr_addr_cp wstrb_cp      COUNT AT LEAST 
-ro_addrs_a all_bytes     9     1        
-ro_addrs_b all_bytes     7     1        
-ro_addrs_c all_bytes     5     1        
-rw_addrs_0 three_bytes_7 2     1        
-rw_addrs_0 three_bytes_b 2     1        
-rw_addrs_0 three_bytes_d 2     1        
-rw_addrs_0 three_bytes_e 2     1        
-rw_addrs_0 two_bytes_3   2     1        
-rw_addrs_0 two_bytes_5   2     1        
-rw_addrs_0 two_bytes_6   2     1        
-rw_addrs_0 two_bytes_9   2     1        
-rw_addrs_0 two_bytes_a   2     1        
-rw_addrs_0 two_bytes_c   2     1        
-rw_addrs_0 single_byte_1 2     1        
-rw_addrs_0 single_byte_2 2     1        
-rw_addrs_0 single_byte_4 2     1        
-rw_addrs_0 single_byte_8 2     1        
-rw_addrs_0 no_bytes      8     1        
-rw_addrs_0 all_bytes     59    1        
-rw_addrs_1 all_bytes     32    1        
-rw_addrs_2 all_bytes     28    1        
-rw_addrs_3 all_bytes     27    1        
-rw_addrs_4 all_bytes     29    1        
-rw_addrs_5 all_bytes     28    1        
-rw_addrs_6 all_bytes     33    1        
-rw_addrs_7 all_bytes     38    1        
-rw_addrs_8 all_bytes     28    1        
-rw_addrs_9 all_bytes     21    1        
-rw_addrs_f all_bytes     12    1        
+NAME COUNT AT LEAST 
+zero 126   1        
 
 
 Group : axi_pkg::axi_sub::read_cg
@@ -630,7 +372,7 @@ Group : axi_pkg::axi_sub::read_cg
 Group : axi_pkg::axi_sub::read_cg
 ===============================================================================
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
- 84.58  84.58    1      100    1        1            64           64            
+ 87.50  87.50    1      100    1        1            64           64            
 
 
 Source File(s) : 
@@ -640,7 +382,7 @@ Source File(s) :
 1 Instances:
 
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                   
- 84.58 1      100    1        64           64            axi_top.me.obj.read_cg 
+ 87.50 1      100    1        64           64            axi_top.me.obj.read_cg 
 
 
 
@@ -653,7 +395,6 @@ Summary for Group   axi_pkg::axi_sub::read_cg
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
 Variables 23       1         22      87.50   
-Crosses   48       13        35      72.92   
 
 
 Variables for Group  axi_pkg::axi_sub::read_cg
@@ -666,13 +407,6 @@ rresp_cp         3        0         3       100.00  100  1      1        0
 rdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
-Crosses for Group  axi_pkg::axi_sub::read_cg
-
-
-CROSS       EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
-addr_x_resp 48       13        35      72.92   100  1      1        0                     
-
-
 -------------------------------------------------------------------------------
 
 Summary for Variable rd_addr_cp
@@ -766,78 +500,13 @@ all_ones 0     1        1
 Excluded/Illegal bins
 
 NAME   COUNT STATUS   
-others 205   Excluded 
+others 85    Excluded 
 
 
 Covered bins
 
 NAME COUNT AT LEAST 
-zero 111   1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_resp
-
-
-Samples crossed: rd_addr_cp rresp_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 48       13        35      72.92   13      
-
-
-Automatically Generated Cross Bins for addr_x_resp
-
-
-Uncovered bins
-
-rd_addr_cp                             rresp_cp          COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e]              [okay]            --    --       2      
-[ro_addrs_a]                           [decerr , slverr] --    --       2      
-[ro_addrs_b , ro_addrs_c]              [slverr]          --    --       2      
-[rw_addrs_2]                           [decerr]          0     1        1      
-[rw_addrs_4]                           [decerr]          0     1        1      
-[rw_addrs_6 , rw_addrs_7]              [decerr]          --    --       2      
-[rw_addrs_8 , rw_addrs_9 , rw_addrs_f] [slverr]          --    --       3      
-
-
-Covered bins
-
-rd_addr_cp rresp_cp COUNT AT LEAST 
-wo_addrs_d decerr   1     1        
-wo_addrs_d slverr   11    1        
-wo_addrs_e decerr   2     1        
-wo_addrs_e slverr   9     1        
-ro_addrs_a okay     5     1        
-ro_addrs_b decerr   1     1        
-ro_addrs_b okay     5     1        
-ro_addrs_c decerr   1     1        
-ro_addrs_c okay     1     1        
-rw_addrs_0 decerr   5     1        
-rw_addrs_0 slverr   6     1        
-rw_addrs_0 okay     64    1        
-rw_addrs_1 decerr   1     1        
-rw_addrs_1 slverr   6     1        
-rw_addrs_1 okay     16    1        
-rw_addrs_2 slverr   6     1        
-rw_addrs_2 okay     13    1        
-rw_addrs_3 decerr   1     1        
-rw_addrs_3 slverr   6     1        
-rw_addrs_3 okay     22    1        
-rw_addrs_4 slverr   6     1        
-rw_addrs_4 okay     15    1        
-rw_addrs_5 decerr   3     1        
-rw_addrs_5 slverr   6     1        
-rw_addrs_5 okay     14    1        
-rw_addrs_6 slverr   6     1        
-rw_addrs_6 okay     16    1        
-rw_addrs_7 slverr   6     1        
-rw_addrs_7 okay     15    1        
-rw_addrs_8 decerr   1     1        
-rw_addrs_8 okay     15    1        
-rw_addrs_9 decerr   3     1        
-rw_addrs_9 okay     20    1        
-rw_addrs_f decerr   1     1        
-rw_addrs_f okay     7     1        
+zero 231   1        
 
 
 -------------------------------------------------------------------------------
@@ -845,13 +514,13 @@ rw_addrs_f okay     7     1
 Group Instance : axi_top.me.obj.read_cg
 ===============================================================================
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
- 84.58 1      100    1        64           64            
+ 87.50 1      100    1        64           64            
 
 
 Group:
 
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                      
- 84.58  84.58    1      100    1        1            64           64                    axi_pkg::axi_sub::read_cg 
+ 87.50  87.50    1      100    1        1            64           64                    axi_pkg::axi_sub::read_cg 
 
 
 
@@ -863,7 +532,6 @@ Summary for Group Instance   axi_top.me.obj.read_cg
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
 Variables 23       1         22      87.50   
-Crosses   48       13        35      72.92   
 
 
 Variables for Group Instance  axi_top.me.obj.read_cg
@@ -876,13 +544,6 @@ rresp_cp         3        0         3       100.00  100  1      1        0
 rdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
-Crosses for Group Instance  axi_top.me.obj.read_cg
-
-
-CROSS       EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST PRINT MISSING COMMENT 
-addr_x_resp 48       13        35      72.92   100  1      1        0                     
-
-
 -------------------------------------------------------------------------------
 
 Summary for Variable rd_addr_cp
@@ -976,77 +637,12 @@ all_ones 0     1        1
 Excluded/Illegal bins
 
 NAME   COUNT STATUS   
-others 205   Excluded 
+others 85    Excluded 
 
 
 Covered bins
 
 NAME COUNT AT LEAST 
-zero 111   1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Cross addr_x_resp
-
-
-Samples crossed: rd_addr_cp rresp_cp
-CATEGORY                           EXPECTED UNCOVERED COVERED PERCENT MISSING 
-Automatically Generated Cross Bins 48       13        35      72.92   13      
-
-
-Automatically Generated Cross Bins for addr_x_resp
-
-
-Uncovered bins
-
-rd_addr_cp                             rresp_cp          COUNT AT LEAST NUMBER 
-[wo_addrs_d , wo_addrs_e]              [okay]            --    --       2      
-[ro_addrs_a]                           [decerr , slverr] --    --       2      
-[ro_addrs_b , ro_addrs_c]              [slverr]          --    --       2      
-[rw_addrs_2]                           [decerr]          0     1        1      
-[rw_addrs_4]                           [decerr]          0     1        1      
-[rw_addrs_6 , rw_addrs_7]              [decerr]          --    --       2      
-[rw_addrs_8 , rw_addrs_9 , rw_addrs_f] [slverr]          --    --       3      
-
-
-Covered bins
-
-rd_addr_cp rresp_cp COUNT AT LEAST 
-wo_addrs_d decerr   1     1        
-wo_addrs_d slverr   11    1        
-wo_addrs_e decerr   2     1        
-wo_addrs_e slverr   9     1        
-ro_addrs_a okay     5     1        
-ro_addrs_b decerr   1     1        
-ro_addrs_b okay     5     1        
-ro_addrs_c decerr   1     1        
-ro_addrs_c okay     1     1        
-rw_addrs_0 decerr   5     1        
-rw_addrs_0 slverr   6     1        
-rw_addrs_0 okay     64    1        
-rw_addrs_1 decerr   1     1        
-rw_addrs_1 slverr   6     1        
-rw_addrs_1 okay     16    1        
-rw_addrs_2 slverr   6     1        
-rw_addrs_2 okay     13    1        
-rw_addrs_3 decerr   1     1        
-rw_addrs_3 slverr   6     1        
-rw_addrs_3 okay     22    1        
-rw_addrs_4 slverr   6     1        
-rw_addrs_4 okay     15    1        
-rw_addrs_5 decerr   3     1        
-rw_addrs_5 slverr   6     1        
-rw_addrs_5 okay     14    1        
-rw_addrs_6 slverr   6     1        
-rw_addrs_6 okay     16    1        
-rw_addrs_7 slverr   6     1        
-rw_addrs_7 okay     15    1        
-rw_addrs_8 decerr   1     1        
-rw_addrs_8 okay     15    1        
-rw_addrs_9 decerr   3     1        
-rw_addrs_9 okay     20    1        
-rw_addrs_f decerr   1     1        
-rw_addrs_f okay     7     1        
+zero 231   1        
 
 

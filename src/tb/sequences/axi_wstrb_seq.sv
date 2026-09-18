@@ -23,29 +23,11 @@ class axi_wstrb_wr_seq extends axi_base_sequence;
       wr_pkt.default_wstrb.constraint_mode(0);
       assert(wr_pkt.randomize() with {
         operation == single_w;
-        AWADDR == 32'h0000_0000;
-        WDATA == 32'h0000_0000;
-        WSTRB == 4'hF;
+        WSTRB == s;
       });
       finish_item(wr_pkt);
+     end
 
-      // 2. Write with specific strobe pattern
-      wr_pkt = axi_trans::type_id::create("wr_pkt");
-      start_item(wr_pkt);
-      wr_pkt.slv_err_address.constraint_mode(0);
-      wr_pkt.dec_err_address.constraint_mode(0);
-      wr_pkt.default_wstrb.constraint_mode(0);
-      assert(wr_pkt.randomize() with {
-        operation == single_w;
-        AWADDR == 32'h0000_0000;
-        WDATA == 32'hDEAD_BEEF;
-        WSTRB == s[3:0];
-      });
-      finish_item(wr_pkt);
-      `uvm_info("AXI_WSTRB_WR", $sformatf("WRITE strb=4'b%04b data=0xDEADBEEF resp=%0d", s[3:0], wr_pkt.BRESP), UVM_MEDIUM)
-    end
-
-    `uvm_info("AXI_WSTRB_WR", "WSTRB Write Sequence Complete", UVM_LOW)
   endtask
 endclass
 

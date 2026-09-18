@@ -2,18 +2,12 @@ Tests
 
 Total Coverage Summary 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
- 55.15  27.22  60.00  62.03  50.00  49.12  82.54 
+ 55.88  27.22  60.00  62.03  50.00  49.12  86.88 
 
 
 Total tests in report: 16
 -------------------------------------------------------------------------------
 Data from the following tests was used to generate this report
-simv/axi_wstrb_test_seed_1       
-simv/axi_wstrb_test_seed_2       
-simv/axi_corner_data_test_seed_1 
-simv/axi_corner_data_test_seed_2 
-simv/axi_negative_test_seed_1    
-simv/axi_negative_test_seed_2    
 simv/axi_sanity_test_seed_1      
 simv/axi_sanity_test_seed_2      
 simv/axi_b2b_write_test_seed_1   
@@ -24,4 +18,10 @@ simv/axi_dec_err_test_seed_1
 simv/axi_dec_err_test_seed_2     
 simv/axi_unaligned_test_seed_1   
 simv/axi_unaligned_test_seed_2   
+simv/axi_wstrb_test_seed_1       
+simv/axi_wstrb_test_seed_2       
+simv/axi_corner_data_test_seed_1 
+simv/axi_corner_data_test_seed_2 
+simv/axi_negative_test_seed_1    
+simv/axi_negative_test_seed_2    
 
