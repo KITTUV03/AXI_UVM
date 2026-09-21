@@ -30,7 +30,6 @@ class axi_input_monitor extends uvm_monitor;
     join_none
   endtask
 
-  // Monitor Write Input: Captures AW (Address) and W (Data) handshakes
   task monitor_write_input();
     axi_trans wr_trans;
     bit addr_captured, data_captured;
@@ -76,7 +75,6 @@ class axi_input_monitor extends uvm_monitor;
     end
   endtask
 
-  // Monitor Read Input: Captures AR (Address) handshake
   task monitor_read_input();
     axi_trans rd_trans;
 
