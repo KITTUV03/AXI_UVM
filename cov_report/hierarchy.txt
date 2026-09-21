@@ -3,12 +3,12 @@ Design Hierarchy
 
 ----------------
 SCORE  LINE   COND   TOGGLE FSM    BRANCH         
- 67.38  90.71  60.00  62.86  50.00  73.33 axi_top 
+ 58.52  86.76  48.00  61.19  30.00  66.67 axi_top 
   
   ----------------
   SCORE  LINE   COND   TOGGLE FSM    BRANCH         
-   64.94 --     --      64.94 --     --     axi_inf 
-   67.72  91.23  60.00  61.51  50.00  75.86 dut     
+   63.31 --     --      63.31 --     --     axi_inf 
+   58.75  86.84  48.00  59.97  30.00  68.97 dut     
 
 ----------------
 SCORE  LINE   COND   TOGGLE FSM    BRANCH                                    

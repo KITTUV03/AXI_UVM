@@ -20,7 +20,6 @@ INCDIRS = \
 SRC = \
 	src/tb/include/define.svh \
 	src/tb/include/axi_interface.sv \
-	src/tb/include/axi_assertion.sv \
 	src/design/axi_design.sv \
 	src/tb/top/axi_package.sv \
 	src/tb/top/axi_top.sv

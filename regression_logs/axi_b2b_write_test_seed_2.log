@@ -1,7 +1,7 @@
 Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_b2b_write_test +ntb_random_seed=2 -cm line+cond+fsm+tgl+branch -cm_name axi_b2b_write_test_seed_2 -cm_dir simv.vdb -l regression_logs/axi_b2b_write_test_seed_2.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 18 13:20 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 14:30 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -34,9 +34,12 @@ uvm_test_top               axi_b2b_write_test          -     @461
         rd_item_port       uvm_seq_item_pull_port      -     @777 
         rsp_port           uvm_analysis_port           -     @768 
         seq_item_port      uvm_seq_item_pull_port      -     @759 
-      mon                  axi_monitor                 -     @786 
-        read_ap            uvm_analysis_port           -     @804 
-        write_ap           uvm_analysis_port           -     @795 
+      inp_mon              axi_input_monitor           -     @786 
+        read_ap            uvm_analysis_port           -     @812 
+        write_ap           uvm_analysis_port           -     @803 
+      out_mon              axi_out_monitor             -     @794 
+        read_ap            uvm_analysis_port           -     @831 
+        write_ap           uvm_analysis_port           -     @822 
       rd_sqr               axi_sequencer               -     @628 
         rsp_export         uvm_analysis_export         -     @636 
         seq_item_export    uvm_seq_item_pull_imp       -     @742 
@@ -52,146 +55,222 @@ uvm_test_top               axi_b2b_write_test          -     @461
         num_last_reqs      integral                    32    'd1  
         num_last_rsps      integral                    32    'd1  
     cov                    axi_sub                     -     @493 
-      read_export          uvm_analysis_imp_cov_read   -     @833 
-      write_export         uvm_analysis_imp_cov_write  -     @824 
+      rd_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @957 
+        analysis_export    uvm_analysis_imp            -     @1001
+        get_ap             uvm_analysis_port           -     @992 
+        get_peek_export    uvm_get_peek_imp            -     @974 
+        put_ap             uvm_analysis_port           -     @983 
+        put_export         uvm_put_imp                 -     @965 
+      rd_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1010
+        analysis_export    uvm_analysis_imp            -     @1054
+        get_ap             uvm_analysis_port           -     @1045
+        get_peek_export    uvm_get_peek_imp            -     @1027
+        put_ap             uvm_analysis_port           -     @1036
+        put_export         uvm_put_imp                 -     @1018
+      wr_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @851 
+        analysis_export    uvm_analysis_imp            -     @895 
+        get_ap             uvm_analysis_port           -     @886 
+        get_peek_export    uvm_get_peek_imp            -     @868 
+        put_ap             uvm_analysis_port           -     @877 
+        put_export         uvm_put_imp                 -     @859 
+      wr_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @904 
+        analysis_export    uvm_analysis_imp            -     @948 
+        get_ap             uvm_analysis_port           -     @939 
+        get_peek_export    uvm_get_peek_imp            -     @921 
+        put_ap             uvm_analysis_port           -     @930 
+        put_export         uvm_put_imp                 -     @912 
     scb                    axi_scb                     -     @485 
-      read_export          uvm_analysis_imp_read_txn   -     @851 
-      write_export         uvm_analysis_imp_write_txn  -     @842 
+      rd_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @1170
+        analysis_export    uvm_analysis_imp            -     @1214
+        get_ap             uvm_analysis_port           -     @1205
+        get_peek_export    uvm_get_peek_imp            -     @1187
+        put_ap             uvm_analysis_port           -     @1196
+        put_export         uvm_put_imp                 -     @1178
+      rd_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1223
+        analysis_export    uvm_analysis_imp            -     @1267
+        get_ap             uvm_analysis_port           -     @1258
+        get_peek_export    uvm_get_peek_imp            -     @1240
+        put_ap             uvm_analysis_port           -     @1249
+        put_export         uvm_put_imp                 -     @1231
+      wr_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @1064
+        analysis_export    uvm_analysis_imp            -     @1108
+        get_ap             uvm_analysis_port           -     @1099
+        get_peek_export    uvm_get_peek_imp            -     @1081
+        put_ap             uvm_analysis_port           -     @1090
+        put_export         uvm_put_imp                 -     @1072
+      wr_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1117
+        analysis_export    uvm_analysis_imp            -     @1161
+        get_ap             uvm_analysis_port           -     @1152
+        get_peek_export    uvm_get_peek_imp            -     @1134
+        put_ap             uvm_analysis_port           -     @1143
+        put_export         uvm_put_imp                 -     @1125
 ------------------------------------------------------------------
 
 UVM_INFO src/tb/sequences/axi_b2b_write.sv(13) @ 0: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] Starting Back-to-Back Write Sequence
-UVM_INFO src/tb/top/axi_top.sv(25) @ 15: reporter [TESTBENCH] Reset released
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 65: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000014 data=0x3af437d3 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 65: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/top/axi_top.sv(24) @ 15: reporter [TESTBENCH] Reset released
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 45: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x3af437d3 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 65: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 65: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
 UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 75: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0x3af437d3 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 95: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000003c data=0xf715fc1d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
 UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 125: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0xf715fc1d resp=0
-UVM_INFO src/tb/top/axi_top.sv(25) @ 135: reporter [TESTBENCH] Reset released
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 175: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001c data=0x4ec14cea strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 175: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 185: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0x4ec14cea resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 225: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000024 data=0x6b3a3680 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 225: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 235: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0x6b3a3680 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 275: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000024 data=0xadd67cab strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 275: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 285: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xadd67cab resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 325: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000010 data=0xa582ca47 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 325: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 335: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xa582ca47 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 375: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000020 data=0xe86a473c strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 375: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 385: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xe86a473c resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 425: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000003c data=0x05495787 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 435: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0x05495787 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 475: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000024 data=0xc969f249 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 475: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 485: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xc969f249 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 525: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000020 data=0xf1a66f6b strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 525: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 535: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xf1a66f6b resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 575: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000003c data=0x706fbe4f strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 575: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 585: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0x706fbe4f resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 625: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001c data=0x2a502190 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 625: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 635: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0x2a502190 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 675: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000c data=0x2877e9e7 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 675: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 685: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x2877e9e7 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 725: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x0b6ca030 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 725: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 735: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x0b6ca030 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 775: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000018 data=0x46f9b5fe strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 775: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 785: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000018 data=0x46f9b5fe resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 825: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000014 data=0x3f855824 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 825: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 835: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0x3f855824 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 875: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001c data=0xded452dd strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 875: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 885: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xded452dd resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 925: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000008 data=0xedaddc40 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 925: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 935: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0xedaddc40 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 975: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000020 data=0xcc5661e8 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 975: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 985: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xcc5661e8 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1025: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000c data=0x6fa75998 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1025: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1035: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x6fa75998 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1075: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000018 data=0xebf4a903 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1075: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1085: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000018 data=0xebf4a903 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1125: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000004 data=0xefae3c91 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1125: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1135: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0xefae3c91 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1175: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000004 data=0x52e07591 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1175: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1185: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x52e07591 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1225: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000000c data=0x2324d0c6 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1225: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1235: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x2324d0c6 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1275: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001c data=0xa70f3683 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1275: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1285: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xa70f3683 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1325: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000024 data=0x1e4c907d strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1325: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1335: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0x1e4c907d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1375: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000008 data=0x5ee98b4d strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1375: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1385: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x5ee98b4d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1425: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000024 data=0xb63db40e strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1425: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1435: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xb63db40e resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1475: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000010 data=0xd182c71b strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1475: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1485: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xd182c71b resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 1525: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x0000001c data=0xc32b5e53 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 1525: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1535: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xc32b5e53 resp=0
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(26) @ 1535: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] Back-to-Back Write Sequence Complete
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 1535: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO src/tb/env/axi_subscriber.sv(112) @ 1535: uvm_test_top.env.cov [AXI_COVERAGE] 
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x4ec14cea strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 175: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0x4ec14cea resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x6b3a3680 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 225: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0x6b3a3680 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0xadd67cab strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 275: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xadd67cab resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xa582ca47 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xa582ca47 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xe86a473c strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 375: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xe86a473c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000003c data=0x05495787 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 425: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0x05495787 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0xc969f249 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 475: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xc969f249 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xf1a66f6b strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xf1a66f6b resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000003c data=0x706fbe4f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 575: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0x706fbe4f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x2a502190 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 625: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0x2a502190 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x2877e9e7 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 675: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x2877e9e7 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x0b6ca030 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 725: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x0b6ca030 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0x46f9b5fe strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 775: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000018 data=0x46f9b5fe resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x3f855824 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 825: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0x3f855824 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0xded452dd strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 875: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xded452dd resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0xedaddc40 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 925: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0xedaddc40 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xcc5661e8 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 975: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xcc5661e8 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x6fa75998 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1025: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x6fa75998 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xebf4a903 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1075: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000018 data=0xebf4a903 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0xefae3c91 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1125: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0xefae3c91 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0x52e07591 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1175: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x52e07591 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x2324d0c6 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1225: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x2324d0c6 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0xa70f3683 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1275: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xa70f3683 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x1e4c907d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0x1e4c907d resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x5ee98b4d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1375: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x5ee98b4d resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0xb63db40e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1425: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000024 data=0xb63db40e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xd182c71b strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1475: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xd182c71b resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0xc32b5e53 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xc32b5e53 resp=0
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(26) @ 1525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] Back-to-Back Write Sequence Complete
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 1525: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 1525: uvm_test_top.env.cov [AXI_COVERAGE] 
 ============ COVERAGE SUMMARY ============
-  Write Coverage : 31.67%
+  Write Coverage : 39.58%
   Read  Coverage : 0.00%
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(145) @ 1535: uvm_test_top.env.scb [AXI_SCOREBOARD] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 1525: uvm_test_top.env.scb [AXI_SCOREBOARD] 
 ============ SCOREBOARD SUMMARY ============
-  Total Writes  : 29
+  Total Writes  : 30
   Total Reads   : 0
-  Total Pass    : 29
+  Total Pass    : 30
   Total Fail    : 0
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(151) @ 1535: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
-UVM_INFO src/tb/tests/axi_test.sv(39) @ 1535: uvm_test_top [AXI_TEST] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 1525: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
+UVM_INFO src/tb/tests/axi_test.sv(39) @ 1525: uvm_test_top [AXI_TEST] 
 *** TEST PASSED ***
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   99
+UVM_INFO :  130
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
 [AXI_B2B_WRITE]    32
 [AXI_COVERAGE]     1
-[AXI_MONITOR]    29
-[AXI_SCOREBOARD]    31
+[AXI_INP_MON]    30
+[AXI_OUT_MON]    30
+[AXI_SCOREBOARD]    32
 [AXI_TEST]     1
 [RNTST]     1
-[TESTBENCH]     2
+[TESTBENCH]     1
 [TEST_DONE]     1
 [UVMTOP]     1
 $finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
-$finish at simulation time                 1535
+$finish at simulation time                 1525
 
 ---------------------------------------------------------------------------
 VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
 ---------------------------------------------------------------------------
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 1535 ns
-CPU Time:      0.690 seconds;       Data structure size:   0.6Mb
-Fri Sep 18 13:21:00 2026
+Time: 1525 ns
+CPU Time:      0.620 seconds;       Data structure size:   0.6Mb
+Mon Sep 21 14:30:53 2026

@@ -1,4 +1,4 @@
-721      
+727      
 0 cov_hier.cfg
 0 uvm_macros.svh
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/uvm_macros.svh
@@ -681,6 +681,12 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/axi_input_monitor.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/axi_input_monitor.sv
 0 src/tb/include/axi_input_monitor.sv
+0 axi_out_monitor.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/axi_out_monitor.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/axi_out_monitor.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/axi_out_monitor.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/axi_out_monitor.sv
+0 src/tb/include/axi_out_monitor.sv
 0 axi_active_agent.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/axi_active_agent.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/vcs/axi_active_agent.sv
@@ -720,7 +726,7 @@
 0 src/tb/agent/axi_test.sv
 0 src/tb/sequences/axi_test.sv
 0 src/tb/env/axi_test.sv
-61
+60
 +define+UVM_DIRECTC_OPTS
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
@@ -778,12 +784,11 @@ cov_hier.cfg
 /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
 src/tb/include/define.svh
 src/tb/include/axi_interface.sv
-src/tb/include/axi_assertion.sv
 src/design/axi_design.sv
 src/tb/top/axi_package.sv
 src/tb/top/axi_top.sv
 44
-XDG_SESSION_ID=89836
+XDG_SESSION_ID=90822
 XDG_RUNTIME_DIR=/run/user/6917
 XDG_DATA_DIRS=/home/kittupatel/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -800,15 +805,15 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64
-SSH_TTY=/dev/pts/37
-SSH_CONNECTION=171.76.109.210 30283 192.168.1.16 22
-SSH_CLIENT=171.76.109.210 30283 22
+SSH_TTY=/dev/pts/437
+SSH_CONNECTION=171.76.109.49 21032 192.168.1.16 22
+SSH_CLIENT=171.76.109.49 21032 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SPYGLASS_HOME=/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME
 SNPSLMD_QUEUE=true
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=171.76.109.210
+REMOTEHOST=171.76.109.49
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
@@ -830,11 +835,12 @@ DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
 0
 181
 1789706753 src/tb/tests/axi_test.sv
-1789679686 src/tb/env/axi_env.sv
-1789704991 src/tb/env/axi_subscriber.sv
-1789679708 src/tb/env/axi_scoreboard.sv
-1789555221 src/tb/agent/axi_active_agent.sv
-1789555165 src/tb/agent/axi_input_monitor.sv
+1789979891 src/tb/env/axi_env.sv
+1789981216 src/tb/env/axi_subscriber.sv
+1789981172 src/tb/env/axi_scoreboard.sv
+1789979512 src/tb/agent/axi_active_agent.sv
+1789980093 src/tb/agent/axi_out_monitor.sv
+1789980107 src/tb/agent/axi_input_monitor.sv
 1789704906 src/tb/agent/axi_override_driver.sv
 1789620330 src/tb/agent/axi_driver.sv
 1789555122 src/tb/agent/axi_sequencer.sv
@@ -997,10 +1003,9 @@ DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
 1631418289 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/macros/snps_macros.svp
 1631418289 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/macros/uvm_version_defines.svh
 1631418293 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/uvm_macros.svh
-1789706802 src/tb/top/axi_top.sv
-1789706787 src/tb/top/axi_package.sv
+1789979921 src/tb/top/axi_top.sv
+1789972597 src/tb/top/axi_package.sv
 1789445783 src/design/axi_design.sv
-1789679746 src/tb/include/axi_assertion.sv
 1789446197 src/tb/include/axi_interface.sv
 1789672076 src/tb/include/define.svh
 1631418293 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv
@@ -1017,5 +1022,5 @@ DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
 1631416743 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/liberrorinf.so
 1631416702 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libsnpsmalloc.so
 1631416739 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvfs.so
-1789717850 simv.daidir
+1789981243 simv.daidir
 -1 partitionlib

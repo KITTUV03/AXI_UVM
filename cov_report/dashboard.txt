@@ -1,6 +1,6 @@
 Dashboard
 
-Date: Fri Sep 18 13:21:31 2026
+Date: Mon Sep 21 14:31:26 2026
 
 User: kittupatel
 
@@ -11,13 +11,13 @@ Number of tests: 16
 -------------------------------------------------------------------------------
 Total Coverage Summary 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH GROUP  
- 55.88  27.22  60.00  62.03  50.00  49.12  86.88 
+ 51.37  25.81  48.00  60.38  30.00  45.61  98.44 
 
 
 -------------------------------------------------------------------------------
 Hierarchical coverage data for top-level instances 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                               
- 67.38  90.71  60.00  62.86  50.00  73.33 axi_top                            
+ 58.52  86.76  48.00  61.19  30.00  66.67 axi_top                            
  30.22  30.43 --     --     --      30.00 uvm_custom_install_recording       
   8.41   4.76 --       0.00 --      20.45 uvm_custom_install_verdi_recording 
 
@@ -25,11 +25,11 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME
 -------------------------------------------------------------------------------
 Total Module Definition Coverage Summary 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 49.68  27.22  60.00  62.03  50.00  49.12 
+ 41.96  25.81  48.00  60.38  30.00  45.61 
 
 
 -------------------------------------------------------------------------------
 Total Groups Coverage Summary 
 SCORE  INST SCORE WEIGHT 
- 86.88  86.88     1      
+ 98.44  98.44     1      
 

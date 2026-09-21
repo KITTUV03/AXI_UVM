@@ -21,6 +21,7 @@ package axi_pkg;
   `include "axi_driver.sv"
   `include  "axi_override_driver.sv"
   `include "axi_input_monitor.sv"
+  `include "axi_out_monitor.sv"
   `include "axi_active_agent.sv"
   `include "axi_scoreboard.sv"
   `include "axi_subscriber.sv"
@@ -28,3 +29,4 @@ package axi_pkg;
   `include "axi_test.sv"
   
 endpackage
+

@@ -2,7 +2,7 @@ Design Module List
 
 Total Module Definition Coverage Summary 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 49.68  27.22  60.00  62.03  50.00  49.12 
+ 41.96  25.81  48.00  60.38  30.00  45.61 
 
 
 Total modules in report: 5
@@ -10,7 +10,7 @@ Total modules in report: 5
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME                               
   8.41   4.76 --       0.00 --      20.45 uvm_custom_install_verdi_recording 
  30.22  30.43 --     --     --      30.00 uvm_custom_install_recording       
- 62.82  88.46 --     100.00 --       0.00 axi_top                            
- 64.94 --     --      64.94 --     --     intf                               
- 67.72  91.23  60.00  61.51  50.00  75.86 axi4_lite_slave                    
+ 53.79  86.36 --      75.00 --       0.00 axi_top                            
+ 58.75  86.84  48.00  59.97  30.00  68.97 axi4_lite_slave                    
+ 63.31 --     --      63.31 --     --     intf                               
 

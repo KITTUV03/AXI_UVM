@@ -1835,7 +1835,7 @@ Since this is the module's only instance, the coverage report is the same as for
 Module : axi_top
 ===============================================================================
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 62.82  88.46 --     100.00 --       0.00 
+ 53.79  86.36 --      75.00 --       0.00 
 
 Source File(s) : 
 
@@ -1844,7 +1844,7 @@ Source File(s) :
 Module self-instances :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
- 62.82  88.46 --     100.00 --       0.00 axi_top 
+ 53.79  86.36 --      75.00 --       0.00 axi_top 
 
 
 
@@ -1852,150 +1852,140 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME
 Line Coverage for Module : axi_top
 
              Line No.   Total   Covered  Percent
-TOTAL                       26       23    88.46
-INITIAL            14        6        6   100.00
-ROUTINE            22        7        7   100.00
-INITIAL            29        5        5   100.00
-INITIAL            83        1        1   100.00
-INITIAL            87        1        1   100.00
-INITIAL            92        4        1    25.00
-INITIAL            97        2        2   100.00
+TOTAL                       22       19    86.36
+INITIAL            13        6        6   100.00
+ROUTINE            21        7        7   100.00
+INITIAL            28        1        1   100.00
+INITIAL            74        1        1   100.00
+INITIAL            78        1        1   100.00
+INITIAL            82        4        1    25.00
+INITIAL            87        2        2   100.00
 
-13                        initial begin
-14         1/1              ACLK = 1'b0;
-15         1/1              forever begin
-16         2/2                #(`low)  ACLK = 1'b1;
-17         2/2                #(`high) ACLK = 1'b0;
-18                          end
-19                        end
-20                      
-21                        task apply_reset;
-22         1/1              ARESETn = 1'b0;
-23         3/3              repeat(2) @(posedge ACLK);
+12                        initial begin
+13         1/1              ACLK = 1'b0;
+14         1/1              forever begin
+15         2/2                #(`low)  ACLK = 1'b1;
+16         2/2                #(`high) ACLK = 1'b0;
+17                          end
+18                        end
+19                      
+20                        task apply_reset;
+21         1/1              ARESETn = 1'b0;
+22         3/3              repeat(2) @(posedge ACLK);
                         REPEAT_FALSE
-24         1/1              ARESETn = 1'b1;
-25         2/2              `uvm_info("TESTBENCH", "Reset released", UVM_LOW)
+23         1/1              ARESETn = 1'b1;
+24         2/2              `uvm_info("TESTBENCH", "Reset released", UVM_LOW)
 uvm_info("TESTBENCH", "Reset released", UVM_LOW):
-25.1                    `ifdef ZEMI4UVM 
-25.2                          (* zemi4_uvm_attribute=1 *) 
-25.3                       `endif 
-25.4                       begin 
-25.5       1/1               if (uvm_report_enabled(UVM_LOW,UVM_INFO,"TESTBENCH")) 
-25.6       1/1                 uvm_report_info ("TESTBENCH", "Reset released", UVM_LOW, "src/tb/top/axi_top.sv", 25); 
-25.7                       end
+24.1                    `ifdef ZEMI4UVM 
+24.2                          (* zemi4_uvm_attribute=1 *) 
+24.3                       `endif 
+24.4                       begin 
+24.5       1/1               if (uvm_report_enabled(UVM_LOW,UVM_INFO,"TESTBENCH")) 
+24.6       1/1                 uvm_report_info ("TESTBENCH", "Reset released", UVM_LOW, "src/tb/top/axi_top.sv", 24); 
+24.7                       end
                    ==>  MISSING_ELSE
-26                        endtask
-27                      
-28                        initial begin
-29         1/1              apply_reset;
-30         3/3              repeat(10) @(posedge ACLK);
-                        REPEAT_FALSE
-31         1/1              apply_reset;
-32                        end
-33                      
-34                      
-35                      
-36                        intf axi_inf(ACLK, ARESETn);
-37                      
-38                      
-39                        axi4_lite_slave #(
-40                          .DATA_WIDTH (`DATA_WIDTH),
-41                          .ADDR_WIDTH (`ADDR_WIDTH),
-42                          .MEM_DEPTH  (`MEM_DEPTH)
-43                        ) dut (
-44                          .ACLK    (ACLK),
-45                          .ARESETn (ARESETn),
+25                        endtask
+26                      
+27                        initial begin
+28         1/1              apply_reset;
+29                        end
+30                      
+31                        intf axi_inf(ACLK, ARESETn);
+32                      
+33                        axi4_lite_slave #(
+34                          .DATA_WIDTH (`DATA_WIDTH),
+35                          .ADDR_WIDTH (`ADDR_WIDTH),
+36                          .MEM_DEPTH  (`MEM_DEPTH)
+37                        ) dut (
+38                          .ACLK    (ACLK),
+39                          .ARESETn (ARESETn),
+40                      
+41                          // Write Address Channel
+42                          .AWADDR  (axi_inf.AWADDR),
+43                          .AWPROT  (axi_inf.AWPROT),
+44                          .AWVALID (axi_inf.AWVALID),
+45                          .AWREADY (axi_inf.AWREADY),
 46                      
-47                          // Write Address Channel
-48                          .AWADDR  (axi_inf.AWADDR),
-49                          .AWPROT  (axi_inf.AWPROT),
-50                          .AWVALID (axi_inf.AWVALID),
-51                          .AWREADY (axi_inf.AWREADY),
+47                          // Write Data Channel
+48                          .WDATA   (axi_inf.WDATA),
+49                          .WSTRB   (axi_inf.WSTRB),
+50                          .WVALID  (axi_inf.WVALID),
+51                          .WREADY  (axi_inf.WREADY),
 52                      
-53                          // Write Data Channel
-54                          .WDATA   (axi_inf.WDATA),
-55                          .WSTRB   (axi_inf.WSTRB),
-56                          .WVALID  (axi_inf.WVALID),
-57                          .WREADY  (axi_inf.WREADY),
-58                      
-59                          // Write Response Channel
-60                          .BRESP   (axi_inf.BRESP),
-61                          .BVALID  (axi_inf.BVALID),
-62                          .BREADY  (axi_inf.BREADY),
+53                          // Write Response Channel
+54                          .BRESP   (axi_inf.BRESP),
+55                          .BVALID  (axi_inf.BVALID),
+56                          .BREADY  (axi_inf.BREADY),
+57                      
+58                          // Read Address Channel
+59                          .ARADDR  (axi_inf.ARADDR),
+60                          .ARPROT  (axi_inf.ARPROT),
+61                          .ARVALID (axi_inf.ARVALID),
+62                          .ARREADY (axi_inf.ARREADY),
 63                      
-64                          // Read Address Channel
-65                          .ARADDR  (axi_inf.ARADDR),
-66                          .ARPROT  (axi_inf.ARPROT),
-67                          .ARVALID (axi_inf.ARVALID),
-68                          .ARREADY (axi_inf.ARREADY),
-69                      
-70                          // Read Data Channel
-71                          .RDATA   (axi_inf.RDATA),
-72                          .RRESP   (axi_inf.RRESP),
-73                          .RVALID  (axi_inf.RVALID),
-74                          .RREADY  (axi_inf.RREADY)
-75                        );
+64                          // Read Data Channel
+65                          .RDATA   (axi_inf.RDATA),
+66                          .RRESP   (axi_inf.RRESP),
+67                          .RVALID  (axi_inf.RVALID),
+68                          .RREADY  (axi_inf.RREADY)
+69                        );
+70                      
+71                        //axi_assertions axi_assert(axi_inf);
+72                      
+73                        initial begin
+74         1/1              uvm_config_db #(virtual intf)::set(null, "*", "axi_inf", axi_inf);
+75                        end
 76                      
-77                      
-78                       
-79                        axi_assertions axi_assert(axi_inf);
+77                        initial begin
+78         1/1              run_test("axi_regression_test");
+79                        end
 80                      
-81                      
-82                        initial begin
-83         1/1              uvm_config_db #(virtual intf)::set(null, "*", "axi_inf", axi_inf);
+81                        initial begin
+82         1/2     ==>      #100_000;
+83         0/2     ==>      `uvm_fatal("TIMEOUT", "Simulation timed out at 100us!")
+uvm_fatal("TIMEOUT", "Simulation timed out at 100us!"):
+83.1                    `ifdef ZEMI4UVM 
+83.2                          (* zemi4_uvm_attribute=1 *) 
+83.3                       `endif 
+83.4                       begin 
+83.5       0/1     ==>       if (uvm_report_enabled(UVM_NONE,UVM_FATAL,"TIMEOUT")) 
+83.6       0/1     ==>         uvm_report_fatal ("TIMEOUT", "Simulation timed out at 100us!", UVM_NONE, "src/tb/top/axi_top.sv", 83); 
+83.7                       end
+                   ==>  MISSING_ELSE
 84                        end
 85                      
 86                        initial begin
-87         1/1              run_test("axi_regression_test");
-88                        end
-89                      
-90                      
-91                        initial begin
-92         1/2     ==>      #100_000;
-93         0/2     ==>      `uvm_fatal("TIMEOUT", "Simulation timed out at 100us!")
-uvm_fatal("TIMEOUT", "Simulation timed out at 100us!"):
-93.1                    `ifdef ZEMI4UVM 
-93.2                          (* zemi4_uvm_attribute=1 *) 
-93.3                       `endif 
-93.4                       begin 
-93.5       0/1     ==>       if (uvm_report_enabled(UVM_NONE,UVM_FATAL,"TIMEOUT")) 
-93.6       0/1     ==>         uvm_report_fatal ("TIMEOUT", "Simulation timed out at 100us!", UVM_NONE, "src/tb/top/axi_top.sv", 93); 
-93.7                       end
-                   ==>  MISSING_ELSE
-94                        end
-95                      
-96                        initial begin
-97         1/1              $dumpfile("dump.vcd");
-98         1/1              $dumpvars;
+87         1/1              $dumpfile("dump.vcd");
+88         1/1              $dumpvars;
 
 -------------------------------------------------------------------------------
 Toggle Coverage for Module : axi_top
                 Total Covered Percent 
-Totals          2     2       100.00  
-Total Bits      4     4       100.00  
+Totals          2     1       50.00   
+Total Bits      4     3       75.00   
 Total Bits 0->1 2     2       100.00  
-Total Bits 1->0 2     2       100.00  
+Total Bits 1->0 2     1       50.00   
 
                             
-Signals          2 2 100.00 
-Signal Bits      4 4 100.00 
+Signals          2 1 50.00  
+Signal Bits      4 3 75.00  
 Signal Bits 0->1 2 2 100.00 
-Signal Bits 1->0 2 2 100.00 
+Signal Bits 1->0 2 1 50.00  
 
 Signal Details
         Toggle Toggle 1->0 Toggle 0->1 
 ACLK    Yes    Yes         Yes         
-ARESETn Yes    Yes         Yes         
+ARESETn No     No          Yes         
 
 
 -------------------------------------------------------------------------------
 Branch Coverage for Module : axi_top
          Line No. Total Covered Percent 
 Branches          2     0       0.00    
-IF       93       2     0       0.00    
+IF       83       2     0       0.00    
 
 
-93             `uvm_fatal("TIMEOUT", "Simulation timed out at 100us!")
+83             `uvm_fatal("TIMEOUT", "Simulation timed out at 100us!")
                -1-                                                       
                ==>
                MISSING_ELSE
@@ -2016,19 +2006,19 @@ Module Instance : axi_top
 Instance :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 62.82  88.46 --     100.00 --       0.00 
+ 53.79  86.36 --      75.00 --       0.00 
 
 
 Instance's subtree :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 67.38  90.71  60.00  62.86  50.00  73.33 
+ 58.52  86.76  48.00  61.19  30.00  66.67 
 
 
 Module : 
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
- 62.82  88.46 --     100.00 --       0.00 axi_top 
+ 53.79  86.36 --      75.00 --       0.00 axi_top 
 
 
 Parent : 
@@ -2040,114 +2030,9 @@ none
 Subtrees :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
- 64.94 --     --      64.94 --     --     axi_inf 
- 67.72  91.23  60.00  61.51  50.00  75.86 dut     
+ 63.31 --     --      63.31 --     --     axi_inf 
+ 58.75  86.84  48.00  59.97  30.00  68.97 dut     
 
-
-
--------------------------------------------------------------------------------
-Since this is the module's only instance, the coverage report is the same as for the module.
-===============================================================================
-Module : intf
-===============================================================================
-SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 64.94 --     --      64.94 --     --     
-
-Source File(s) : 
-
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/axi_interface.sv
-
-Module self-instances :
-
-SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME            
- 64.94 --     --      64.94 --     --     axi_top.axi_inf 
-
-
-
--------------------------------------------------------------------------------
-Toggle Coverage for Module : intf
-                Total Covered Percent 
-Totals          21    17      80.95   
-Total Bits      308   200     64.94   
-Total Bits 0->1 154   100     64.94   
-Total Bits 1->0 154   100     64.94   
-
-                          
-Ports          2 2 100.00 
-Port Bits      4 4 100.00 
-Port Bits 0->1 2 2 100.00 
-Port Bits 1->0 2 2 100.00 
-
-                                
-Signals          19  15  78.95  
-Signal Bits      304 196 64.47  
-Signal Bits 0->1 152 98  64.47  
-Signal Bits 1->0 152 98  64.47  
-
-Port Details
-        Toggle Toggle 1->0 Toggle 0->1 Direction 
-ACLK    Yes    Yes         Yes         INPUT     
-ARESETn Yes    Yes         Yes         INPUT     
-
-Signal Details
-             Toggle Toggle 1->0 Toggle 0->1 
-AWADDR[7:0]  Yes    Yes         Yes         
-AWADDR[31:8] No     No          No          
-AWPROT[2:0]  No     No          No          
-AWVALID      Yes    Yes         Yes         
-AWREADY      Yes    Yes         Yes         
-WDATA[31:0]  Yes    Yes         Yes         
-WSTRB[3:0]   Yes    Yes         Yes         
-WVALID       Yes    Yes         Yes         
-WREADY       Yes    Yes         Yes         
-BRESP[1:0]   Yes    Yes         Yes         
-BVALID       Yes    Yes         Yes         
-BREADY       Yes    Yes         Yes         
-ARADDR[7:0]  Yes    Yes         Yes         
-ARADDR[31:8] No     No          No          
-ARPROT[2:0]  No     No          No          
-ARVALID      Yes    Yes         Yes         
-ARREADY      Yes    Yes         Yes         
-RDATA[31:0]  Yes    Yes         Yes         
-RRESP[1:0]   Yes    Yes         Yes         
-RVALID       Yes    Yes         Yes         
-RREADY       Yes    Yes         Yes         
-
-
--------------------------------------------------------------------------------
-===============================================================================
-Module Instance : axi_top.axi_inf
-===============================================================================
-
-Instance :
-
-SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 64.94 --     --      64.94 --     --     
-
-
-Instance's subtree :
-
-SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 64.94 --     --      64.94 --     --     
-
-
-Module : 
-
-SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
- 64.94 --     --      64.94 --     --     intf 
-
-
-Parent : 
-
-SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
- 62.82  88.46 --     100.00 --       0.00 axi_top 
-
-
-Subtrees :
-
-
-no children
-----------------
 
 
 -------------------------------------------------------------------------------
@@ -2156,7 +2041,7 @@ Since this is the module's only instance, the coverage report is the same as for
 Module : axi4_lite_slave
 ===============================================================================
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 67.72  91.23  60.00  61.51  50.00  75.86 
+ 58.75  86.84  48.00  59.97  30.00  68.97 
 
 Source File(s) : 
 
@@ -2165,7 +2050,7 @@ Source File(s) :
 Module self-instances :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
- 67.72  91.23  60.00  61.51  50.00  75.86 axi_top.dut 
+ 58.75  86.84  48.00  59.97  30.00  68.97 axi_top.dut 
 
 
 
@@ -2173,11 +2058,11 @@ SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME
 Line Coverage for Module : axi4_lite_slave
 
              Line No.   Total   Covered  Percent
-TOTAL                      114      104    91.23
+TOTAL                      114       99    86.84
 ALWAYS             78       18       18   100.00
 ALWAYS            108        3        3   100.00
-ALWAYS            114       17       12    70.59
-ALWAYS            132       41       37    90.24
+ALWAYS            114       17       10    58.82
+ALWAYS            132       41       34    82.93
 ALWAYS            216        3        3   100.00
 ALWAYS            222        7        6    85.71
 ALWAYS            233       25       25   100.00
@@ -2233,8 +2118,8 @@ ALWAYS            233       25       25   100.00
 122                             end
 123        0/2     ==>          W_ADDR: if (AWVALID && AWREADY) n_wr_state = W_RESP;
                    ==>  MISSING_ELSE
-124        2/2                  W_DATA: if (WVALID  && WREADY)  n_wr_state = W_RESP;
-                        MISSING_ELSE
+124        0/2     ==>          W_DATA: if (WVALID  && WREADY)  n_wr_state = W_RESP;
+                   ==>  MISSING_ELSE
 125        2/2                  W_RESP: if (BVALID  && BREADY)  n_wr_state = W_IDLE;
                         MISSING_ELSE
 126        0/1     ==>          default:                        n_wr_state = W_IDLE;
@@ -2262,7 +2147,7 @@ ALWAYS            233       25       25   100.00
 148        1/1                               AWREADY <= 1'b0;
                    ==>  MISSING_ELSE
 149        2/2                          if (w_done  || (WVALID  && WREADY ))  WREADY  <= 1'b0;
-                        MISSING_ELSE
+                   ==>  MISSING_ELSE
 150                                 end
 151                                 W_ADDR: begin
 152        0/1     ==>                  AWREADY <= 1'b1;
@@ -2270,8 +2155,8 @@ ALWAYS            233       25       25   100.00
                    ==>  MISSING_ELSE
 154                                 end
 155                                 W_DATA: begin
-156        1/1                          WREADY <= 1'b1;
-157        2/2                          if (WVALID && WREADY) WREADY <= 1'b0;
+156        0/1     ==>                  WREADY <= 1'b1;
+157        0/2     ==>                  if (WVALID && WREADY) WREADY <= 1'b0;
                    ==>  MISSING_ELSE
 158                                 end
 159                                 W_RESP: begin
@@ -2405,8 +2290,8 @@ ALWAYS            233       25       25   100.00
 Cond Coverage for Module : axi4_lite_slave
 
                Total   Covered  Percent
-Conditions        100       60    60.00
-Logical           100       60    60.00
+Conditions        100       48    48.00
+Logical           100       48    48.00
 Non-Logical         0        0
 Event               0        0
 
@@ -2426,7 +2311,7 @@ Event               0        0
 
 -1- -2- Status
  0   1  Covered
- 1   0  Covered
+ 1   0  Not Covered
  1   1  Covered
 
  LINE       98
@@ -2462,7 +2347,7 @@ Event               0        0
 
 -1- -2- Status
  0   0  Not Covered
- 0   1  Covered
+ 0   1  Not Covered
  1   0  Covered
 
  LINE       118
@@ -2498,7 +2383,7 @@ Event               0        0
 
 -1- -2- Status
  0   0  Not Covered
- 0   1  Covered
+ 0   1  Not Covered
  1   0  Not Covered
 
  LINE       120
@@ -2542,9 +2427,9 @@ Event               0        0
              ---1--    ---2--
 
 -1- -2- Status
- 0   1  Covered
+ 0   1  Not Covered
  1   0  Not Covered
- 1   1  Covered
+ 1   1  Not Covered
 
  LINE       125
  EXPRESSION (BVALID && BREADY)
@@ -2561,7 +2446,7 @@ Event               0        0
 
 -1- -2- Status
  0   0  Not Covered
- 0   1  Covered
+ 0   1  Not Covered
  1   0  Covered
 
  LINE       147
@@ -2571,14 +2456,14 @@ Event               0        0
 -1- -2- Status
  0   1  Covered
  1   0  Not Covered
- 1   1  Covered
+ 1   1  Not Covered
 
  LINE       149
  EXPRESSION (w_done || (WVALID && WREADY))
              ---1--    ---------2--------
 
 -1- -2- Status
- 0   0  Covered
+ 0   0  Not Covered
  0   1  Covered
  1   0  Not Covered
 
@@ -2587,7 +2472,7 @@ Event               0        0
                  ---1--    ---2--
 
 -1- -2- Status
- 0   1  Covered
+ 0   1  Not Covered
  1   0  Not Covered
  1   1  Covered
 
@@ -2607,7 +2492,7 @@ Event               0        0
 -1- -2- Status
  0   1  Not Covered
  1   0  Not Covered
- 1   1  Covered
+ 1   1  Not Covered
 
  LINE       164
  EXPRESSION (wr_addr_ro || wr_addr_unaligned)
@@ -2633,7 +2518,7 @@ Event               0        0
 
 -1- -2- Status
  0   1  Covered
- 1   0  Covered
+ 1   0  Not Covered
  1   1  Covered
 
  LINE       226
@@ -2651,7 +2536,7 @@ Event               0        0
 
 -1- -2- Status
  0   1  Covered
- 1   0  Covered
+ 1   0  Not Covered
  1   1  Covered
 
  LINE       256
@@ -2711,27 +2596,27 @@ Event               0        0
 -------------------------------------------------------------------------------
 Toggle Coverage for Module : axi4_lite_slave
                 Total Covered Percent 
-Totals          43    32      74.42   
-Total Bits      582   358     61.51   
-Total Bits 0->1 291   179     61.51   
-Total Bits 1->0 291   179     61.51   
+Totals          43    27      62.79   
+Total Bits      582   349     59.97   
+Total Bits 0->1 291   177     60.82   
+Total Bits 1->0 291   172     59.11   
 
                               
-Ports          21  17  80.95  
-Port Bits      308 200 64.94  
+Ports          21  14  66.67  
+Port Bits      308 195 63.31  
 Port Bits 0->1 154 100 64.94  
-Port Bits 1->0 154 100 64.94  
+Port Bits 1->0 154 95  61.69  
 
                                 
-Signals          22  15  68.18  
-Signal Bits      274 158 57.66  
-Signal Bits 0->1 137 79  57.66  
-Signal Bits 1->0 137 79  57.66  
+Signals          22  13  59.09  
+Signal Bits      274 154 56.20  
+Signal Bits 0->1 137 77  56.20  
+Signal Bits 1->0 137 77  56.20  
 
 Port Details
              Toggle Toggle 1->0 Toggle 0->1 Direction 
 ACLK         Yes    Yes         Yes         INPUT     
-ARESETn      Yes    Yes         Yes         INPUT     
+ARESETn      No     No          Yes         INPUT     
 AWADDR[7:0]  Yes    Yes         Yes         INPUT     
 AWADDR[31:8] No     No          No          INPUT     
 AWPROT[2:0]  No     No          No          INPUT     
@@ -2741,7 +2626,7 @@ WDATA[31:0]  Yes    Yes         Yes         INPUT
 WSTRB[3:0]   Yes    Yes         Yes         INPUT     
 WVALID       Yes    Yes         Yes         INPUT     
 WREADY       Yes    Yes         Yes         OUTPUT    
-BRESP[1:0]   Yes    Yes         Yes         OUTPUT    
+BRESP[1:0]   No     No          Yes         OUTPUT    
 BVALID       Yes    Yes         Yes         OUTPUT    
 BREADY       Yes    Yes         Yes         INPUT     
 ARADDR[7:0]  Yes    Yes         Yes         INPUT     
@@ -2750,15 +2635,19 @@ ARPROT[2:0]  No     No          No          INPUT
 ARVALID      Yes    Yes         Yes         INPUT     
 ARREADY      Yes    Yes         Yes         OUTPUT    
 RDATA[31:0]  Yes    Yes         Yes         OUTPUT    
-RRESP[1:0]   Yes    Yes         Yes         OUTPUT    
+RRESP[1:0]   No     No          Yes         OUTPUT    
 RVALID       Yes    Yes         Yes         OUTPUT    
 RREADY       Yes    Yes         Yes         INPUT     
 
 Signal Details
                   Toggle Toggle 1->0 Toggle 0->1 
 slave_prot[2:0]   No     No          No          
-wr_state[2:0]     Yes    Yes         Yes         
-n_wr_state[2:0]   Yes    Yes         Yes         
+wr_state[0]       Yes    Yes         Yes         
+wr_state[1]       No     No          No          
+wr_state[2]       Yes    Yes         Yes         
+n_wr_state[0]     Yes    Yes         Yes         
+n_wr_state[1]     No     No          No          
+n_wr_state[2]     Yes    Yes         Yes         
 aw_done           Yes    Yes         Yes         
 w_done            Yes    Yes         Yes         
 wr_addr_lat[7:0]  Yes    Yes         Yes         
@@ -2786,8 +2675,8 @@ rd_addr_wo        Yes    Yes         Yes
 FSM Coverage for Module : axi4_lite_slave
 Summary for FSM :: wr_state
             Total Covered Percent                         
-States      5     4       80.00   (Not included in score) 
-Transitions 10    5       50.00                           
+States      5     3       60.00   (Not included in score) 
+Transitions 10    3       30.00                           
 Sequences   0     0                                       
 
 State, Transition and Sequence Details for FSM :: wr_state
@@ -2795,7 +2684,7 @@ State, Transition and Sequence Details for FSM :: wr_state
 states Line No. Covered     
 W_ADDR 121      Not Covered 
 W_BOTH 116      Covered     
-W_DATA 120      Covered     
+W_DATA 120      Not Covered 
 W_IDLE 108      Covered     
 W_RESP 119      Covered     
 
@@ -2803,11 +2692,11 @@ transitions    Line No. Covered
 W_ADDR->W_IDLE 108      Not Covered 
 W_ADDR->W_RESP 123      Not Covered 
 W_BOTH->W_ADDR 121      Not Covered 
-W_BOTH->W_DATA 120      Covered     
+W_BOTH->W_DATA 120      Not Covered 
 W_BOTH->W_IDLE 108      Not Covered 
 W_BOTH->W_RESP 119      Covered     
 W_DATA->W_IDLE 108      Not Covered 
-W_DATA->W_RESP 124      Covered     
+W_DATA->W_RESP 124      Not Covered 
 W_IDLE->W_BOTH 116      Covered     
 W_RESP->W_IDLE 108      Covered     
 
@@ -2815,11 +2704,11 @@ W_RESP->W_IDLE 108      Covered
 -------------------------------------------------------------------------------
 Branch Coverage for Module : axi4_lite_slave
          Line No. Total Covered Percent 
-Branches          58    44      75.86   
+Branches          58    40      68.97   
 IF       78       5     5       100.00  
 IF       108      2     2       100.00  
-CASE     115      13    8       61.54   
-IF       132      23    17      73.91   
+CASE     115      13    6       46.15   
+IF       132      23    15      65.22   
 IF       216      2     2       100.00  
 CASE     224      5     4       80.00   
 IF       233      8     6       75.00   
@@ -2934,8 +2823,8 @@ W_BOTH  -   0   0   1   -   -   -   Not Covered
 W_BOTH  -   0   0   0   -   -   -   Not Covered 
 W_ADDR  -   -   -   -   1   -   -   Not Covered 
 W_ADDR  -   -   -   -   0   -   -   Not Covered 
-W_DATA  -   -   -   -   -   1   -   Covered     
-W_DATA  -   -   -   -   -   0   -   Covered     
+W_DATA  -   -   -   -   -   1   -   Not Covered 
+W_DATA  -   -   -   -   -   0   -   Not Covered 
 W_RESP  -   -   -   -   -   -   1   Covered     
 W_RESP  -   -   -   -   -   -   0   Covered     
 default -   -   -   -   -   -   -   Not Covered 
@@ -3051,10 +2940,10 @@ Branches:
 0   W_BOTH          1   -   -   -   -   -   -   -    -    -    -    -    Covered     
 0   W_BOTH          0   -   -   -   -   -   -   -    -    -    -    -    Not Covered 
 0   W_BOTH          -   1   -   -   -   -   -   -    -    -    -    -    Covered     
-0   W_BOTH          -   0   -   -   -   -   -   -    -    -    -    -    Covered     
+0   W_BOTH          -   0   -   -   -   -   -   -    -    -    -    -    Not Covered 
 0   W_ADDR          -   -   1   -   -   -   -   -    -    -    -    -    Not Covered 
 0   W_ADDR          -   -   0   -   -   -   -   -    -    -    -    -    Not Covered 
-0   W_DATA          -   -   -   1   -   -   -   -    -    -    -    -    Covered     
+0   W_DATA          -   -   -   1   -   -   -   -    -    -    -    -    Not Covered 
 0   W_DATA          -   -   -   0   -   -   -   -    -    -    -    -    Not Covered 
 0   W_RESP          -   -   -   -   1   1   -   -    -    -    -    -    Covered     
 0   W_RESP          -   -   -   -   1   0   1   -    -    -    -    -    Covered     
@@ -3190,25 +3079,130 @@ Module Instance : axi_top.dut
 Instance :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 67.72  91.23  60.00  61.51  50.00  75.86 
+ 58.75  86.84  48.00  59.97  30.00  68.97 
 
 
 Instance's subtree :
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH 
- 67.72  91.23  60.00  61.51  50.00  75.86 
+ 58.75  86.84  48.00  59.97  30.00  68.97 
 
 
 Module : 
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME            
- 67.72  91.23  60.00  61.51  50.00  75.86 axi4_lite_slave 
+ 58.75  86.84  48.00  59.97  30.00  68.97 axi4_lite_slave 
 
 
 Parent : 
 
 SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
- 62.82  88.46 --     100.00 --       0.00 axi_top 
+ 53.79  86.36 --      75.00 --       0.00 axi_top 
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.
+===============================================================================
+Module : intf
+===============================================================================
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 63.31 --     --      63.31 --     --     
+
+Source File(s) : 
+
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/axi_interface.sv
+
+Module self-instances :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME            
+ 63.31 --     --      63.31 --     --     axi_top.axi_inf 
+
+
+
+-------------------------------------------------------------------------------
+Toggle Coverage for Module : intf
+                Total Covered Percent 
+Totals          21    14      66.67   
+Total Bits      308   195     63.31   
+Total Bits 0->1 154   100     64.94   
+Total Bits 1->0 154   95      61.69   
+
+                          
+Ports          2 1 50.00  
+Port Bits      4 3 75.00  
+Port Bits 0->1 2 2 100.00 
+Port Bits 1->0 2 1 50.00  
+
+                                
+Signals          19  13  68.42  
+Signal Bits      304 192 63.16  
+Signal Bits 0->1 152 98  64.47  
+Signal Bits 1->0 152 94  61.84  
+
+Port Details
+        Toggle Toggle 1->0 Toggle 0->1 Direction 
+ACLK    Yes    Yes         Yes         INPUT     
+ARESETn No     No          Yes         INPUT     
+
+Signal Details
+             Toggle Toggle 1->0 Toggle 0->1 
+AWADDR[7:0]  Yes    Yes         Yes         
+AWADDR[31:8] No     No          No          
+AWPROT[2:0]  No     No          No          
+AWVALID      Yes    Yes         Yes         
+AWREADY      Yes    Yes         Yes         
+WDATA[31:0]  Yes    Yes         Yes         
+WSTRB[3:0]   Yes    Yes         Yes         
+WVALID       Yes    Yes         Yes         
+WREADY       Yes    Yes         Yes         
+BRESP[1:0]   No     No          Yes         
+BVALID       Yes    Yes         Yes         
+BREADY       Yes    Yes         Yes         
+ARADDR[7:0]  Yes    Yes         Yes         
+ARADDR[31:8] No     No          No          
+ARPROT[2:0]  No     No          No          
+ARVALID      Yes    Yes         Yes         
+ARREADY      Yes    Yes         Yes         
+RDATA[31:0]  Yes    Yes         Yes         
+RRESP[1:0]   No     No          Yes         
+RVALID       Yes    Yes         Yes         
+RREADY       Yes    Yes         Yes         
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : axi_top.axi_inf
+===============================================================================
+
+Instance :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 63.31 --     --      63.31 --     --     
+
+
+Instance's subtree :
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 63.31 --     --      63.31 --     --     
+
+
+Module : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME 
+ 63.31 --     --      63.31 --     --     intf 
+
+
+Parent : 
+
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME    
+ 53.79  86.36 --      75.00 --       0.00 axi_top 
 
 
 Subtrees :

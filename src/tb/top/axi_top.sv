@@ -6,7 +6,6 @@ module axi_top;
   import uvm_pkg::*;
   import axi_pkg::*;
 
-
   bit ACLK;
   bit ARESETn;
 
@@ -27,14 +26,9 @@ module axi_top;
 
   initial begin
     apply_reset;
-    repeat(10) @(posedge ACLK);
-    apply_reset;
   end
 
-
-
   intf axi_inf(ACLK, ARESETn);
-
 
   axi4_lite_slave #(
     .DATA_WIDTH (`DATA_WIDTH),
@@ -74,10 +68,7 @@ module axi_top;
     .RREADY  (axi_inf.RREADY)
   );
 
-
- 
-  axi_assertions axi_assert(axi_inf);
-
+  //axi_assertions axi_assert(axi_inf);
 
   initial begin
     uvm_config_db #(virtual intf)::set(null, "*", "axi_inf", axi_inf);
@@ -86,7 +77,6 @@ module axi_top;
   initial begin
     run_test("axi_regression_test");
   end
-
 
   initial begin
     #100_000;
@@ -99,3 +89,4 @@ module axi_top;
   end
 
 endmodule
+

@@ -3,20 +3,20 @@
 ========================================================================================
 TEST NAME              SEED   STATUS   WR COV       RD COV       LOG FILE                 
 ----------------------------------------------------------------------------------------
-axi_sanity_test        1      PASSED   31.67%       48.96%       regression_logs/axi_sanity_test_seed_1.log
-axi_sanity_test        2      PASSED   31.67%       53.65%       regression_logs/axi_sanity_test_seed_2.log
-axi_b2b_write_test     1      PASSED   29.17%       0.00%        regression_logs/axi_b2b_write_test_seed_1.log
-axi_b2b_write_test     2      PASSED   31.67%       0.00%        regression_logs/axi_b2b_write_test_seed_2.log
-axi_slv_err_test       1      PASSED   21.67%       36.46%       regression_logs/axi_slv_err_test_seed_1.log
-axi_slv_err_test       2      PASSED   21.67%       36.46%       regression_logs/axi_slv_err_test_seed_2.log
-axi_dec_err_test       1      PASSED   24.17%       42.71%       regression_logs/axi_dec_err_test_seed_1.log
-axi_dec_err_test       2      PASSED   26.67%       45.83%       regression_logs/axi_dec_err_test_seed_2.log
-axi_unaligned_test     1      PASSED   27.92%       45.83%       regression_logs/axi_unaligned_test_seed_1.log
-axi_unaligned_test     2      PASSED   27.92%       45.83%       regression_logs/axi_unaligned_test_seed_2.log
-axi_wstrb_test         1      PASSED   45.42%       22.40%       regression_logs/axi_wstrb_test_seed_1.log
-axi_wstrb_test         2      PASSED   46.67%       22.40%       regression_logs/axi_wstrb_test_seed_2.log
-axi_corner_data_test   1      PASSED   29.17%       48.96%       regression_logs/axi_corner_data_test_seed_1.log
-axi_corner_data_test   2      PASSED   29.17%       48.96%       regression_logs/axi_corner_data_test_seed_2.log
-axi_negative_test      1      FAILED   31.67%       38.02%       regression_logs/axi_negative_test_seed_1.log
-axi_negative_test      2      FAILED   31.67%       38.02%       regression_logs/axi_negative_test_seed_2.log
+axi_sanity_test        1      PASSED   39.58%       48.61%       regression_logs/axi_sanity_test_seed_1.log
+axi_sanity_test        2      PASSED   39.58%       54.86%       regression_logs/axi_sanity_test_seed_2.log
+axi_b2b_write_test     1      PASSED   36.46%       0.00%        regression_logs/axi_b2b_write_test_seed_1.log
+axi_b2b_write_test     2      PASSED   39.58%       0.00%        regression_logs/axi_b2b_write_test_seed_2.log
+axi_slv_err_test       1      PASSED   27.08%       31.94%       regression_logs/axi_slv_err_test_seed_1.log
+axi_slv_err_test       2      PASSED   27.08%       31.94%       regression_logs/axi_slv_err_test_seed_2.log
+axi_dec_err_test       1      PASSED   30.21%       40.28%       regression_logs/axi_dec_err_test_seed_1.log
+axi_dec_err_test       2      PASSED   33.33%       44.44%       regression_logs/axi_dec_err_test_seed_2.log
+axi_unaligned_test     1      PASSED   34.90%       44.44%       regression_logs/axi_unaligned_test_seed_1.log
+axi_unaligned_test     2      PASSED   34.90%       44.44%       regression_logs/axi_unaligned_test_seed_2.log
+axi_wstrb_test         1      PASSED   58.33%       29.86%       regression_logs/axi_wstrb_test_seed_1.log
+axi_wstrb_test         2      PASSED   61.46%       29.86%       regression_logs/axi_wstrb_test_seed_2.log
+axi_corner_data_test   1      PASSED   23.96%       48.61%       regression_logs/axi_corner_data_test_seed_1.log
+axi_corner_data_test   2      PASSED   23.96%       48.61%       regression_logs/axi_corner_data_test_seed_2.log
+axi_negative_test      1      PASSED   27.08%       34.03%       regression_logs/axi_negative_test_seed_1.log
+axi_negative_test      2      PASSED   27.08%       34.03%       regression_logs/axi_negative_test_seed_2.log
 ========================================================================================

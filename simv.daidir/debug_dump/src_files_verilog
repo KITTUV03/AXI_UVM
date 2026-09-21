@@ -152,13 +152,13 @@
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_active_agent.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_driver.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_input_monitor.sv
+/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_out_monitor.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_override_driver.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_sequencer.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/agent/axi_trans.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/env/axi_env.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/env/axi_scoreboard.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/env/axi_subscriber.sv
-/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/axi_assertion.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/axi_interface.sv
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/include/define.svh
 /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/src/tb/sequences/axi_b2b_read.sv

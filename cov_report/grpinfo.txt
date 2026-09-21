@@ -4,7 +4,7 @@ Group : axi_pkg::axi_sub::write_cg
 Group : axi_pkg::axi_sub::write_cg
 ===============================================================================
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
- 86.25  86.25    1      100    1        1            64           64            
+ 96.88  96.88    1      100    1        1            64           64            
 
 
 Source File(s) : 
@@ -14,7 +14,7 @@ Source File(s) :
 1 Instances:
 
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                    
- 86.25 1      100    1        64           64            axi_top.me.obj.write_cg 
+ 96.88 1      100    1        64           64            axi_top.me.obj.write_cg 
 
 
 
@@ -26,7 +26,7 @@ Summary for Group   axi_pkg::axi_sub::write_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 39       4         35      86.25   
+Variables 37       2         35      96.88   
 
 
 Variables for Group  axi_pkg::axi_sub::write_cg
@@ -35,9 +35,8 @@ Variables for Group  axi_pkg::axi_sub::write_cg
 VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
 wr_addr_cp       16       2         14      87.50   100  1      1        0                    
 wr_addr_range_cp 2        0         2       100.00  100  1      1        0                    
-wstrb_cp         16       1         15      93.75   100  1      1        0                    
+wstrb_cp         16       0         16      100.00  100  1      1        0                    
 bresp_cp         3        0         3       100.00  100  1      1        0                    
-wdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -64,18 +63,18 @@ Covered bins
 NAME       COUNT AT LEAST 
 ro_addrs_a 9     1        
 ro_addrs_b 7     1        
-ro_addrs_c 5     1        
-rw_addrs_0 144   1        
+ro_addrs_c 7     1        
+rw_addrs_0 152   1        
 rw_addrs_1 23    1        
 rw_addrs_2 17    1        
 rw_addrs_3 18    1        
-rw_addrs_4 21    1        
-rw_addrs_5 19    1        
+rw_addrs_4 22    1        
+rw_addrs_5 20    1        
 rw_addrs_6 24    1        
 rw_addrs_7 29    1        
-rw_addrs_8 21    1        
+rw_addrs_8 22    1        
 rw_addrs_9 10    1        
-rw_addrs_f 13    1        
+rw_addrs_f 16    1        
 
 
 -------------------------------------------------------------------------------
@@ -93,8 +92,8 @@ User Defined Bins for wr_addr_range_cp
 Bins
 
 NAME          COUNT AT LEAST 
-invalid_range 18    1        
-valid_range   342   1        
+invalid_range 20    1        
+valid_range   356   1        
 
 
 -------------------------------------------------------------------------------
@@ -103,19 +102,13 @@ Summary for Variable wstrb_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 16       1         15      93.75   
+User Defined Bins 16       0         16      100.00  
 
 
 User Defined Bins for wstrb_cp
 
 
-Uncovered bins
-
-NAME          COUNT AT LEAST NUMBER 
-single_byte_1 0     1        1      
-
-
-Covered bins
+Bins
 
 NAME          COUNT AT LEAST 
 three_bytes_7 2     1        
@@ -128,11 +121,12 @@ two_bytes_6   2     1
 two_bytes_9   2     1        
 two_bytes_a   2     1        
 two_bytes_c   2     1        
+single_byte_1 2     1        
 single_byte_2 2     1        
 single_byte_4 2     1        
 single_byte_8 2     1        
-no_bytes      128   1        
-all_bytes     206   1        
+no_bytes      130   1        
+all_bytes     218   1        
 
 
 -------------------------------------------------------------------------------
@@ -150,39 +144,9 @@ User Defined Bins for bresp_cp
 Bins
 
 NAME   COUNT AT LEAST 
-decerr 18    1        
-slverr 64    1        
-okay   278   1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Variable wdata_cp
-
-
-CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        1         1       50.00   
-
-
-User Defined Bins for wdata_cp
-
-
-Uncovered bins
-
-NAME     COUNT AT LEAST NUMBER 
-all_ones 0     1        1      
-
-
-Excluded/Illegal bins
-
-NAME   COUNT STATUS   
-others 234   Excluded 
-
-
-Covered bins
-
-NAME COUNT AT LEAST 
-zero 126   1        
+decerr 20    1        
+slverr 68    1        
+okay   288   1        
 
 
 -------------------------------------------------------------------------------
@@ -190,13 +154,13 @@ zero 126   1
 Group Instance : axi_top.me.obj.write_cg
 ===============================================================================
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
- 86.25 1      100    1        64           64            
+ 96.88 1      100    1        64           64            
 
 
 Group:
 
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                       
- 86.25  86.25    1      100    1        1            64           64                    axi_pkg::axi_sub::write_cg 
+ 96.88  96.88    1      100    1        1            64           64                    axi_pkg::axi_sub::write_cg 
 
 
 
@@ -207,7 +171,7 @@ Summary for Group Instance   axi_top.me.obj.write_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 39       4         35      86.25   
+Variables 37       2         35      96.88   
 
 
 Variables for Group Instance  axi_top.me.obj.write_cg
@@ -216,9 +180,8 @@ Variables for Group Instance  axi_top.me.obj.write_cg
 VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
 wr_addr_cp       16       2         14      87.50   100  1      1        0                    
 wr_addr_range_cp 2        0         2       100.00  100  1      1        0                    
-wstrb_cp         16       1         15      93.75   100  1      1        0                    
+wstrb_cp         16       0         16      100.00  100  1      1        0                    
 bresp_cp         3        0         3       100.00  100  1      1        0                    
-wdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -245,18 +208,18 @@ Covered bins
 NAME       COUNT AT LEAST 
 ro_addrs_a 9     1        
 ro_addrs_b 7     1        
-ro_addrs_c 5     1        
-rw_addrs_0 144   1        
+ro_addrs_c 7     1        
+rw_addrs_0 152   1        
 rw_addrs_1 23    1        
 rw_addrs_2 17    1        
 rw_addrs_3 18    1        
-rw_addrs_4 21    1        
-rw_addrs_5 19    1        
+rw_addrs_4 22    1        
+rw_addrs_5 20    1        
 rw_addrs_6 24    1        
 rw_addrs_7 29    1        
-rw_addrs_8 21    1        
+rw_addrs_8 22    1        
 rw_addrs_9 10    1        
-rw_addrs_f 13    1        
+rw_addrs_f 16    1        
 
 
 -------------------------------------------------------------------------------
@@ -274,8 +237,8 @@ User Defined Bins for wr_addr_range_cp
 Bins
 
 NAME          COUNT AT LEAST 
-invalid_range 18    1        
-valid_range   342   1        
+invalid_range 20    1        
+valid_range   356   1        
 
 
 -------------------------------------------------------------------------------
@@ -284,19 +247,13 @@ Summary for Variable wstrb_cp
 
 
 CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 16       1         15      93.75   
+User Defined Bins 16       0         16      100.00  
 
 
 User Defined Bins for wstrb_cp
 
 
-Uncovered bins
-
-NAME          COUNT AT LEAST NUMBER 
-single_byte_1 0     1        1      
-
-
-Covered bins
+Bins
 
 NAME          COUNT AT LEAST 
 three_bytes_7 2     1        
@@ -309,11 +266,12 @@ two_bytes_6   2     1
 two_bytes_9   2     1        
 two_bytes_a   2     1        
 two_bytes_c   2     1        
+single_byte_1 2     1        
 single_byte_2 2     1        
 single_byte_4 2     1        
 single_byte_8 2     1        
-no_bytes      128   1        
-all_bytes     206   1        
+no_bytes      130   1        
+all_bytes     218   1        
 
 
 -------------------------------------------------------------------------------
@@ -331,39 +289,9 @@ User Defined Bins for bresp_cp
 Bins
 
 NAME   COUNT AT LEAST 
-decerr 18    1        
-slverr 64    1        
-okay   278   1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Variable wdata_cp
-
-
-CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        1         1       50.00   
-
-
-User Defined Bins for wdata_cp
-
-
-Uncovered bins
-
-NAME     COUNT AT LEAST NUMBER 
-all_ones 0     1        1      
-
-
-Excluded/Illegal bins
-
-NAME   COUNT STATUS   
-others 234   Excluded 
-
-
-Covered bins
-
-NAME COUNT AT LEAST 
-zero 126   1        
+decerr 20    1        
+slverr 68    1        
+okay   288   1        
 
 
 Group : axi_pkg::axi_sub::read_cg
@@ -372,7 +300,7 @@ Group : axi_pkg::axi_sub::read_cg
 Group : axi_pkg::axi_sub::read_cg
 ===============================================================================
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING 
- 87.50  87.50    1      100    1        1            64           64            
+100.00 100.00    1      100    1        1            64           64            
 
 
 Source File(s) : 
@@ -382,7 +310,7 @@ Source File(s) :
 1 Instances:
 
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING NAME                   
- 87.50 1      100    1        64           64            axi_top.me.obj.read_cg 
+100.00 1      100    1        64           64            axi_top.me.obj.read_cg 
 
 
 
@@ -394,7 +322,7 @@ Summary for Group   axi_pkg::axi_sub::read_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 23       1         22      87.50   
+Variables 21       0         21      100.00  
 
 
 Variables for Group  axi_pkg::axi_sub::read_cg
@@ -404,7 +332,6 @@ VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BI
 rd_addr_cp       16       0         16      100.00  100  1      1        0                    
 rd_addr_range_cp 2        0         2       100.00  100  1      1        0                    
 rresp_cp         3        0         3       100.00  100  1      1        0                    
-rdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -480,47 +407,17 @@ okay   228   1
 
 
 -------------------------------------------------------------------------------
-
-Summary for Variable rdata_cp
-
-
-CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        1         1       50.00   
-
-
-User Defined Bins for rdata_cp
-
-
-Uncovered bins
-
-NAME     COUNT AT LEAST NUMBER 
-all_ones 0     1        1      
-
-
-Excluded/Illegal bins
-
-NAME   COUNT STATUS   
-others 85    Excluded 
-
-
-Covered bins
-
-NAME COUNT AT LEAST 
-zero 231   1        
-
-
--------------------------------------------------------------------------------
 ===============================================================================
 Group Instance : axi_top.me.obj.read_cg
 ===============================================================================
 SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
- 87.50 1      100    1        64           64            
+100.00 1      100    1        64           64            
 
 
 Group:
 
 SCORE  INSTANCES WEIGHT GOAL   AT LEAST PER INSTANCE AUTO BIN MAX PRINT MISSING COMMENT NAME                      
- 87.50  87.50    1      100    1        1            64           64                    axi_pkg::axi_sub::read_cg 
+100.00 100.00    1      100    1        1            64           64                    axi_pkg::axi_sub::read_cg 
 
 
 
@@ -531,7 +428,7 @@ Summary for Group Instance   axi_top.me.obj.read_cg
 
 
 CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
-Variables 23       1         22      87.50   
+Variables 21       0         21      100.00  
 
 
 Variables for Group Instance  axi_top.me.obj.read_cg
@@ -541,7 +438,6 @@ VARIABLE         EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BI
 rd_addr_cp       16       0         16      100.00  100  1      1        0                    
 rd_addr_range_cp 2        0         2       100.00  100  1      1        0                    
 rresp_cp         3        0         3       100.00  100  1      1        0                    
-rdata_cp         2        1         1       50.00   100  1      1        0                    
 
 
 -------------------------------------------------------------------------------
@@ -614,35 +510,5 @@ NAME   COUNT AT LEAST
 decerr 20    1        
 slverr 68    1        
 okay   228   1        
-
-
--------------------------------------------------------------------------------
-
-Summary for Variable rdata_cp
-
-
-CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
-User Defined Bins 2        1         1       50.00   
-
-
-User Defined Bins for rdata_cp
-
-
-Uncovered bins
-
-NAME     COUNT AT LEAST NUMBER 
-all_ones 0     1        1      
-
-
-Excluded/Illegal bins
-
-NAME   COUNT STATUS   
-others 85    Excluded 
-
-
-Covered bins
-
-NAME COUNT AT LEAST 
-zero 231   1        
 
 

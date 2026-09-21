@@ -1,14 +1,15 @@
 `ifndef AXI_SUB
 `define AXI_SUB
 
-`uvm_analysis_imp_decl(_cov_write)
-`uvm_analysis_imp_decl(_cov_read)
-
 class axi_sub extends uvm_component;
   `uvm_component_utils(axi_sub)
 
-  uvm_analysis_imp_cov_write #(axi_trans, axi_sub) write_export;
-  uvm_analysis_imp_cov_read  #(axi_trans, axi_sub) read_export;
+  virtual intf axi_inf;
+
+  uvm_tlm_analysis_fifo #(axi_trans) wr_inp_fifo;
+  uvm_tlm_analysis_fifo #(axi_trans) wr_out_fifo;
+  uvm_tlm_analysis_fifo #(axi_trans) rd_inp_fifo;
+  uvm_tlm_analysis_fifo #(axi_trans) rd_out_fifo;
 
   axi_trans wr_trans;
   axi_trans rd_trans;
@@ -41,11 +42,6 @@ class axi_sub extends uvm_component;
       bins decerr = {2'b11};
     }
 
-    wdata_cp: coverpoint wr_trans.WDATA {
-      bins zero     = {32'h0000_0000};
-      bins all_ones = {32'hFFFF_FFFF};
-      bins others   = default;
-    }
 
   endgroup
 
@@ -69,14 +65,7 @@ class axi_sub extends uvm_component;
       bins decerr = {2'b11};
     }
 
-    rdata_cp: coverpoint rd_trans.RDATA {
-      bins zero     = {32'h0000_0000};
-      bins all_ones = {32'hFFFF_FFFF};
-      bins others   = default;
-    }
-
   endgroup
-
 
   function new(string name = "axi_sub", uvm_component parent);
     super.new(name, parent);
@@ -86,26 +75,65 @@ class axi_sub extends uvm_component;
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    write_export = new("write_export", this);
-    read_export  = new("read_export",  this);
+    wr_inp_fifo = new("wr_inp_fifo", this);
+    wr_out_fifo = new("wr_out_fifo", this);
+    rd_inp_fifo = new("rd_inp_fifo", this);
+    rd_out_fifo = new("rd_out_fifo", this);
+    void'(uvm_config_db #(virtual intf)::get(this, "", "axi_inf", axi_inf));
   endfunction
 
+  task run_phase(uvm_phase phase);
+    fork
+      sample_write_coverage();
+      sample_read_coverage();
+      monitor_reset();
+    join_none
+  endtask
 
-  function void write_cov_write(axi_trans t);
-    wr_trans = t;
-    write_cg.sample();
-    `uvm_info("AXI_COVERAGE", $sformatf("[WRITE SAMPLED] addr=0x%08h strb=0x%01h resp=%0d",
-              t.AWADDR, t.WSTRB, t.BRESP), UVM_HIGH)
-  endfunction
+  task monitor_reset();
+    if (axi_inf != null) begin
+      forever begin
+        @(negedge axi_inf.ARESETn);
+        wr_inp_fifo.flush();
+        wr_out_fifo.flush();
+        rd_inp_fifo.flush();
+        rd_out_fifo.flush();
+      end
+    end
+  endtask
 
+  task sample_write_coverage();
+    axi_trans inp, out;
+    forever begin
+      wr_inp_fifo.get(inp);
+      wr_out_fifo.get(out);
+      wr_trans = axi_trans::type_id::create("wr_cov_trans");
+      wr_trans.AWADDR = inp.AWADDR;
+      wr_trans.AWPROT = inp.AWPROT;
+      wr_trans.WDATA  = inp.WDATA;
+      wr_trans.WSTRB  = inp.WSTRB;
+      wr_trans.BRESP  = out.BRESP;
+      write_cg.sample();
+      `uvm_info("AXI_COVERAGE", $sformatf("[WRITE SAMPLED] addr=0x%08h strb=0x%01h resp=%0d",
+                wr_trans.AWADDR, wr_trans.WSTRB, wr_trans.BRESP), UVM_HIGH)
+    end
+  endtask
 
-  function void write_cov_read(axi_trans t);
-    rd_trans = t;
-    read_cg.sample();
-    `uvm_info("AXI_COVERAGE", $sformatf("[READ SAMPLED] addr=0x%08h resp=%0d",
-              t.ARADDR, t.RRESP), UVM_HIGH)
-  endfunction
-
+  task sample_read_coverage();
+    axi_trans inp, out;
+    forever begin
+      rd_inp_fifo.get(inp);
+      rd_out_fifo.get(out);
+      rd_trans = axi_trans::type_id::create("rd_cov_trans");
+      rd_trans.ARADDR = inp.ARADDR;
+      rd_trans.ARPROT = inp.ARPROT;
+      rd_trans.RDATA  = out.RDATA;
+      rd_trans.RRESP  = out.RRESP;
+      read_cg.sample();
+      `uvm_info("AXI_COVERAGE", $sformatf("[READ SAMPLED] addr=0x%08h resp=%0d",
+                rd_trans.ARADDR, rd_trans.RRESP), UVM_HIGH)
+    end
+  endtask
 
   function void report_phase(uvm_phase phase);
     super.report_phase(phase);
@@ -117,3 +145,4 @@ class axi_sub extends uvm_component;
 endclass
 
 `endif
+

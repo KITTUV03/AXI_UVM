@@ -21,13 +21,21 @@ class axi_env extends uvm_env;
 
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
-    agt.mon.write_ap.connect(scb.write_export);
-    agt.mon.read_ap.connect(scb.read_export);
-    agt.mon.write_ap.connect(cov.write_export);
-    agt.mon.read_ap.connect(cov.read_export);
-    `uvm_info("AXI_ENV", "Monitor->Scoreboard and Monitor->Coverage connected", UVM_HIGH)
+
+    agt.inp_mon.write_ap.connect(scb.wr_inp_fifo.analysis_export);
+    agt.inp_mon.read_ap.connect(scb.rd_inp_fifo.analysis_export);
+    agt.inp_mon.write_ap.connect(cov.wr_inp_fifo.analysis_export);
+    agt.inp_mon.read_ap.connect(cov.rd_inp_fifo.analysis_export);
+
+    agt.out_mon.write_ap.connect(scb.wr_out_fifo.analysis_export);
+    agt.out_mon.read_ap.connect(scb.rd_out_fifo.analysis_export);
+    agt.out_mon.write_ap.connect(cov.wr_out_fifo.analysis_export);
+    agt.out_mon.read_ap.connect(cov.rd_out_fifo.analysis_export);
+
+    `uvm_info("AXI_ENV", "Input & Output Monitors -> Scoreboard & Coverage FIFOs connected successfully", UVM_HIGH)
   endfunction
 
 endclass
 
 `endif
+

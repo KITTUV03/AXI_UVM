@@ -1,7 +1,7 @@
 Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_negative_test +ntb_random_seed=1 -cm line+cond+fsm+tgl+branch -cm_name axi_negative_test_seed_1 -cm_dir simv.vdb -l regression_logs/axi_negative_test_seed_1.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 18 13:21 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 14:31 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -34,9 +34,12 @@ uvm_test_top               axi_negative_test           -     @461
         rd_item_port       uvm_seq_item_pull_port      -     @777 
         rsp_port           uvm_analysis_port           -     @768 
         seq_item_port      uvm_seq_item_pull_port      -     @759 
-      mon                  axi_monitor                 -     @786 
-        read_ap            uvm_analysis_port           -     @804 
-        write_ap           uvm_analysis_port           -     @795 
+      inp_mon              axi_input_monitor           -     @786 
+        read_ap            uvm_analysis_port           -     @812 
+        write_ap           uvm_analysis_port           -     @803 
+      out_mon              axi_out_monitor             -     @794 
+        read_ap            uvm_analysis_port           -     @831 
+        write_ap           uvm_analysis_port           -     @822 
       rd_sqr               axi_sequencer               -     @628 
         rsp_export         uvm_analysis_export         -     @636 
         seq_item_export    uvm_seq_item_pull_imp       -     @742 
@@ -52,31 +55,83 @@ uvm_test_top               axi_negative_test           -     @461
         num_last_reqs      integral                    32    'd1  
         num_last_rsps      integral                    32    'd1  
     cov                    axi_sub                     -     @493 
-      read_export          uvm_analysis_imp_cov_read   -     @833 
-      write_export         uvm_analysis_imp_cov_write  -     @824 
+      rd_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @957 
+        analysis_export    uvm_analysis_imp            -     @1001
+        get_ap             uvm_analysis_port           -     @992 
+        get_peek_export    uvm_get_peek_imp            -     @974 
+        put_ap             uvm_analysis_port           -     @983 
+        put_export         uvm_put_imp                 -     @965 
+      rd_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1010
+        analysis_export    uvm_analysis_imp            -     @1054
+        get_ap             uvm_analysis_port           -     @1045
+        get_peek_export    uvm_get_peek_imp            -     @1027
+        put_ap             uvm_analysis_port           -     @1036
+        put_export         uvm_put_imp                 -     @1018
+      wr_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @851 
+        analysis_export    uvm_analysis_imp            -     @895 
+        get_ap             uvm_analysis_port           -     @886 
+        get_peek_export    uvm_get_peek_imp            -     @868 
+        put_ap             uvm_analysis_port           -     @877 
+        put_export         uvm_put_imp                 -     @859 
+      wr_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @904 
+        analysis_export    uvm_analysis_imp            -     @948 
+        get_ap             uvm_analysis_port           -     @939 
+        get_peek_export    uvm_get_peek_imp            -     @921 
+        put_ap             uvm_analysis_port           -     @930 
+        put_export         uvm_put_imp                 -     @912 
     scb                    axi_scb                     -     @485 
-      read_export          uvm_analysis_imp_read_txn   -     @851 
-      write_export         uvm_analysis_imp_write_txn  -     @842 
+      rd_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @1170
+        analysis_export    uvm_analysis_imp            -     @1214
+        get_ap             uvm_analysis_port           -     @1205
+        get_peek_export    uvm_get_peek_imp            -     @1187
+        put_ap             uvm_analysis_port           -     @1196
+        put_export         uvm_put_imp                 -     @1178
+      rd_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1223
+        analysis_export    uvm_analysis_imp            -     @1267
+        get_ap             uvm_analysis_port           -     @1258
+        get_peek_export    uvm_get_peek_imp            -     @1240
+        put_ap             uvm_analysis_port           -     @1249
+        put_export         uvm_put_imp                 -     @1231
+      wr_inp_fifo          uvm_tlm_analysis_fifo #(T)  -     @1064
+        analysis_export    uvm_analysis_imp            -     @1108
+        get_ap             uvm_analysis_port           -     @1099
+        get_peek_export    uvm_get_peek_imp            -     @1081
+        put_ap             uvm_analysis_port           -     @1090
+        put_export         uvm_put_imp                 -     @1072
+      wr_out_fifo          uvm_tlm_analysis_fifo #(T)  -     @1117
+        analysis_export    uvm_analysis_imp            -     @1161
+        get_ap             uvm_analysis_port           -     @1152
+        get_peek_export    uvm_get_peek_imp            -     @1134
+        put_ap             uvm_analysis_port           -     @1143
+        put_export         uvm_put_imp                 -     @1125
 ------------------------------------------------------------------
 
 UVM_INFO src/tb/sequences/axi_negative_test.sv(14) @ 0: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_NEGATIVE] Starting Negative Test Sequence
 UVM_INFO src/tb/sequences/axi_negative_test.sv(14) @ 0: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_NEGATIVE] Starting Negative Test Sequence
-UVM_INFO src/tb/top/axi_top.sv(25) @ 15: reporter [TESTBENCH] Reset released
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 45: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x0000003c data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(125) @ 45: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x00000000
+UVM_INFO src/tb/top/axi_top.sv(24) @ 15: reporter [TESTBENCH] Reset released
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 35: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 45: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x73ca5f74 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 45: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 45: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x00000000
 UVM_INFO src/tb/sequences/axi_negative_test.sv(23) @ 55: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x8b58f3b6 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 65: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x73ca5f74 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 65: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 75: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000024 data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(125) @ 75: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x00000000
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 65: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 65: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 65: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 75: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 75: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x00000000
 UVM_INFO src/tb/sequences/axi_negative_test.sv(23) @ 75: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x73ca5f74 resp=0
 UVM_INFO src/tb/sequences/axi_negative_test.sv(23) @ 85: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0xd07f87f5 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 105: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x73ca5f74 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(125) @ 105: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x73ca5f74
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 95: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x51fd7b41 strb=0xf
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 95: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 105: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x73ca5f74 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 105: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x73ca5f74
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 125: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
 UVM_INFO src/tb/sequences/axi_negative_test.sv(23) @ 125: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x51fd7b41 resp=0
-UVM_INFO src/tb/top/axi_top.sv(25) @ 135: reporter [TESTBENCH] Reset released
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 155: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x00000000 resp=0
-UVM_ERROR src/tb/env/axi_scoreboard.sv(120) @ 155: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA MISMATCH] addr=0x00000000 (reg[0]) exp=0x73ca5f74 act=0x00000000 time=155
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 135: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x51fd7b41 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 135: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x51fd7b41
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0xc555f394 strb=0xf
 
 =======================================================
 
@@ -125,17 +180,18 @@ src/tb/sequences/axi_negative_test.sv, 44
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 165ns failed at 165ns
+"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 145ns failed at 145ns
 	Offending 'wr_pkt.randomize() with {
 (this.operation == single_w);
 (this.AWADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 175: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000014 data=0xc555f394 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 175: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 185: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x00000000 resp=0
-UVM_ERROR src/tb/env/axi_scoreboard.sv(120) @ 185: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA MISMATCH] addr=0x00000000 (reg[0]) exp=0x73ca5f74 act=0x00000000 time=185
-UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 195: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 155: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x51fd7b41 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 165: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x51fd7b41
+UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 175: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
 
 =======================================================
 
@@ -156,15 +212,15 @@ constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequ
 =======================================================
 
 Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
-  from randomize serial 10 partition 1.
+  from randomize serial 9 partition 1.
   To reproduce the error using the extracted testcase, please use the 
   following command:
   cd 
   /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
-  vcs -sverilog extracted_r_10_p_1_inconsistent_constraints.sv -R
+  vcs -sverilog extracted_r_9_p_1_inconsistent_constraints.sv -R
   To reproduce the error using the original design and verbose logging, re-run
   simulation using:
-  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=10
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=9
   To reproduce the error using the original design and debug the error with 
   Verdi/DVE:
   1. re-compile the original design with -debug_access+all, if not already 
@@ -174,7 +230,7 @@ Info-[CNST-SATE]  A standalone test-case for this failure has automatically been
   	% simv -gui/-verdi <other options>
   3. enter the following commands to begin interactive constraint 
   inconsistency debug within Verdi/DVE
-  	I. set the breakpoint:	verdi/dve> stop -solver -serial 10
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 9
   	II. run the simulation till it stops:	verdi/dve> run
   	III. step in the constraint solver:	verdi/dve> step -solver
 
@@ -184,17 +240,17 @@ src/tb/sequences/axi_negative_test.sv, 44
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 195ns failed at 195ns
+"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 175ns failed at 175ns
 	Offending 'wr_pkt.randomize() with {
 (this.operation == single_w);
 (this.AWADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 215: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x00000000 resp=0
-UVM_ERROR src/tb/env/axi_scoreboard.sv(120) @ 215: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA MISMATCH] addr=0x00000000 (reg[0]) exp=0x73ca5f74 act=0x00000000 time=215
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 225: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x05af8940 strb=0xf resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 225: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 225: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 185: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x05af8940 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 195: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x51fd7b41 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 195: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x51fd7b41
+UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 205: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
 
 =======================================================
 
@@ -243,12 +299,17 @@ src/tb/sequences/axi_negative_test.sv, 56
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 225ns failed at 225ns
+"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 205ns failed at 205ns
 	Offending 'rd_pkt.randomize() with {
 (this.operation == single_r);
 (this.ARADDR == 32'hffffffff);
 }
 '
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 215: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 225: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x05af8940 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 225: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x05af8940
 
 =======================================================
 
@@ -297,14 +358,12 @@ src/tb/sequences/axi_negative_test.sv, 44
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 235ns failed at 235ns
+"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 225ns failed at 225ns
 	Offending 'wr_pkt.randomize() with {
 (this.operation == single_w);
 (this.AWADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 245: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x05af8940 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(125) @ 245: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x05af8940
 
 =======================================================
 
@@ -353,17 +412,19 @@ src/tb/sequences/axi_negative_test.sv, 56
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 255ns failed at 255ns
+"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 235ns failed at 235ns
 	Offending 'rd_pkt.randomize() with {
 (this.operation == single_r);
 (this.ARADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(117) @ 275: uvm_test_top.env.agt.mon [AXI_MONITOR] [READ COMPLETE] addr=0x00000000 data=0x05af8940 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(125) @ 275: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x05af8940
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 275: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 275: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 285: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 255: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x05af8940 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 255: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0x05af8940
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 275: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
 
 =======================================================
 
@@ -412,15 +473,16 @@ src/tb/sequences/axi_negative_test.sv, 44
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 285ns failed at 285ns
+"src/tb/sequences/axi_negative_test.sv", 44: axi_pkg::\axi_negative_seq::body .unnamed$$_2: started at 275ns failed at 275ns
 	Offending 'wr_pkt.randomize() with {
 (this.operation == single_w);
 (this.AWADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 325: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 325: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 335: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_negative_test.sv(46) @ 325: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_Negative_WR] WRITE addr=0x00000000 data=0x00000000 resp=0
 
 =======================================================
 
@@ -469,14 +531,15 @@ src/tb/sequences/axi_negative_test.sv, 56
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 335ns failed at 335ns
+"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 325ns failed at 325ns
 	Offending 'rd_pkt.randomize() with {
 (this.operation == single_r);
 (this.ARADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 375: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 375: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
 
 =======================================================
 
@@ -525,56 +588,58 @@ src/tb/sequences/axi_negative_test.sv, 56
   Please check the inconsistent constraints being printed above and rewrite 
   them.
 
-"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 385ns failed at 385ns
+"src/tb/sequences/axi_negative_test.sv", 56: axi_pkg::\axi_negative_seq::body .unnamed$$_3: started at 375ns failed at 375ns
 	Offending 'rd_pkt.randomize() with {
 (this.operation == single_r);
 (this.ARADDR == 32'hffffffff);
 }
 '
-UVM_INFO src/tb/agent/axi_input_monitor.sv(78) @ 425: uvm_test_top.env.agt.mon [AXI_MONITOR] [WRITE COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(85) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 435: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO src/tb/env/axi_subscriber.sv(112) @ 435: uvm_test_top.env.cov [AXI_COVERAGE] 
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 425: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 425: uvm_test_top.env.cov [AXI_COVERAGE] 
 ============ COVERAGE SUMMARY ============
-  Write Coverage : 31.67%
-  Read  Coverage : 38.02%
+  Write Coverage : 27.08%
+  Read  Coverage : 34.03%
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(145) @ 435: uvm_test_top.env.scb [AXI_SCOREBOARD] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] 
 ============ SCOREBOARD SUMMARY ============
-  Total Writes  : 7
+  Total Writes  : 8
   Total Reads   : 8
-  Total Pass    : 12
-  Total Fail    : 3
+  Total Pass    : 16
+  Total Fail    : 0
 =============================================
-UVM_ERROR src/tb/env/axi_scoreboard.sv(149) @ 435: uvm_test_top.env.scb [AXI_SCOREBOARD] TEST FAILED with 3 mismatches!
-UVM_INFO src/tb/tests/axi_test.sv(37) @ 435: uvm_test_top [AXI_TEST] 
-*** TEST FAILED ***
+UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 425: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
+UVM_INFO src/tb/tests/axi_test.sv(39) @ 425: uvm_test_top [AXI_TEST] 
+*** TEST PASSED ***
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   45
+UVM_INFO :   66
 UVM_WARNING :    0
-UVM_ERROR :    4
+UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
 [AXI_COVERAGE]     1
-[AXI_MONITOR]    15
+[AXI_INP_MON]    16
 [AXI_NEGATIVE]     2
 [AXI_Negative_WR]     8
-[AXI_SCOREBOARD]    17
+[AXI_OUT_MON]    16
+[AXI_SCOREBOARD]    18
 [AXI_TEST]     1
 [RNTST]     1
-[TESTBENCH]     2
+[TESTBENCH]     1
 [TEST_DONE]     1
 [UVMTOP]     1
 $finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
-$finish at simulation time                  435
+$finish at simulation time                  425
 
 ---------------------------------------------------------------------------
 VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
 ---------------------------------------------------------------------------
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 435 ns
-CPU Time:      0.740 seconds;       Data structure size:   0.6Mb
-Fri Sep 18 13:21:26 2026
+Time: 425 ns
+CPU Time:      0.700 seconds;       Data structure size:   0.7Mb
+Mon Sep 21 14:31:20 2026
