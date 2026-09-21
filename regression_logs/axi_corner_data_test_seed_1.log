@@ -1,7 +1,7 @@
 Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_corner_data_test +ntb_random_seed=1 -cm line+cond+fsm+tgl+branch -cm_name axi_corner_data_test_seed_1 -cm_dir simv.vdb -l regression_logs/axi_corner_data_test_seed_1.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 14:31 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 15:50 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -3474,8 +3474,8 @@ UVM_INFO src/tb/sequences/axi_corner_data_seq.sv(79) @ 4825: uvm_test_top.env.ag
 UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 4825: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 4825: uvm_test_top.env.cov [AXI_COVERAGE] 
 ============ COVERAGE SUMMARY ============
-  Write Coverage : 23.96%
-  Read  Coverage : 48.61%
+  Write Coverage : 36.46%
+  Read  Coverage : 65.28%
 =============================================
 UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 4825: uvm_test_top.env.scb [AXI_SCOREBOARD] 
 ============ SCOREBOARD SUMMARY ============
@@ -3516,5 +3516,5 @@ VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitor
 ---------------------------------------------------------------------------
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 4825 ns
-CPU Time:      1.000 seconds;       Data structure size:   0.7Mb
-Mon Sep 21 14:31:15 2026
+CPU Time:      1.080 seconds;       Data structure size:   0.7Mb
+Mon Sep 21 15:50:55 2026

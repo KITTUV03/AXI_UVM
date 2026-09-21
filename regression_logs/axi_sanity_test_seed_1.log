@@ -1,7 +1,7 @@
 Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_sanity_test +ntb_random_seed=1 -cm line+cond+fsm+tgl+branch -cm_name axi_sanity_test_seed_1 -cm_dir simv.vdb -l regression_logs/axi_sanity_test_seed_1.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 14:30 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 15:50 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -228,172 +228,492 @@ UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1495: uvm_test_top.env.agt.inp_
 UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
 UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
 UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1525: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(27) @ 1525: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] Sanity Write Sequence Complete
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(43) @ 1525: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] Starting Sanity Read Sequence
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1535: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1545: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6693916d resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1545: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6693916d
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1555: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6693916d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1565: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1575: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x4acbfed6 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1575: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x4acbfed6
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1585: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x4acbfed6 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1605: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x4acbfed6 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1605: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x4acbfed6
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1615: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x4acbfed6 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1625: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1635: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1635: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1645: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1655: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x098a8bc7 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1665: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x098a8bc7
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1675: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x098a8bc7 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1685: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1695: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1695: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1705: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1715: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000020
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1725: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x94ca1ff0 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1725: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000020 data=0x94ca1ff0
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1735: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000020 data=0x94ca1ff0 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000001c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1755: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x5561aa25 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1755: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000001c data=0x5561aa25
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1765: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000001c data=0x5561aa25 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1775: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1785: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x098a8bc7 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1785: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x098a8bc7
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1795: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x098a8bc7 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1805: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xa60d76bd resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1815: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xa60d76bd
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1825: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xa60d76bd resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1835: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1845: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6693916d resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1845: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6693916d
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1855: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6693916d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1865: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1875: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x098a8bc7 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1875: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x098a8bc7
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1885: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x098a8bc7 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1905: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1905: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0xfb92cbe8
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1915: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1925: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1935: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xa60d76bd resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1935: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xa60d76bd
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1945: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xa60d76bd resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1955: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1965: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 1975: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 1985: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 1995: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xa60d76bd resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 1995: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xa60d76bd
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2005: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xa60d76bd resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2015: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2025: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6693916d resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2025: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6693916d
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2035: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6693916d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000008
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2055: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x08d5f33f resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2055: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000008 data=0x08d5f33f
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2065: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000008 data=0x08d5f33f resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2075: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2085: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6693916d resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2085: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6693916d
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2095: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6693916d resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2105: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2115: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2125: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2135: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2145: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2145: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2155: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2165: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2175: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x098a8bc7 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2175: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x098a8bc7
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2185: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x098a8bc7 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2205: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2205: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0xfb92cbe8
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2215: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2225: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2235: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2235: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0xfb92cbe8
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2245: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2255: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xa60d76bd resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2265: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xa60d76bd
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2275: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xa60d76bd resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2285: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2295: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2295: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2305: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2315: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2325: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x4acbfed6 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2325: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x4acbfed6
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2335: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x4acbfed6 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2355: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2355: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0xfb92cbe8
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2365: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0xfb92cbe8 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2375: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2385: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2385: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2395: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
-UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 2405: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
-UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 2415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
-UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 2415: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 2425: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
-UVM_INFO src/tb/sequences/axi_sanity_test.sv(56) @ 2425: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] Sanity Read Sequence Complete
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 2425: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 2425: uvm_test_top.env.cov [AXI_COVERAGE] 
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x032e751f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1575: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000001c data=0x032e751f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x0afaacf8 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1625: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000001c data=0x0afaacf8 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x8cca55da strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1675: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x8cca55da resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0x732c5c4f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1725: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000020 data=0x732c5c4f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000003c data=0x9b4e8336 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1775: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xdc87751e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1825: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000010 data=0xdc87751e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x09c4d440 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1875: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0x09c4d440 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x42774583 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1925: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x42774583 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xbf3895fe strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 1975: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0xbf3895fe resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xd00f8b94 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2025: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0xd00f8b94 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x526164c9 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2075: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x526164c9 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xcbc2db67 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2125: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000020 data=0xcbc2db67 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x1028a089 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2175: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0x1028a089 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0xf352e66b strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2225: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0xf352e66b resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xdd84453e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2275: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000010 data=0xdd84453e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0xcaa1d805 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2325: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000014 data=0xcaa1d805 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0xa50d36d2 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2375: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0xa50d36d2 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0xa5293993 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2425: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000008 data=0xa5293993 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x6abc780a strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2475: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xc233b239 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2525: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0xc233b239 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x36a2ad0a strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2575: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x36a2ad0a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0x9286ef0f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2625: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x476be066 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2675: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000014 data=0x476be066 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0x33493183 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2725: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000020 data=0x33493183 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0xffc71686 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2775: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0xffc71686 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x3e53d055 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2825: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000001c data=0x3e53d055 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x6b0911ac strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2875: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0x6b0911ac resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x835363c1 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2925: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x835363c1 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0x75af342e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 2975: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0x75af342e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xdaf15669 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3025: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0xdaf15669 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000024 data=0x1781a52f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000024 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3075: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0x0b454024 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3125: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000020 data=0x0b454024 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x95d71e04 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3175: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0x95d71e04 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0x088a3799 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3225: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x8d7c5eed strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3275: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000014 data=0x8d7c5eed resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x03f3521c strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3325: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000014 data=0x03f3521c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0xceded601 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3375: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0xceded601 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x275f4c5c strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3425: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000008 data=0x275f4c5c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0xf288b213 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3475: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x0000001c data=0xf288b213 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0xf1026a79 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(23) @ 3525: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] WRITE addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(27) @ 3525: uvm_test_top.env.agt.wr_sqr@@wr_seq [AXI_SANITY_WR] Sanity Write Sequence Complete
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(43) @ 3525: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] Starting Sanity Read Sequence
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3535: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3545: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3545: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3555: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3565: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3575: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3575: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3585: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3605: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3605: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3615: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3625: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3635: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3635: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3645: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3655: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3665: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3675: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3685: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3695: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3695: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3705: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3715: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000020
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3725: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x0b454024 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3725: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000020 data=0x0b454024
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3735: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000020 data=0x0b454024 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000001c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3755: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf288b213 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3755: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000001c data=0xf288b213
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3765: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000001c data=0xf288b213 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3775: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3785: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3785: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3795: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3805: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3815: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3825: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3835: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3845: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3845: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3855: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3865: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3875: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3875: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3885: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3905: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3905: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3915: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3925: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3935: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3935: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3945: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3955: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3965: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 3975: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 3985: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 3995: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 3995: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4005: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4015: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4025: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4025: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4035: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000008
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4055: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x275f4c5c resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4055: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000008 data=0x275f4c5c
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4065: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000008 data=0x275f4c5c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4075: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4085: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4085: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4095: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4105: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4115: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4125: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4135: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4145: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4145: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4155: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4165: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4175: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4175: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4185: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4205: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4205: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4215: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4225: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4235: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4235: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4245: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4255: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4265: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4275: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4285: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4295: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4295: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4305: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4315: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4325: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4325: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4335: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4355: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4355: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4365: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4375: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4385: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4385: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4395: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4405: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4415: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4425: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4435: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4445: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4445: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4455: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4465: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4475: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4475: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4485: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000020
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4505: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x0b454024 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4505: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000020 data=0x0b454024
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4515: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000020 data=0x0b454024 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4525: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000008
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4535: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x275f4c5c resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4535: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000008 data=0x275f4c5c
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4545: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000008 data=0x275f4c5c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4555: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4565: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4575: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4585: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4595: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4595: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4605: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4615: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000010
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4625: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9286ef0f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4625: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000010 data=0x9286ef0f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4635: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000010
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4655: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9286ef0f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4655: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000010 data=0x9286ef0f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4665: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4675: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4685: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4685: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4695: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4705: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000030
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4715: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000030 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4725: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000030 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4735: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000030
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4745: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4745: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000030 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4755: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000030 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4765: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000008
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4775: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x275f4c5c resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4775: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000008 data=0x275f4c5c
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4785: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000008 data=0x275f4c5c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000020
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4805: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x0b454024 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4805: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000020 data=0x0b454024
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4815: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000020 data=0x0b454024 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4825: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4835: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4835: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4845: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4855: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4865: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4875: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4885: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4895: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4895: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4905: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4915: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4925: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4925: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4935: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000004
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4955: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6bcec946 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4955: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000004 data=0x6bcec946
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4965: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000004 data=0x6bcec946 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 4975: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000028
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 4985: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 4985: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000028 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 4995: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000028 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5005: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5015: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5025: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5035: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000004
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5045: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6bcec946 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5045: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000004 data=0x6bcec946
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5055: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000004 data=0x6bcec946 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5065: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5075: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5075: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5085: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000000c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5105: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6abc780a resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5105: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000000c data=0x6abc780a
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5115: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000000c data=0x6abc780a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5125: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000010
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5135: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9286ef0f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5135: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000010 data=0x9286ef0f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5145: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5155: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000003c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9b4e8336 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5165: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000003c data=0x9b4e8336
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5175: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000003c data=0x9b4e8336 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5185: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000010
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5195: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9286ef0f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5195: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000010 data=0x9286ef0f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5205: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5215: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5225: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5225: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5235: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000010
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5255: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x9286ef0f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5255: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000010 data=0x9286ef0f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5265: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000010 data=0x9286ef0f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5275: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5285: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5285: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5295: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5305: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5315: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5325: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5335: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000000
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5345: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf1026a79 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5345: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000000 data=0xf1026a79
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5355: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000000 data=0xf1026a79 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5365: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000001c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5375: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0xf288b213 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5375: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000001c data=0xf288b213
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5385: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000001c data=0xf288b213 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x0000002c
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5405: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5405: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x0000002c data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5415: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x0000002c data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5425: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000008
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5435: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x275f4c5c resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5435: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000008 data=0x275f4c5c
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5445: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000008 data=0x275f4c5c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5455: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000020
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x0b454024 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5465: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000020 data=0x0b454024
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5475: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000020 data=0x0b454024 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5485: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000018
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5495: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x088a3799 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5495: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000018 data=0x088a3799
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5505: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000018 data=0x088a3799 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5515: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000024
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5525: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x1781a52f resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5525: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000024 data=0x1781a52f
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5535: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000024 data=0x1781a52f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000030
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5555: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5555: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000030 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5565: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000030 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5575: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000004
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5585: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x6bcec946 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5585: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000004 data=0x6bcec946
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5595: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000004 data=0x6bcec946 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(102) @ 5605: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [READ INPUT COMPLETE] addr=0x00000030
+UVM_INFO src/tb/agent/axi_out_monitor.sv(81) @ 5615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [READ OUTPUT COMPLETE] data=0x00000000 resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(174) @ 5615: uvm_test_top.env.scb [AXI_SCOREBOARD] [READ DATA PASS] addr=0x00000030 data=0x00000000
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(52) @ 5625: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] READ addr=0x00000030 data=0x00000000 resp=0
+UVM_INFO src/tb/sequences/axi_sanity_test.sv(56) @ 5625: uvm_test_top.env.agt.rd_sqr@@rd_seq [AXI_SANITY_RD] Sanity Read Sequence Complete
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 5625: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 5625: uvm_test_top.env.cov [AXI_COVERAGE] 
 ============ COVERAGE SUMMARY ============
-  Write Coverage : 39.58%
-  Read  Coverage : 48.61%
+  Write Coverage : 52.08%
+  Read  Coverage : 71.53%
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 2425: uvm_test_top.env.scb [AXI_SCOREBOARD] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 5625: uvm_test_top.env.scb [AXI_SCOREBOARD] 
 ============ SCOREBOARD SUMMARY ============
-  Total Writes  : 30
-  Total Reads   : 30
-  Total Pass    : 60
+  Total Writes  : 70
+  Total Reads   : 70
+  Total Pass    : 140
   Total Fail    : 0
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 2425: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
-UVM_INFO src/tb/tests/axi_test.sv(39) @ 2425: uvm_test_top [AXI_TEST] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 5625: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
+UVM_INFO src/tb/tests/axi_test.sv(39) @ 5625: uvm_test_top [AXI_TEST] 
 *** TEST PASSED ***
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  252
+UVM_INFO :  572
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
 [AXI_COVERAGE]     1
-[AXI_INP_MON]    60
-[AXI_OUT_MON]    60
-[AXI_SANITY_RD]    32
-[AXI_SANITY_WR]    32
-[AXI_SCOREBOARD]    62
+[AXI_INP_MON]   140
+[AXI_OUT_MON]   140
+[AXI_SANITY_RD]    72
+[AXI_SANITY_WR]    72
+[AXI_SCOREBOARD]   142
 [AXI_TEST]     1
 [RNTST]     1
 [TESTBENCH]     1
 [TEST_DONE]     1
 [UVMTOP]     1
 $finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
-$finish at simulation time                 2425
+$finish at simulation time                 5625
 
 ---------------------------------------------------------------------------
 VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
 ---------------------------------------------------------------------------
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 2425 ns
-CPU Time:      0.650 seconds;       Data structure size:   0.6Mb
-Mon Sep 21 14:30:46 2026
+Time: 5625 ns
+CPU Time:      0.680 seconds;       Data structure size:   0.6Mb
+Mon Sep 21 15:50:26 2026

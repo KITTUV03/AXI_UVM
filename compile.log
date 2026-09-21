@@ -4,7 +4,7 @@ Command: vcs -full64 -sverilog +v2k -ntb_opts uvm -timescale=1ns/1ns +incdir+src
 -cm_hier cov_hier.cfg src/tb/include/define.svh src/tb/include/axi_interface.sv src/design/axi_design.sv \
 src/tb/top/axi_package.sv src/tb/top/axi_top.sv -l compile.log
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Mon Sep 21 14:30:28 2026
+      Version Q-2020.03-SP2-8_Full64 -- Mon Sep 21 15:50:09 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -386,11 +386,8 @@ Warning-[CM-HIER-FNF] File not found
 VCS Coverage Metrics Release Q-2020.03-SP2-8_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
 Starting vcs inline pass...
 10 modules and 0 UDP read.
-recompiling package vcs_paramclassrepository
-recompiling module uvm_custom_install_verdi_recording
 recompiling package axi_pkg
-3 of 10 modules done
-	However, due to incremental compilation, only 3 modules need to be compiled. 
+	However, due to incremental compilation, only 1 module needs to be compiled. 
 make[1]: Entering directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
@@ -400,7 +397,7 @@ if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
 -L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
-/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _148082_archive_1.so _prev_archive_1.so \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _183989_archive_1.so _prev_archive_1.so \
 _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
 rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
 -lreader_common /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libBA.a \
@@ -412,4 +409,4 @@ _vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/lin
 ../simv up to date
 make[1]: Leaving directory `/fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/csrc' \
 
-CPU time: 11.718 seconds to compile + .450 seconds to elab + .679 seconds to link
+CPU time: 10.176 seconds to compile + .412 seconds to elab + .673 seconds to link

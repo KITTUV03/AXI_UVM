@@ -24,7 +24,7 @@ global coverage_group 0 axi_pkg::axi_sub::write_cg __coverage_axi_sub.write_cg u
  0
  0
  0
- 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_20
+ 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1c
 0
 0
 0
@@ -59,7 +59,7 @@ global coverage_group 0 axi_pkg::axi_sub::write_cg __coverage_axi_sub.write_cg u
  1 1 1 0 1 1 8 wo_addrs 23 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_5 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_6 0 0 0 0 0
  0
 
- 16 wr_addr_range_cp 26 0 0 0 0 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_7 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 32 0 0 1 0 0 0
+ 16 wr_addr_range_cp 26 0 0 0 0 0 36 axi_sub::axi_pkg_axi_sub_write_cg_fn 36 axi_sub::axi_pkg_axi_sub_write_cg_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 4 0 0 1 0 0 0
  0
  0
  0
@@ -74,12 +74,10 @@ global coverage_group 0 axi_pkg::axi_sub::write_cg __coverage_axi_sub.write_cg u
  0
  0
  0
- 2 1 1 0 0 1 1 11 valid_range 27 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_0 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_8 0 0 0 0 0
- 0
- 1 1 0 0 1 1 13 invalid_range 28 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_9 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_a 0 0 0 0 0
+ 1 1 1 0 0 1 1 11 valid_range 27 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_0 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_2 0 0 0 0 0
  0
 
- 8 wstrb_cp 31 0 0 0 0 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_b 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 4 0 0 1 0 0 0
+ 8 wstrb_cp 31 0 0 0 0 0 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_7 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 4 0 0 1 0 0 0
  0
  0
  0
@@ -94,29 +92,29 @@ global coverage_group 0 axi_pkg::axi_sub::write_cg __coverage_axi_sub.write_cg u
  0
  0
  0
- 5 1 1 0 0 1 1 9 all_bytes 32 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_c 0 0 0 0 0 0 0
+ 5 1 1 0 0 1 1 9 all_bytes 32 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_8 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 8 no_bytes 33 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_d 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 8 no_bytes 33 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_9 0 0 0 0 0 0 0
  0
- 1 1 1 0 1 1 11 single_byte 34 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 4 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_e 0 0 0 0 0 0 0
+ 1 1 1 0 1 1 11 single_byte 34 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 4 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_a 0 0 0 0 0 0 0
+ 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_b 0 0 0 0 0 0 0
+ 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_c 0 0 0 0 0 0 0
+ 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_d 0 0 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 9 two_bytes 35 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 6 1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_e 0 0 0 0 0 0 0
  1 1 38 axi_sub::axi_pkg_axi_sub_write_cg_fn_f 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_10 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_11 0 0 0 0 0 0 0
- 0
- 1 1 1 0 1 1 9 two_bytes 35 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 6 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_12 0 0 0 0 0 0 0
+ 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_12 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_13 0 0 0 0 0 0 0
- 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_14 0 0 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 11 three_bytes 36 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 4 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_14 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_15 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_16 0 0 0 0 0 0 0
  1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_17 0 0 0 0 0 0 0
  0
- 1 1 1 0 1 1 11 three_bytes 36 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 4 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_18 0 0 0 0 0 0 0
- 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_19 0 0 0 0 0 0 0
- 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1a 0 0 0 0 0 0 0
- 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1b 0 0 0 0 0 0 0
- 0
 
- 8 bresp_cp 39 0 0 0 0 0 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1c 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1c 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 8 bresp_cp 39 0 0 0 0 0 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_18 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_18 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
  0
  0
  0
@@ -131,11 +129,11 @@ global coverage_group 0 axi_pkg::axi_sub::write_cg __coverage_axi_sub.write_cg u
  0
  0
  0
- 3 1 1 0 0 1 1 4 okay 40 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1d 0 0 0 0 0 0 0
+ 3 1 1 0 0 1 1 4 okay 40 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_19 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 slverr 41 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1e 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 slverr 41 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1a 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 decerr 42 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1f 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 decerr 42 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 39 axi_sub::axi_pkg_axi_sub_write_cg_fn_1b 0 0 0 0 0 0 0
  0
 
 end_coverage_group
@@ -163,7 +161,7 @@ global coverage_group 0 axi_pkg::axi_sub::read_cg __coverage_axi_sub.read_cg unu
  0
  0
  0
- 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_f
+ 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_b
 0
 0
 0
@@ -198,7 +196,7 @@ global coverage_group 0 axi_pkg::axi_sub::read_cg __coverage_axi_sub.read_cg unu
  1 1 1 0 1 1 8 wo_addrs 54 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_5 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_6 0 0 0 0 0
  0
 
- 16 rd_addr_range_cp 57 0 0 0 0 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_7 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 32 0 0 1 0 0 0
+ 16 rd_addr_range_cp 57 0 0 0 0 0 35 axi_sub::axi_pkg_axi_sub_read_cg_fn 35 axi_sub::axi_pkg_axi_sub_read_cg_fn 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 4 0 0 1 0 0 0
  0
  0
  0
@@ -213,12 +211,10 @@ global coverage_group 0 axi_pkg::axi_sub::read_cg __coverage_axi_sub.read_cg unu
  0
  0
  0
- 2 1 1 0 0 1 1 11 valid_range 58 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_0 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_8 0 0 0 0 0
- 0
- 1 1 0 0 1 1 13 invalid_range 59 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_9 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_a 0 0 0 0 0
+ 1 1 1 0 0 1 1 11 valid_range 58 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_0 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_2 0 0 0 0 0
  0
 
- 8 rresp_cp 62 0 0 0 0 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_b 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_b 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
+ 8 rresp_cp 62 0 0 0 0 0 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_7 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_7 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 2 2 0 0 1 0 0 0
  0
  0
  0
@@ -233,11 +229,11 @@ global coverage_group 0 axi_pkg::axi_sub::read_cg __coverage_axi_sub.read_cg unu
  0
  0
  0
- 3 1 1 0 0 1 1 4 okay 63 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_c 0 0 0 0 0 0 0
+ 3 1 1 0 0 1 1 4 okay 63 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_8 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 slverr 64 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_d 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 slverr 64 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_9 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 decerr 65 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_e 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 decerr 65 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 37 axi_sub::axi_pkg_axi_sub_read_cg_fn_a 0 0 0 0 0 0 0
  0
 
 end_coverage_group

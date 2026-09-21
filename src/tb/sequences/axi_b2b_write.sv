@@ -22,6 +22,17 @@ class axi_b2b_seq extends axi_base_sequence;
       `uvm_info("AXI_B2B_WRITE", $sformatf("B2B WRITE addr=0x%08h data=0x%08h resp=%0d",
                 pkt.AWADDR, pkt.WDATA, pkt.BRESP), UVM_MEDIUM)
     end
+     
+      for(int i=0;i<16;i++) begin
+      pkt = axi_trans::type_id::create("pkt");
+      start_item(pkt);
+      pkt.slv_err_address.constraint_mode(0);
+      pkt.dec_err_address.constraint_mode(0);
+      assert(pkt.randomize() with {operation == b2b_w;pkt.AWADDR==i;});
+      finish_item(pkt);
+      `uvm_info("AXI_B2B_WRITE", $sformatf("B2B WRITE addr=0x%08h data=0x%08h resp=%0d",
+                pkt.AWADDR, pkt.WDATA, pkt.BRESP), UVM_MEDIUM)
+    end
 
     `uvm_info("AXI_B2B_WRITE", "Back-to-Back Write Sequence Complete", UVM_LOW)
   endtask

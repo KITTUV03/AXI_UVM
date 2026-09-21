@@ -1,7 +1,7 @@
 Command: /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv +UVM_TESTNAME=axi_b2b_write_test +ntb_random_seed=1 -cm line+cond+fsm+tgl+branch -cm_name axi_b2b_write_test_seed_1 -cm_dir simv.vdb -l regression_logs/axi_b2b_write_test_seed_1.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 14:30 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Sep 21 15:50 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -228,49 +228,933 @@ UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1495: uvm_test_top.env.agt.inp_
 UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
 UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
 UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xf85fc85e resp=0
-UVM_INFO src/tb/sequences/axi_b2b_write.sv(26) @ 1525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] Back-to-Back Write Sequence Complete
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 1525: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 1525: uvm_test_top.env.cov [AXI_COVERAGE] 
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x1f5ffa3a strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1575: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x1f5ffa3a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0xdab5e1c1 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1625: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0xdab5e1c1 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x74898a58 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1675: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x74898a58 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x4c2e530e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1725: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x4c2e530e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0xb906116d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1775: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0xb906116d resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0x129477a6 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1825: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0x129477a6 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0xaf760c27 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1875: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0xaf760c27 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x208dc7cc strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1925: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0x208dc7cc resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x605150c4 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 1965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 1965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 1975: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x605150c4 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 1995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x9369dc12 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2025: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x9369dc12 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xbdc01ec0 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2075: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xbdc01ec0 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0x2646574e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2125: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x2646574e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000003c data=0x5cc60438 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000003c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2175: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000003c data=0x5cc60438 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0x388f3640 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2225: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0x388f3640 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0x9c80f681 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2275: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x9c80f681 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0xf15be742 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0xf15be742 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x0efbd7e6 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2375: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x0efbd7e6 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0xdba9df9b strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2425: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0xdba9df9b resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x4e19aecf strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2475: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x4e19aecf resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0x70a3d408 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0x70a3d408 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0x9d43159d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2575: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0x9d43159d resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0x119b67d0 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2625: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0x119b67d0 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000018 data=0xc7caf730 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000018 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2675: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000018 data=0xc7caf730 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xb186b1ac strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2725: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xb186b1ac resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0xc60c94ad strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2775: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0xc60c94ad resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0x67cc6cb0 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2825: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x67cc6cb0 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000020 data=0x78b83b8c strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000020 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2875: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000020 data=0x78b83b8c resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0xd2238719 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2925: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0xd2238719 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xebd68edd strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 2965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 2965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 2975: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xebd68edd resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 2995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x378a247a strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3025: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x378a247a resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0x050b35b1 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3075: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0x050b35b1 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x97368a6f strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3125: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x97368a6f resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000014 data=0x142dcfb7 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000014 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3175: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000014 data=0x142dcfb7 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000010 data=0xa7c88a28 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000010 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3225: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000010 data=0xa7c88a28 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000001c data=0xad5ca474 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000001c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3275: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000001c data=0xad5ca474 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0xc0c792a3 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0xc0c792a3 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3345: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x91201c32 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3365: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3365: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3375: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x91201c32 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3395: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0x2340cf7e strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3415: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3415: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3425: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0x2340cf7e resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3445: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0x8066ea71 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3465: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3465: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3475: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0x8066ea71 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3495: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x85c2dc6d strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3515: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3515: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(22) @ 3525: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x85c2dc6d resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3545: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x287c724c strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3565: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3565: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3575: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x287c724c resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 1;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 72 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_72_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=72
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 72
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3575ns failed at 3575ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3595: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3615: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3615: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3625: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 2;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 73 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_73_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=73
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 73
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3625ns failed at 3625ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3645: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3665: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3665: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3675: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 3;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 74 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_74_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=74
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 74
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3675ns failed at 3675ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3695: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3715: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3715: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3725: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3745: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000004 data=0xe0b01644 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3765: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3765: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000004 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3775: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000004 data=0xe0b01644 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 5;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 76 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_76_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=76
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 76
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3775ns failed at 3775ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3795: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3815: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3815: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3825: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 6;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 77 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_77_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=77
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 77
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3825ns failed at 3825ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3845: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3865: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3865: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3875: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 7;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 78 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_78_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=78
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 78
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3875ns failed at 3875ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3895: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3915: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3915: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3925: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3945: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000008 data=0x7220f028 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 3965: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 3965: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000008 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 3975: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000008 data=0x7220f028 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 9;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 80 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_80_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=80
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 80
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 3975ns failed at 3975ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 3995: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4015: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4015: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4025: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 10;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 81 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_81_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=81
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 81
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 4025ns failed at 4025ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4045: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4065: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4065: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4075: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 11;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 82 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_82_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=82
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 82
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 4075ns failed at 4075ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4095: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4115: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4115: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4125: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4145: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x0000000c data=0xf13ddfc6 strb=0xf
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4165: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4165: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x0000000c resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4175: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x0000000c data=0xf13ddfc6 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 13;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 84 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_84_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=84
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 84
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 4175ns failed at 4175ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4195: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4215: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4215: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4225: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 14;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 85 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_85_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=85
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 85
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 4225ns failed at 4225ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4245: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4265: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4265: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4275: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+
+=======================================================
+
+Solver failed when solving following set of constraints 
+
+
+integer i = 15;
+rand bit[31:0] AWADDR; // rand_mode = ON 
+
+constraint aligned_address    // (from this) (constraint_mode = ON) (src/tb/agent/axi_trans.sv:51)
+{
+   ((AWADDR[1:0]) == 2'h0);
+}
+constraint WITH_CONSTRAINT    // (from this) (constraint_mode = ON) (src/tb/sequences/axi_b2b_write.sv:31)
+{
+   (AWADDR == i);
+}
+
+=======================================================
+
+Info-[CNST-SATE]  A standalone test-case for this failure has automatically been extracted 
+  from randomize serial 86 partition 1.
+  To reproduce the error using the extracted testcase, please use the 
+  following command:
+  cd 
+  /fetools/work_area/frontend/Batch_11/Kittu_Patel/UVM/Project/AXI/./simv.cst/testcases;
+  vcs -sverilog extracted_r_86_p_1_inconsistent_constraints.sv -R
+  To reproduce the error using the original design and verbose logging, re-run
+  simulation using:
+  simv +ntb_solver_debug=trace +ntb_solver_debug_filter=86
+  To reproduce the error using the original design and debug the error with 
+  Verdi/DVE:
+  1. re-compile the original design with -debug_access+all, if not already 
+  done so
+  	% vcs -debug_access+all <other options>
+  2. re-run the simulation interactively with -gui/-verdi
+  	% simv -gui/-verdi <other options>
+  3. enter the following commands to begin interactive constraint 
+  inconsistency debug within Verdi/DVE
+  	I. set the breakpoint:	verdi/dve> stop -solver -serial 86
+  	II. run the simulation till it stops:	verdi/dve> run
+  	III. step in the constraint solver:	verdi/dve> step -solver
+
+Error-[CNST-CIF] Constraints inconsistency failure
+src/tb/sequences/axi_b2b_write.sv, 31
+  Constraints are inconsistent and cannot be solved.
+  Please check the inconsistent constraints being printed above and rewrite 
+  them.
+
+"src/tb/sequences/axi_b2b_write.sv", 31: axi_pkg::\axi_b2b_seq::body .unnamed$$_1.unnamed$$_2: started at 4275ns failed at 4275ns
+	Offending 'pkt.randomize() with {
+(this.operation == b2b_w);
+(pkt.AWADDR == i);
+}
+'
+UVM_INFO src/tb/agent/axi_input_monitor.sv(73) @ 4295: uvm_test_top.env.agt.inp_mon [AXI_INP_MON] [WRITE INPUT COMPLETE] addr=0x00000000 data=0x00000000 strb=0x0
+UVM_INFO src/tb/agent/axi_out_monitor.sv(54) @ 4315: uvm_test_top.env.agt.out_mon [AXI_OUT_MON] [WRITE OUTPUT COMPLETE] resp=0
+UVM_INFO src/tb/env/axi_scoreboard.sv(126) @ 4315: uvm_test_top.env.scb [AXI_SCOREBOARD] [WRITE RESP PASS] addr=0x00000000 resp=2'b00
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(33) @ 4325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] B2B WRITE addr=0x00000000 data=0x00000000 resp=0
+UVM_INFO src/tb/sequences/axi_b2b_write.sv(37) @ 4325: uvm_test_top.env.agt.wr_sqr@@seq [AXI_B2B_WRITE] Back-to-Back Write Sequence Complete
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_objection.svh(1274) @ 4325: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO src/tb/env/axi_subscriber.sv(140) @ 4325: uvm_test_top.env.cov [AXI_COVERAGE] 
 ============ COVERAGE SUMMARY ============
-  Write Coverage : 36.46%
+  Write Coverage : 52.08%
   Read  Coverage : 0.00%
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 1525: uvm_test_top.env.scb [AXI_SCOREBOARD] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(195) @ 4325: uvm_test_top.env.scb [AXI_SCOREBOARD] 
 ============ SCOREBOARD SUMMARY ============
-  Total Writes  : 30
+  Total Writes  : 86
   Total Reads   : 0
-  Total Pass    : 30
+  Total Pass    : 86
   Total Fail    : 0
 =============================================
-UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 1525: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
-UVM_INFO src/tb/tests/axi_test.sv(39) @ 1525: uvm_test_top [AXI_TEST] 
+UVM_INFO src/tb/env/axi_scoreboard.sv(201) @ 4325: uvm_test_top.env.scb [AXI_SCOREBOARD] ALL CHECKS PASSED
+UVM_INFO src/tb/tests/axi_test.sv(39) @ 4325: uvm_test_top [AXI_TEST] 
 *** TEST PASSED ***
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  130
+UVM_INFO :  354
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[AXI_B2B_WRITE]    32
+[AXI_B2B_WRITE]    88
 [AXI_COVERAGE]     1
-[AXI_INP_MON]    30
-[AXI_OUT_MON]    30
-[AXI_SCOREBOARD]    32
+[AXI_INP_MON]    86
+[AXI_OUT_MON]    86
+[AXI_SCOREBOARD]    88
 [AXI_TEST]     1
 [RNTST]     1
 [TESTBENCH]     1
 [TEST_DONE]     1
 [UVMTOP]     1
 $finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm/base/uvm_root.svh", line 437.
-$finish at simulation time                 1525
+$finish at simulation time                 4325
 
 ---------------------------------------------------------------------------
 VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
 ---------------------------------------------------------------------------
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 1525 ns
-CPU Time:      0.650 seconds;       Data structure size:   0.6Mb
-Mon Sep 21 14:30:51 2026
+Time: 4325 ns
+CPU Time:      0.810 seconds;       Data structure size:   0.6Mb
+Mon Sep 21 15:50:31 2026

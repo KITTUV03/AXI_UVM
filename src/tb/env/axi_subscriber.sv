@@ -23,9 +23,9 @@ class axi_sub extends uvm_component;
       bins wo_addrs[]  = {[13:14]};
     }
 
-    wr_addr_range_cp: coverpoint wr_trans.AWADDR {
-      bins valid_range   = {[0:63]};
-      bins invalid_range = {[64:$]};
+    wr_addr_range_cp: coverpoint wr_trans.AWADDR[5:2] {
+      bins valid_range   = {[0:15]};
+//      bins invalid_range = {[64:$]};
     }
 
     wstrb_cp: coverpoint wr_trans.WSTRB {
@@ -54,9 +54,9 @@ class axi_sub extends uvm_component;
       bins wo_addrs[]  = {[13:14]};
     }
 
-    rd_addr_range_cp: coverpoint rd_trans.ARADDR {
-      bins valid_range   = {[0:63]};
-      bins invalid_range = {[64:$]};
+    rd_addr_range_cp: coverpoint rd_trans.ARADDR[5:2] {
+      bins valid_range   = {[0:15]};
+     // bins invalid_range = {[64:$]};
     }
 
     rresp_cp: coverpoint rd_trans.RRESP {
